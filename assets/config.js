@@ -13,7 +13,7 @@ window.SITE_CONFIG = {
 
      取得場所: LINE Official Account Manager →
      「友だちを増やす」→「友だち追加ガイド」→「URLを作成」 */
-  LINE_URL: ""
+  LINE_URL: "https://line.me/ti/p/opL0xZIyk2"
 
 };
 
