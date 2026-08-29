@@ -382,7 +382,7 @@ button[disabled]{opacity:.6;cursor:progress}
 @media (max-width:820px){.teacher-band{grid-template-columns:1fr;gap:24px;padding:30px 24px;text-align:center}}
 .t-photo{width:100%;max-width:220px;margin:0 auto;border-radius:50%;overflow:hidden;
   box-shadow:0 14px 34px var(--shadow);border:5px solid var(--surface)}
-.t-photo svg{display:block;width:100%;height:auto}
+.t-photo svg,.t-photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
 .t-role{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;color:var(--kaki)}
 .t-name{font-size:1.9rem;margin:6px 0 16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 @media (max-width:820px){.t-name{justify-content:center}}
