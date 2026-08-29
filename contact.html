@@ -34,7 +34,7 @@
 </head>
 <body>
 <a class="skip" href="#main">本文へスキップ</a>
-<p class="demo-note">現在準備中のサービスです。フォームはデモのため送信されません。電話番号は仮の内容です。</p>
+<p class="demo-note">現在準備中のサービスです。電話番号・料金は仮の内容を含みます（お申し込みフォームは受付中です）。</p>
 
 <header class="site-header">
   <div class="wrap bar">
@@ -116,52 +116,21 @@
 
       <!-- Form card -->
       <div class="card reveal">
-        <h3 style="font-size:1.5rem;margin-bottom:18px">フォームでのお申し込み</h3>
-        <form id="contactForm" novalidate>
-          <div>
-            <label for="who">どなたのお申し込みですか？</label>
-            <select id="who" name="who">
-              <option>本人（受講したい本人です）</option>
-              <option>家族（親などへの代理申し込み）</option>
-              <option>団体（町会・施設などの出張依頼）</option>
-            </select>
-          </div>
-          <div>
-            <label for="name">お名前<span class="req">必須</span></label>
-            <input id="name" name="name" type="text" autocomplete="name" required placeholder="例）墨田 花子">
-          </div>
-          <div>
-            <label for="tel">お電話番号</label>
-            <input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="例）090-0000-0000">
-          </div>
-          <div>
-            <label for="course">ご希望のコース</label>
-            <select id="course" name="course">
-              <option>ワンコイン体験（500円）</option>
-              <option>やさしいAI入門（全4回）</option>
-              <option>生活活用コース（月額）</option>
-              <option>デジタル安心講座</option>
-              <option>マンツーマン（オンライン／出張）</option>
-              <option>出張講座（町会・施設）</option>
-              <option>まだ決めていない・相談したい</option>
-            </select>
-          </div>
-          <div>
-            <label for="mode">ご希望の受け方</label>
-            <select id="mode" name="mode">
-              <option>オンライン（はじめてでも大丈夫）</option>
-              <option>出張（墨田区・近隣）</option>
-              <option>相談して決めたい</option>
-            </select>
-          </div>
-          <div>
-            <label for="msg">ご相談内容</label>
-            <textarea id="msg" name="msg" placeholder="不安なこと、やってみたいこと、何でもどうぞ。（例：オンラインのつなぎ方が心配です）"></textarea>
-          </div>
-          <button class="btn btn-primary btn-block" type="submit">この内容で送信する</button>
-          <p class="form-note" id="formDemoNote">※ これはデモ用フォームです。送信内容はどこにも送られません（開講時に本番用へ差し替えます）。</p>
-          <div id="thanks" class="thanks" hidden>ありがとうございます。お申し込みを受け付けました（デモ表示）。</div>
-        </form>
+        <h3 style="font-size:1.5rem;margin-bottom:10px">フォームでのお申し込み</h3>
+        <p style="color:var(--ink-soft);font-size:1rem;margin-bottom:18px">
+          下の用紙に書いて、いちばん下の「送信」を押してください。<br>
+          文字が小さいと感じる方は、下のボタンから大きな画面で開けます。
+        </p>
+        <a class="btn btn-ghost btn-block" href="https://docs.google.com/forms/d/e/1FAIpQLSc6_kVWA02wWY7j5xz_YOoOA41AQnb7J0jlgaMdl_-jlkPNPw/viewform" target="_blank" rel="noopener">
+          <span class="nb">大きな画面で</span><span class="nb">フォームを開く</span>
+        </a>
+        <div class="form-embed">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSc6_kVWA02wWY7j5xz_YOoOA41AQnb7J0jlgaMdl_-jlkPNPw/viewform?embedded=true"
+            title="すみだAI教室 お申し込みフォーム"
+            loading="lazy">読み込んでいます…</iframe>
+        </div>
+        <p class="form-note">※ ご記入内容は、すみだAI教室（AIプロジェクトチーム）にのみ届きます。お急ぎの方はお電話がいちばん確実です。</p>
       </div>
 
     </div>
