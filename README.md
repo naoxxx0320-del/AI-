@@ -14,6 +14,7 @@
 | `faq.html` | よくある質問 | FAQPage構造化データでリッチリザルト狙い |
 | `about.html` | 会社概要 | 運営者情報（E-E-A-T） |
 | `contact.html` | お問い合わせ | 体験申込・代理申込の受け皿 |
+| `blog/` | ブログ（記事一覧＋記事3本） | 「詐欺メール 見分け方」「ChatGPT 始め方 シニア」等の検索流入（Article構造化データ） |
 | `sitemap.xml` / `robots.txt` | — | クローラー向け |
 | `assets/` | CSS・JS・OGP画像 | 共通デザインシステム |
 | `404.html` | エラーページ | — |
@@ -40,6 +41,12 @@
 公開後にやること（SEO）：
 - [Google Search Console](https://search.google.com/search-console) にサイトを登録し、`sitemap.xml` を送信
 - 独自ドメイン取得時は、全ページの canonical / OGP / sitemap のURLを差し替え
+
+## フォーム・LINEの本番化
+
+`assets/config.js` にURLを貼るだけで有効になります（コードの知識は不要）:
+- **お問い合わせフォーム** → Googleフォーム連携。手順: [`docs/form-setup.md`](docs/form-setup.md)
+- **LINE友だち追加ボタン** → LINE公式アカウント連携。手順: [`docs/line-setup.md`](docs/line-setup.md)
 
 ## ⚠️ ご注意
 

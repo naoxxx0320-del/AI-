@@ -308,6 +308,26 @@ textarea{min-height:130px;resize:vertical}
 .js .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
 
+/* ---- Blog article ---- */
+.article{width:min(780px,92vw);margin:0 auto}
+.post-meta{display:flex;gap:14px;align-items:center;color:var(--ink-faint);font-size:.92rem;margin-top:14px;font-variant-numeric:tabular-nums}
+.post-meta .cat{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--kaki)}
+.article p{margin:0 0 1.4em}
+.article h2{font-size:1.5rem;margin:2em 0 .8em;padding-left:16px;border-left:6px solid var(--kaki);line-height:1.5}
+.article h3{font-size:1.2rem;margin:1.6em 0 .6em;color:var(--ai)}
+.article ul,.article ol{margin:0 0 1.4em;padding-left:1.5em;display:flex;flex-direction:column;gap:.5em}
+.article strong{color:var(--kaki)}
+.article .point{background:var(--wakaba-tint);border-left:6px solid var(--wakaba);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:20px 24px;margin:0 0 1.6em}
+.article .point .pt{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--wakaba);display:block;margin-bottom:6px}
+.article .warn{background:var(--kaki-tint);border-left:6px solid var(--kaki);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:20px 24px;margin:0 0 1.6em}
+.article .warn .pt{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--kaki);display:block;margin-bottom:6px}
+.article .lesson-link{background:var(--ai-tint);border-radius:var(--radius);padding:28px;margin:2.5em 0 0;text-align:center}
+.article .lesson-link p{margin-bottom:18px;color:var(--ink-soft)}
+.term{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px 26px;margin-bottom:16px}
+.term dt{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.15rem;color:var(--ai);margin-bottom:6px}
+.term dd{margin:0;color:var(--ink-soft)}
+.term dd .rei{display:block;margin-top:8px;font-size:.95rem;color:var(--wakaba)}
+
 /* ---- Utility ---- */
 .center{text-align:center}
 .mt-lg{margin-top:44px}
