@@ -76,7 +76,10 @@ body{
   line-height:1.9;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;line-height:1.45;text-wrap:balance;margin:0;font-weight:700}
+h1,h2,h3,h4{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;line-height:1.45;text-wrap:balance;margin:0;font-weight:700;word-break:auto-phrase}
+.lead,.hero-lead,.sec-head p{word-break:auto-phrase}
+/* 改行させたくない語句のまとまり（文節）用 */
+.nb{display:inline-block}
 p{margin:0}
 img,svg{max-width:100%}
 a{color:inherit}
@@ -122,7 +125,7 @@ nav.menu a[aria-current="page"]{background:var(--ai);color:#fff}
 :root[data-theme="dark"] .tel-btn{color:#1B1915}
 
 /* Mobile nav */
-.nav-toggle{display:none;background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:9px 12px;cursor:pointer;color:var(--ink);font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;align-items:center;gap:6px}
+.nav-toggle{display:none;background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:9px 12px;cursor:pointer;color:var(--ink);font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;align-items:center;gap:6px;white-space:nowrap;flex:0 0 auto}
 @media (max-width:960px){
   nav.menu{
     display:none;position:absolute;top:100%;left:0;right:0;
@@ -132,6 +135,17 @@ nav.menu a[aria-current="page"]{background:var(--ai);color:#fff}
   nav.menu.open{display:flex}
   nav.menu a{font-size:1.1rem;padding:13px 16px;border-radius:12px}
   .nav-toggle{display:inline-flex}
+}
+/* 小さい画面: ロゴ・メニュー・ボタンが1行に収まるように */
+@media (max-width:520px){
+  .bar{gap:6px}
+  .brand{gap:7px}
+  .brand svg{width:34px;height:34px}
+  .brand-name{font-size:.92rem}
+  .brand-sub{font-size:.58rem}
+  .nav-toggle{padding:7px 8px;font-size:.78rem;border-radius:10px}
+  .tel-btn{padding:8px 10px;font-size:.8rem;gap:5px}
+  .tel-btn svg{display:none}
 }
 
 /* ---- Buttons ---- */
