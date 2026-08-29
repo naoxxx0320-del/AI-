@@ -122,7 +122,13 @@
           あとは「送信する」を押すだけです。
         </p>
 
-        <form id="contactForm" novalidate>
+        <!-- action/method は、JavaScriptが動かない環境でも送信できるようにするための保険。
+             通常は site.js が横取りして送信し、thanks.html へ移動します。 -->
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="86e44014-aade-40b5-ad5f-35b1c50bcc58">
+          <input type="hidden" name="subject" value="すみだAI教室 ウェブサイトからのお申し込み">
+          <input type="hidden" name="from_name" value="すみだAI教室 ウェブサイト">
+          <input type="hidden" name="redirect" value="https://naoxxx0320-del.github.io/AI-/thanks.html">
           <fieldset>
             <legend>どなたのお申し込みですか？</legend>
             <div class="choices">
@@ -174,8 +180,8 @@
             <textarea id="msg" name="msg" placeholder="不安なこと、やってみたいことを、何でもどうぞ。&#10;（例：オンラインのつなぎ方が心配です）"></textarea>
           </div>
 
-          <!-- 迷惑メール対策（人には見えません） -->
-          <div class="hp" aria-hidden="true"><label for="website">この欄は入力しないでください</label><input id="website" name="botcheck" type="text" tabindex="-1" autocomplete="off"></div>
+          <!-- 迷惑メール対策（人には見えません／Web3Forms指定のチェックボックス形式） -->
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <button class="btn btn-primary btn-block" type="submit" id="submitBtn"><span class="nb">この内容で送信する</span></button>
           <p class="form-note" id="formNote">※ ご記入内容は、すみだAI教室（AIプロジェクトチーム）にのみ届きます。お急ぎの方はお電話がいちばん確実です。</p>

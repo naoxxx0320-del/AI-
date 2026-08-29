@@ -50,12 +50,12 @@
     });
   }
 
-  /* Contact form: sends to the owner's inbox via Web3Forms (see assets/config.js) */
+  /* Contact form: posts to Web3Forms, then moves to thanks.html.
+     The form's own action/method still work if this script fails to load. */
   var form = document.getElementById('contactForm');
   if (form) {
     var msg = document.getElementById('formMsg');
     var btn = document.getElementById('submitBtn');
-    var note = document.getElementById('formNote');
 
     var show = function (kind, title, sub) {
       msg.className = 'form-msg ' + kind;
@@ -70,17 +70,8 @@
       msg.hidden = false;
     };
 
-    /* Until the access key is set, say so plainly rather than dropping messages. */
-    if (!cfg.FORM_ACCESS_KEY) {
-      btn.disabled = true;
-      if (note) note.hidden = true;
-      show('ng', 'このフォームは準備中です。',
-        'お手数ですが、お電話またはLINEでご連絡ください。すぐにお返事します。');
-    }
-
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!cfg.FORM_ACCESS_KEY) return;
 
       var name = document.getElementById('name');
       var tel = document.getElementById('tel');
@@ -95,15 +86,16 @@
       [name, tel].forEach(function (el) { el.style.borderColor = ''; });
 
       var fd = new FormData(form);
-      fd.append('access_key', cfg.FORM_ACCESS_KEY);
-      fd.append('subject', 'すみだAI教室 お申し込み（' + name.value.trim() + ' 様）');
-      fd.append('from_name', 'すみだAI教室 ウェブサイト');
+      /* 件名にお名前を入れて、受信箱で誰からか一目で分かるようにする */
+      fd.set('subject', 'すみだAI教室 お申し込み（' + name.value.trim() + ' 様）');
+      /* AJAX送信では redirect は使わないので、自分で移動する */
+      fd.delete('redirect');
 
       btn.disabled = true;
       btn.textContent = '送信しています…';
       msg.hidden = true;
 
-      fetch('https://api.web3forms.com/submit', {
+      fetch(form.action, {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: fd
@@ -111,11 +103,9 @@
         .then(function (r) { return r.json(); })
         .then(function (data) {
           if (!data.success) throw new Error(data.message || 'failed');
-          form.querySelectorAll('input, select, textarea, fieldset').forEach(function (el) { el.disabled = true; });
-          if (note) note.hidden = true;
           btn.textContent = '送信しました';
-          show('ok', 'ありがとうございます。お申し込みを受け付けました。',
-            '2〜3日以内に、ご記入のお電話番号にご連絡いたします。しばらくお待ちください。');
+          /* 完了ページへ移動（戻るボタンで再送信されないよう replace を使う） */
+          window.location.replace('thanks.html');
         })
         .catch(function () {
           btn.disabled = false;
