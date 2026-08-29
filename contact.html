@@ -117,20 +117,70 @@
       <!-- Form card -->
       <div class="card reveal">
         <h3 style="font-size:1.5rem;margin-bottom:10px">フォームでのお申し込み</h3>
-        <p style="color:var(--ink-soft);font-size:1rem;margin-bottom:18px">
-          下の用紙に書いて、いちばん下の「送信」を押してください。<br>
-          文字が小さいと感じる方は、下のボタンから大きな画面で開けます。
+        <p style="color:var(--ink-soft);font-size:1rem;margin-bottom:22px">
+          下から選んで、お名前とお電話番号だけご記入ください。<br>
+          あとは「送信する」を押すだけです。
         </p>
-        <a class="btn btn-ghost btn-block" href="https://docs.google.com/forms/d/e/1FAIpQLSc6_kVWA02wWY7j5xz_YOoOA41AQnb7J0jlgaMdl_-jlkPNPw/viewform" target="_blank" rel="noopener">
-          <span class="nb">大きな画面で</span><span class="nb">フォームを開く</span>
-        </a>
-        <div class="form-embed">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSc6_kVWA02wWY7j5xz_YOoOA41AQnb7J0jlgaMdl_-jlkPNPw/viewform?embedded=true"
-            title="すみだAI教室 お申し込みフォーム"
-            loading="lazy">読み込んでいます…</iframe>
-        </div>
-        <p class="form-note">※ ご記入内容は、すみだAI教室（AIプロジェクトチーム）にのみ届きます。お急ぎの方はお電話がいちばん確実です。</p>
+
+        <form id="contactForm" novalidate>
+          <fieldset>
+            <legend>どなたのお申し込みですか？</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="who" value="本人（受講したい本人です）" checked>受講したいご本人</label>
+              <label class="choice"><input type="radio" name="who" value="家族（親などへの代理申し込み）">ご家族（親などへの代理申し込み）</label>
+              <label class="choice"><input type="radio" name="who" value="団体（町会・施設などの出張依頼）">町会・施設など（出張のご依頼）</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="name">お名前<span class="req">必須</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required placeholder="例）墨田 花子">
+          </div>
+
+          <div>
+            <label for="tel">お電話番号<span class="req">必須</span></label>
+            <input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required placeholder="例）090-0000-0000">
+          </div>
+
+          <div>
+            <label for="email">メールアドレス（お持ちの方のみ）</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="例）hanako@example.com">
+          </div>
+
+          <fieldset>
+            <legend>ご希望の受け方</legend>
+            <div class="choices cols">
+              <label class="choice"><input type="radio" name="mode" value="オンライン" checked>オンライン</label>
+              <label class="choice"><input type="radio" name="mode" value="出張（墨田区・近隣）">出張（ご自宅など）</label>
+              <label class="choice"><input type="radio" name="mode" value="相談して決めたい">相談して決めたい</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="course">ご希望のコース</label>
+            <select id="course" name="course">
+              <option>ワンコイン体験（500円）</option>
+              <option>やさしいAI入門（全4回）</option>
+              <option>生活活用コース（月額）</option>
+              <option>デジタル安心講座</option>
+              <option>マンツーマン個別相談</option>
+              <option>出張講座（町会・施設）</option>
+              <option>まだ決めていない・相談したい</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="msg">ご相談内容（なくても大丈夫です）</label>
+            <textarea id="msg" name="msg" placeholder="不安なこと、やってみたいことを、何でもどうぞ。&#10;（例：オンラインのつなぎ方が心配です）"></textarea>
+          </div>
+
+          <!-- 迷惑メール対策（人には見えません） -->
+          <div class="hp" aria-hidden="true"><label for="website">この欄は入力しないでください</label><input id="website" name="botcheck" type="text" tabindex="-1" autocomplete="off"></div>
+
+          <button class="btn btn-primary btn-block" type="submit" id="submitBtn"><span class="nb">この内容で送信する</span></button>
+          <p class="form-note" id="formNote">※ ご記入内容は、すみだAI教室（AIプロジェクトチーム）にのみ届きます。お急ぎの方はお電話がいちばん確実です。</p>
+          <div id="formMsg" class="form-msg" hidden role="status" aria-live="polite"></div>
+        </form>
       </div>
 
     </div>
