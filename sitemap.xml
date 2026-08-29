@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sumida-ai.jp/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://sumida-ai.jp/courses.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/teacher.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://sumida-ai.jp/family.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://sumida-ai.jp/online.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://sumida-ai.jp/faq.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
