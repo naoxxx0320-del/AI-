@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://naoxxx0320-del.github.io/AI-/sitemap.xml
