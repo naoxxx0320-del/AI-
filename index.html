@@ -82,6 +82,44 @@
 .hero-card{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 20px 50px var(--shadow)}
 .hero-card svg{width:100%;height:auto;display:block;border-radius:14px}
 .hero-card .cap{margin-top:14px;text-align:center;font-family:"Zen Maru Gothic",sans-serif;color:var(--ai);font-weight:500;font-size:.95rem}
+/* phone mock-up inside the hero card */
+.phone{background:var(--ai);border-radius:22px;padding:10px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.ph-top{display:flex;align-items:center;gap:9px;padding:9px 12px 12px;color:#fff;
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.92rem}
+.ph-dot{width:9px;height:9px;border-radius:50%;background:#7FD1A0;flex:0 0 auto}
+.ph-screen{background:var(--paper);border-radius:14px;padding:16px 14px;display:flex;flex-direction:column;gap:12px}
+.ph-day{align-self:center;font-size:.76rem;color:var(--ink-faint);background:var(--line);
+  border-radius:999px;padding:3px 12px}
+.msg{max-width:88%;padding:12px 15px;border-radius:16px;font-size:.95rem;line-height:1.7}
+.msg.me{align-self:flex-end;background:var(--kaki);color:#fff;border-bottom-right-radius:5px}
+:root[data-theme="dark"] .msg.me{color:#1B1915}
+.msg.me.short{max-width:70%}
+.msg.ai{align-self:flex-start;background:var(--surface);color:var(--ink);
+  border:1px solid var(--line);border-bottom-left-radius:5px;box-shadow:0 3px 10px var(--shadow)}
+.msg.ai ul{list-style:none;margin:9px 0;display:flex;flex-direction:column;gap:6px}
+.msg.ai li{font-size:.9rem;padding-left:2px}
+.msg.ai li b{color:var(--ai);font-family:"Zen Maru Gothic",sans-serif;margin-right:4px}
+.ph-bar{margin-top:11px;padding:9px 12px 4px;text-align:center}
+.ph-bar span{color:rgba(255,255,255,.82);font-size:.8rem}
+@media (max-width:400px){.msg{font-size:.9rem}.msg.ai li{font-size:.85rem}}
+
+/* ---- Why AI: merits for seniors ---- */
+.merit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
+@media (max-width:980px){.merit-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.merit-grid{grid-template-columns:1fr}}
+.merit{background:var(--surface);border:1px solid var(--line);border-radius:20px;
+  padding:26px 24px 24px;box-shadow:0 8px 22px var(--shadow);display:flex;flex-direction:column;gap:13px}
+.m-tag{align-self:flex-start;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;
+  color:var(--ai);background:var(--ai-tint);border-radius:999px;padding:6px 16px}
+.m-ask{position:relative;background:var(--kaki-tint);border-radius:14px;border-bottom-left-radius:5px;
+  padding:14px 16px;font-size:1.02rem;line-height:1.75;color:var(--kaki-deep);
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:500}
+:root[data-theme="dark"] .m-ask{color:var(--kaki)}
+.m-get{color:var(--ink-soft);font-size:1rem;line-height:1.85}
+.merit-note{margin-top:30px;background:var(--wakaba-tint);border-left:6px solid var(--wakaba);
+  border-radius:16px;padding:26px 28px}
+.merit-note p{line-height:1.9}
+@media (max-width:620px){.merit-note{padding:22px 20px}}
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr}
   .hero-card{max-width:440px;margin:0 auto}
@@ -174,31 +212,25 @@
       <p class="hero-note">▶ 初回体験 500円（60分）／ ご家族からの代理お申し込みも歓迎です</p>
     </div>
     <div class="hero-card reveal">
-      <svg viewBox="0 0 320 250" role="img" aria-label="ビデオ通話でAIの使い方を学ぶシニアのイラスト">
-        <rect x="0" y="0" width="320" height="250" rx="16" fill="#EAF1F6"/>
-        <!-- video call frame -->
-        <rect x="22" y="22" width="276" height="164" rx="12" fill="#26221C"/>
-        <rect x="30" y="30" width="260" height="148" rx="8" fill="#FBF7F0"/>
-        <!-- teacher small window -->
-        <rect x="206" y="38" width="76" height="58" rx="8" fill="#1F4A6B"/>
-        <circle cx="244" cy="58" r="11" fill="#F0C9A8"/>
-        <path d="M228 88 q16 -16 32 0 Z" fill="#DA6338"/>
-        <text x="244" y="93" font-family="Zen Maru Gothic, sans-serif" font-size="8" fill="#fff" text-anchor="middle">せんせい</text>
-        <!-- student -->
-        <circle cx="110" cy="86" r="30" fill="#F0C9A8"/>
-        <path d="M82 80 a29 29 0 0 1 56 0 c0 -20 -56 -20 -56 0Z" fill="#B9AF9C"/>
-        <path d="M68 178 q42 -44 84 0 Z" fill="#4E7A5A"/>
-        <!-- chat bubble -->
-        <g>
-          <rect x="150" y="112" width="126" height="44" rx="12" fill="#fff" stroke="#4E7A5A" stroke-width="2.5"/>
-          <path d="M166 156 l0 12 l13 -12 Z" fill="#fff" stroke="#4E7A5A" stroke-width="2.5"/>
-          <text x="213" y="139" font-family="Zen Maru Gothic, sans-serif" font-size="15" font-weight="700" fill="#4E7A5A" text-anchor="middle">ゆっくりで大丈夫</text>
-        </g>
-        <!-- home base line -->
-        <rect x="22" y="200" width="276" height="30" rx="10" fill="#DA6338" opacity="0.14"/>
-        <text x="160" y="220" font-family="Zen Maru Gothic, sans-serif" font-size="14" font-weight="700" fill="#DA6338" text-anchor="middle">おうちが、教室になる。</text>
-      </svg>
-      <p class="cap">▲ 画面ごしでも、となりにいるように。</p>
+      <div class="phone" role="img" aria-label="スマホでAIに旅行の計画を相談している画面の例">
+        <div class="ph-top"><span class="ph-dot"></span>AIアシスタント</div>
+        <div class="ph-screen">
+          <div class="ph-day">今日</div>
+          <div class="msg me">来月、夫婦で草津温泉に2泊したいの。<br>あまり歩かずに回れる順番を考えてくれる？</div>
+          <div class="msg ai">
+            いいですね。ゆったりめの2泊3日にしました。
+            <ul>
+              <li><b>1日目</b>　湯畑をひと回り（平坦で15分ほど）</li>
+              <li><b>2日目</b>　朝は温泉、午後は西の河原公園へ</li>
+              <li><b>3日目</b>　道の駅でお土産を買って帰路に</li>
+            </ul>
+            坂道の少ない道順にしてあります。
+          </div>
+          <div class="msg me short">ありがとう。これなら行けそうね</div>
+        </div>
+        <div class="ph-bar"><span>話しかけるだけ。文字を打たなくても使えます</span></div>
+      </div>
+      <p class="cap">▲ ふだんの言葉で相談できます。</p>
     </div>
   </div>
   <div class="wrap stats reveal">
@@ -206,6 +238,62 @@
     <div class="stat"><span class="num">最大4名</span><span class="cap">オンライン少人数制</span></div>
     <div class="stat"><span class="num">出張OK</span><span class="cap">墨田区・近隣エリア</span></div>
     <div class="stat"><span class="num">何度でも</span><span class="cap">同じ質問、大歓迎</span></div>
+  </div>
+</section>
+
+<!-- ===== WHY AI (benefits for seniors) ===== -->
+<section id="merit" aria-labelledby="merit-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">AIを使うと何がいいの？</span>
+      <h2 id="merit-title"><span class="nb">「聞ける相手」が</span><span class="nb">24時間</span><span class="nb">そばにいる</span><span class="nb">ようなものです。</span></h2>
+      <p>むずかしい機械の話ではありません。<strong>困ったときに、遠慮なく何度でも聞ける相手</strong>ができる。それがAIです。実際にこんなふうに使われています。</p>
+    </div>
+
+    <div class="merit-grid">
+      <article class="merit reveal">
+        <span class="m-tag">旅行の計画</span>
+        <p class="m-ask">「来月、夫婦で温泉に2泊したい。あまり歩かずに回れる順番を教えて」</p>
+        <p class="m-get">行き先の順番・移動時間・食事どころまで、まとめて提案してくれます。坂道の少ない道順など、体に合わせた注文もできます。</p>
+      </article>
+
+      <article class="merit reveal">
+        <span class="m-tag">健康の相談ごと</span>
+        <p class="m-ask">「膝が痛いとき、家でできる運動はありますか」</p>
+        <p class="m-get">体のしくみや一般的な対処法を、やさしい言葉で説明してくれます。病院で聞きそびれたことを、あとから確かめるのにも役立ちます。</p>
+      </article>
+
+      <article class="merit reveal">
+        <span class="m-tag">孫への手紙</span>
+        <p class="m-ask">「入学祝いの手紙を書きたい。何と書けばいいかしら」</p>
+        <p class="m-get">伝えたい気持ちを話すだけで、文章の形にしてくれます。仕上げをご自分の言葉に直せば、立派な手紙のできあがりです。</p>
+      </article>
+
+      <article class="merit reveal">
+        <span class="m-tag">役所の書類・制度</span>
+        <p class="m-ask">「この通知に書いてある言葉の意味がわからない」</p>
+        <p class="m-get">むずかしい役所の言葉を、日常の言葉に言い直してくれます。写真を見せて「これ何？」と聞くこともできます。</p>
+      </article>
+
+      <article class="merit reveal">
+        <span class="m-tag">今日の献立</span>
+        <p class="m-ask">「冷蔵庫に大根と鶏肉がある。何が作れる？」</p>
+        <p class="m-get">材料から献立と作り方を教えてくれます。「塩分ひかえめで」といった注文にも応えてくれます。</p>
+      </article>
+
+      <article class="merit reveal">
+        <span class="m-tag">詐欺から身を守る</span>
+        <p class="m-ask">「こんなメールが来たけれど、本物でしょうか」</p>
+        <p class="m-get">怪しいメールやハガキを見せて、その場で確かめられます。<strong>あわてて連絡してしまう前のひと呼吸</strong>が作れます。</p>
+      </article>
+    </div>
+
+    <div class="merit-note reveal">
+      <p><strong>ただし、AIは万能ではありません。</strong>まちがいを、さも本当のように答えることがあります。とくに<strong>お薬・治療・お金の判断は、AIの答えだけで決めないでください</strong>。かならずお医者さん、薬剤師さん、ご家族や役所にご確認を。</p>
+      <p class="mt-md">当教室では、便利な使い方と同じくらい、<strong>この「信じすぎない線引き」</strong>を大切にお伝えしています。</p>
+    </div>
+
+    <p class="note-line"><a class="arrow-link" href="courses.html">学べる内容をくわしく見る</a></p>
   </div>
 </section>
 
