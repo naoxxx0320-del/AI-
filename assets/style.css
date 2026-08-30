@@ -433,12 +433,8 @@ button[disabled]{opacity:.6;cursor:progress}
   border-radius:999px;padding:10px 22px 10px 10px;text-decoration:none;color:var(--ink);
   transition:transform .16s ease,box-shadow .16s ease}
 .t-chip:hover{transform:translateY(-2px);box-shadow:0 10px 22px var(--shadow)}
-.t-chip img,.t-chip .t-ph{width:54px;height:54px;border-radius:50%;object-fit:cover;flex:0 0 auto;display:block}
-.t-chip .t-ph svg{width:54px;height:54px;display:block}
+.t-chip img{width:54px;height:54px;border-radius:50%;object-fit:cover;flex:0 0 auto;display:block}
 .t-chip span{font-size:.95rem;color:var(--ink-soft);line-height:1.4}
 .t-chip b{display:block;font-family:"Zen Maru Gothic",sans-serif;font-size:1.08rem;color:var(--ai)}
 .t-h{font-size:clamp(1.9rem,4.6vw,2.7rem);margin:10px 0 18px}
-.t-photo-ph{background:var(--ai-tint)}
-.t-photo-wrap .ph-note{margin-top:12px;text-align:center;
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.85rem;color:var(--ink-faint)}
-@media (max-width:520px){.t-chip{padding:8px 18px 8px 8px}.t-chip img,.t-chip .t-ph,.t-chip .t-ph svg{width:46px;height:46px}}
+@media (max-width:520px){.t-chip{padding:8px 18px 8px 8px}.t-chip img{width:46px;height:46px}}
