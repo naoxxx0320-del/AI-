@@ -25,4 +25,16 @@
   <url><loc>https://sumida-ai.jp/course/jitaku.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://sumida-ai.jp/course/chokai.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://sumida-ai.jp/course/shisetsu.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/c/hajimete.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/c/kurashi.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/c/shigoto.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/c/tsukuru.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/c/anshin.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/ai-shigoto-mail.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/ai-gijiroku.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/ai-shiryo-tatakidai.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/ai-website-3jikan.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/ai-tanomikata-kata.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/ai-saisho-no-10pun.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://sumida-ai.jp/blog/ai-uso-hallucination.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
 </urlset>

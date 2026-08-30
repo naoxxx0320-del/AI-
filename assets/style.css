@@ -513,3 +513,27 @@ a.c-card:hover .c-more::after{transform:translateX(5px)}
 .biz-band .c-card h3,.biz-band .card h3{color:var(--ink)}
 .biz-band .c-meta{color:var(--ink-faint)}
 @media (max-width:620px){.biz-band{padding:34px 24px;border-radius:22px}}
+
+/* ---- ブログのカテゴリー ---- */
+.cchips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.cchip{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;
+  background:var(--surface);color:var(--ink);border:1.5px solid var(--line);
+  border-radius:999px;padding:9px 18px;transition:background .15s,border-color .15s,color .15s}
+.cchip i{font-style:normal;font-size:.8rem;color:var(--ink-faint)}
+.cchip:hover{border-color:var(--ai);color:var(--ai)}
+.cchip.on{background:var(--ai);color:#fff;border-color:var(--ai)}
+.cchip.on i{color:rgba(255,255,255,.75)}
+:root[data-theme="dark"] .cchip.on{color:#12293C}
+a.cat,.post-card .cat,.post-meta .cat{
+  display:inline-block;text-decoration:none;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+  font-size:.82rem;border-radius:999px;padding:4px 13px;line-height:1.6}
+.cat-hajimete{background:var(--ai-tint);color:var(--ai)}
+.cat-kurashi{background:var(--wakaba-tint);color:var(--wakaba)}
+.cat-shigoto{background:var(--kaki-tint);color:var(--kaki-deep)}
+:root[data-theme="dark"] .cat-shigoto{color:var(--kaki)}
+.cat-tsukuru{background:var(--ai);color:#fff}
+:root[data-theme="dark"] .cat-tsukuru{background:var(--ai-tint);color:var(--ai)}
+.cat-anshin{background:#F7E3DC;color:#A8401E}
+:root[data-theme="dark"] .cat-anshin{background:#3A241C;color:var(--kaki)}
+.post-card .cat{align-self:flex-start}
