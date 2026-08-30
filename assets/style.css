@@ -468,3 +468,48 @@ button[disabled]{opacity:.6;cursor:progress}
 .t-card:hover .t-card-go::after{transform:translateX(5px)}
 
 .t-h{font-size:clamp(1.9rem,4.6vw,2.7rem);margin:10px 0 18px}
+
+/* ---- コース詳細ページ ---- */
+.c-spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:28px}
+.c-spec>div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.c-spec .k{display:block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.8rem;
+  letter-spacing:.06em;color:var(--kaki);margin-bottom:4px}
+.c-spec .v{font-size:1.02rem;line-height:1.6}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:720px){.fit-grid{grid-template-columns:1fr}}
+.fit-col{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px 26px}
+.fit-col.yes{border-top:5px solid var(--wakaba)}
+.fit-col.no{border-top:5px solid var(--ink-faint)}
+.fit-col h3{font-family:"Zen Maru Gothic",sans-serif;font-size:1.15rem;margin-bottom:16px;color:var(--wakaba)}
+.fit-col.no h3{color:var(--ink-soft)}
+.fit-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.fit-col li{position:relative;padding-left:28px;font-size:1rem;line-height:1.75}
+.fit-col.yes li::before{content:"✓";position:absolute;left:0;top:0;color:var(--wakaba);font-weight:700}
+.fit-col.no li::before{content:"–";position:absolute;left:4px;top:0;color:var(--ink-faint);font-weight:700}
+.bring-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.bring-list li{position:relative;padding-left:30px;line-height:1.8}
+.bring-list li::before{content:"";position:absolute;left:0;top:.6em;width:14px;height:14px;
+  border-radius:4px;border:2.5px solid var(--ai)}
+
+/* コース一覧のカードをリンクに */
+a.c-card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+a.c-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px var(--shadow-strong);border-color:var(--ai)}
+.c-more{margin-top:14px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.98rem;
+  color:var(--ai);display:inline-flex;align-items:center;gap:7px}
+.c-more::after{content:"→";transition:transform .18s ease}
+a.c-card:hover .c-more::after{transform:translateX(5px)}
+
+/* お仕事向けセクション */
+.biz-band{background:var(--ai);color:#fff;border-radius:28px;padding:44px 46px;position:relative;overflow:hidden}
+:root[data-theme="dark"] .biz-band{background:var(--ai-deep)}
+.biz-band>.sec-head h2{color:#fff}
+.biz-band>.sec-head .kicker{color:#F2A07B}
+.biz-band>.sec-head p{color:#D8E4EE}
+.biz-band>.sec-head{margin-bottom:32px}
+/* カード内は通常の文字色に戻す */
+.biz-band .c-card,.biz-band .card{color:var(--ink)}
+.biz-band .c-card p,.biz-band .card p{color:var(--ink-soft)}
+.biz-band .c-card h3,.biz-band .card h3{color:var(--ink)}
+.biz-band .c-meta{color:var(--ink-faint)}
+@media (max-width:620px){.biz-band{padding:34px 24px;border-radius:22px}}
