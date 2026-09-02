@@ -569,30 +569,33 @@ a.cat,.post-card .cat,.post-meta .cat{
 }
 
 /* ---- トップのヒーロー（白いカード＋申し込みの帯） ---- */
-.hero{padding:clamp(18px,3vw,34px) 0 clamp(40px,5.5vw,64px);
-  display:flex;flex-direction:column;gap:clamp(16px,2.4vw,22px)}
+.hero{padding:clamp(26px,4.2vw,42px) 0 clamp(44px,6vw,68px)}
+/* すきまは .wrap の中（カードと帯のあいだ）に入れる。
+   .hero に gap を置いても子は .wrap 一つきりなので効かない */
+.hero>.wrap{display:flex;flex-direction:column;gap:clamp(22px,3.4vw,30px)}
 .hcard{position:relative;overflow:hidden;background:var(--surface);
-  border-radius:clamp(22px,3vw,30px);box-shadow:0 4px 18px var(--shadow);
-  min-height:clamp(330px,62vw,430px);display:flex;align-items:center}
-.hcard-art{position:absolute;right:0;bottom:0;top:10px;z-index:1;
-  height:calc(100% - 10px);width:auto;max-width:none;object-fit:contain;object-position:bottom right}
+  border-radius:clamp(24px,3.2vw,32px);box-shadow:0 4px 18px var(--shadow);
+  min-height:clamp(360px,66vw,460px);display:flex;align-items:center}
+.hcard-art{position:absolute;right:clamp(4px,1.2vw,14px);bottom:16px;top:18px;z-index:1;
+  height:calc(100% - 34px);width:auto;max-width:none;object-fit:contain;object-position:bottom right}
 /* 文字が読めるよう、左から白をかぶせる */
 .hcard::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(100deg,var(--surface) 30%,color-mix(in srgb,var(--surface) 55%,transparent) 54%,transparent 76%)}
-.hcard-tx{position:relative;z-index:3;padding:clamp(26px,4.4vw,44px);max-width:min(30em,66%)}
+.hcard-tx{position:relative;z-index:3;padding:clamp(32px,5vw,52px) clamp(24px,4.4vw,50px);max-width:min(30em,66%)}
 .hcard .eyebrow{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:clamp(.74rem,2.2vw,.88rem);color:var(--orange-ink);margin-bottom:10px;white-space:nowrap}
-.hcard h1{font-size:clamp(1.38rem,4.6vw,2.7rem);line-height:1.32;letter-spacing:.005em}
-.hcard p{margin-top:clamp(14px,2.4vw,20px);color:var(--ink);
+  font-size:clamp(.74rem,2.2vw,.88rem);color:var(--orange-ink);margin-bottom:12px;white-space:nowrap}
+/* 改行位置は <br> で決めているので、balance に触らせない */
+.hcard h1{font-size:clamp(1.38rem,4.6vw,2.7rem);line-height:1.34;letter-spacing:.005em;text-wrap:pretty}
+.hcard p{margin-top:clamp(16px,2.6vw,22px);color:var(--ink);
   font-size:clamp(.95rem,2.8vw,1.08rem);line-height:1.8}
-.ghost{margin-top:clamp(20px,3vw,28px);display:inline-flex;align-items:center;justify-content:center;
+.ghost{margin-top:clamp(24px,3.4vw,32px);display:inline-flex;align-items:center;justify-content:center;
   min-height:58px;padding:14px 34px;border-radius:999px;text-decoration:none;
   background:var(--surface);color:var(--orange-ink);box-shadow:inset 0 0 0 2.4px var(--orange-ink);
   font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:clamp(1.02rem,3vw,1.14rem);
   transition:transform .16s ease,box-shadow .16s ease}
 .ghost:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2.4px var(--orange-ink),0 10px 22px var(--shadow-strong)}
 @media (max-width:520px){
-  .hcard-tx{max-width:73%;padding:24px 18px}
+  .hcard-tx{max-width:72%;padding:28px 20px}
   .hcard::after{background:linear-gradient(102deg,var(--surface) 36%,color-mix(in srgb,var(--surface) 58%,transparent) 60%,transparent 84%)}
 }
 @media (max-width:345px){
@@ -600,13 +603,13 @@ a.cat,.post-card .cat,.post-meta .cat{
 }
 
 /* 申し込みの帯 */
-.hoffer{background:var(--peach-2);border-radius:clamp(22px,3vw,30px);
-  padding:clamp(24px,3.6vw,36px) clamp(20px,3vw,34px);text-align:center}
+.hoffer{background:var(--peach-2);border-radius:clamp(24px,3.2vw,32px);
+  padding:clamp(30px,4.4vw,42px) clamp(24px,3.4vw,38px);text-align:center}
 .hoffer .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--ink);
   font-size:clamp(1.28rem,4.4vw,1.75rem);line-height:1.45}
 .hoffer .t b{font-size:1.12em}
-.hoffer .s{margin-top:6px;color:var(--ink);font-size:clamp(.92rem,2.6vw,1.02rem);line-height:1.7}
-.hoffer .cta{margin-top:clamp(18px,2.6vw,24px);
+.hoffer .s{margin-top:8px;color:var(--ink);font-size:clamp(.92rem,2.6vw,1.02rem);line-height:1.7}
+.hoffer .cta{margin-top:clamp(22px,3vw,28px);
   display:flex;align-items:center;justify-content:center;width:100%;min-height:64px;
   padding:15px 26px;border-radius:999px;text-decoration:none;
   background:var(--orange-ink);color:#fff;box-shadow:0 6px 16px rgba(122,48,10,.30);
@@ -617,8 +620,8 @@ a.cat,.post-card .cat,.post-meta .cat{
 .hoffer .cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px var(--shadow-strong)}
 @media (min-width:900px){
   .hoffer{display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;
-    gap:clamp(20px,3vw,40px);padding:clamp(26px,3vw,34px) clamp(30px,3.4vw,44px)}
-  .hoffer .cta{margin-top:0;width:auto;padding:15px 40px}
+    gap:clamp(24px,3.4vw,44px)}
+  .hoffer .cta{margin-top:0;width:auto;padding:15px 44px}
 }
 /* 320px幅では「ワンコイン体験を申し込む」が2行に折れるので詰める。
    .hoffer .cta の定義より後ろに置かないと後勝ちで打ち消される */
