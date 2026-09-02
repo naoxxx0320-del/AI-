@@ -32,8 +32,14 @@
   --line:#E5DCCB;
   --shadow:rgba(95,72,48,.10);
   --shadow-strong:rgba(95,72,48,.20);
-  --radius:24px;
-  --radius-sm:16px;
+  /* 角丸は2種類だけ。小さな札は999pxの丸 */
+  --r-l:26px;           /* カード・帯 */
+  --r-s:18px;           /* カードの中の小箱 */
+  --radius:26px;        /* 旧名 */
+  --radius-sm:18px;
+  /* 影は1種類だけ */
+  --sh-card:0 4px 16px rgba(95,72,48,.10);
+  --sh-lift:0 16px 32px rgba(95,72,48,.20);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -60,6 +66,7 @@
   --wakaba:#8DC4A6; --wakaba-tint:#25302A;
   --line:#332E27;
   --shadow:rgba(0,0,0,.45); --shadow-strong:rgba(0,0,0,.6);
+  --sh-card:0 4px 16px rgba(0,0,0,.45); --sh-lift:0 16px 32px rgba(0,0,0,.6);
 }
 
 /* ---- Base ---- */
@@ -175,7 +182,7 @@ nav.menu a[aria-current="page"]{background:var(--peach);color:var(--ink)}
   padding:18px 34px;border-radius:999px;min-height:60px;
   transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
 }
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px var(--shadow-strong)}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sh-lift)}
 .btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 16px rgba(213,108,52,.32)}
 .btn-primary:hover{background:var(--orange-ink)}
 :root[data-theme="dark"] .btn-primary{color:#2A1D14}
@@ -186,7 +193,8 @@ nav.menu a[aria-current="page"]{background:var(--peach);color:var(--ink)}
 .btn-block{width:100%}
 
 /* ---- Sections ---- */
-section{padding:clamp(58px,8vw,96px) 0}
+/* 節の上下余白はこの1本だけ。節ごとに変えない */
+section{padding:clamp(52px,7.4vw,88px) 0}
 .alt{background:var(--cream-2)}
 .tint{background:var(--cream-2)}
 .cream{background:var(--cream)}
@@ -211,16 +219,16 @@ h2 .m,h1 .m{color:var(--orange-ink)}
 .breadcrumb li+li::before{content:"›";margin-right:6px;color:var(--ink-faint)}
 
 /* ---- Cards ---- */
-.card{background:var(--surface);border-radius:24px;padding:28px;box-shadow:0 4px 16px var(--shadow)}
+.card{background:var(--surface);border-radius:var(--r-l);padding:28px;box-shadow:var(--sh-card)}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
 @media (max-width:820px){.grid-2,.grid-3{grid-template-columns:1fr}}
 
 /* Promise / feature cards */
-.p-card{background:var(--surface);border-radius:24px;padding:26px 25px;box-shadow:0 4px 16px var(--shadow);transition:transform .18s ease,box-shadow .18s ease}
-.p-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px var(--shadow-strong)}
-.p-badge{width:56px;height:56px;border-radius:20px;display:grid;place-items:center;background:var(--peach);color:var(--orange-ink);margin-bottom:16px}
+.p-card{background:var(--surface);border-radius:var(--r-l);padding:26px 25px;box-shadow:var(--sh-card);transition:transform .18s ease,box-shadow .18s ease}
+.p-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
+.p-badge{width:56px;height:56px;border-radius:var(--r-s);display:grid;place-items:center;background:var(--peach);color:var(--orange-ink);margin-bottom:16px}
 .p-badge svg{width:30px;height:30px}
 .p-badge.green{background:var(--leaf-tint);color:var(--leaf)}
 .p-badge.orange{background:var(--peach);color:var(--orange-ink)}
@@ -228,8 +236,8 @@ h2 .m,h1 .m{color:var(--orange-ink)}
 .p-card p{color:var(--ink-soft);font-size:.97rem}
 
 /* ---- Course cards ---- */
-.c-card{background:var(--surface);border-radius:24px;padding:30px;display:flex;flex-direction:column;position:relative;box-shadow:0 4px 16px var(--shadow)}
-.c-card.feature{box-shadow:0 4px 16px var(--shadow),inset 0 0 0 2.4px var(--orange)}
+.c-card{background:var(--surface);border-radius:var(--r-l);padding:30px;display:flex;flex-direction:column;position:relative;box-shadow:var(--sh-card)}
+.c-card.feature{box-shadow:var(--sh-card),inset 0 0 0 2.4px var(--orange)}
 .c-tag{position:absolute;top:-14px;left:26px;background:var(--orange-ink);color:#fff;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.88rem;padding:5px 15px;border-radius:999px}
 :root[data-theme="dark"] .c-tag{color:#2A1D14}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .c-tag{color:#2A1D14}}
@@ -250,7 +258,7 @@ h2 .m,h1 .m{color:var(--orange-ink)}
 /* ---- Steps ---- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
 @media (max-width:820px){.steps{grid-template-columns:1fr}}
-.step{background:var(--surface);border-radius:24px;padding:30px 26px 26px;position:relative;box-shadow:0 4px 16px var(--shadow);margin-top:17px}
+.step{background:var(--surface);border-radius:var(--r-l);padding:30px 26px 26px;position:relative;box-shadow:var(--sh-card);margin-top:17px}
 .step::before{
   counter-increment:step;content:counter(step);
   position:absolute;top:-17px;left:26px;
@@ -266,12 +274,12 @@ h2 .m,h1 .m{color:var(--orange-ink)}
 /* ---- Stats band ---- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
 @media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{background:var(--surface);border-radius:18px;padding:20px 14px;text-align:center;box-shadow:0 3px 12px var(--shadow)}
+.stat{background:var(--surface);border-radius:var(--r-s);padding:20px 14px;text-align:center;box-shadow:var(--sh-card)}
 .stat .num{font-family:"Shippori Mincho",serif;font-size:1.9rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.3}
 .stat .cap{font-size:.88rem;color:var(--ink-soft);font-family:"Zen Maru Gothic",sans-serif}
 
 /* ---- Tables ---- */
-.table-wrap{overflow-x:auto;border-radius:20px;background:var(--surface);box-shadow:0 4px 16px var(--shadow)}
+.table-wrap{overflow-x:auto;border-radius:var(--r-s);background:var(--surface);box-shadow:var(--sh-card)}
 table{border-collapse:collapse;width:100%;min-width:560px;font-size:1rem}
 th,td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line)}
 thead th{background:var(--cream-2);color:var(--ink);font-family:"Zen Maru Gothic",sans-serif;font-size:.95rem}
@@ -289,7 +297,7 @@ td .yen{font-variant-numeric:tabular-nums;font-weight:700;color:var(--orange-ink
 
 /* ---- FAQ ---- */
 .faq-list{display:flex;flex-direction:column;gap:14px}
-details.faq{background:var(--surface);border-radius:20px;overflow:hidden;box-shadow:0 3px 12px var(--shadow)}
+details.faq{background:var(--surface);border-radius:var(--r-s);overflow:hidden;box-shadow:var(--sh-card)}
 details.faq summary{
   cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;
   padding:20px 24px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.08rem;
@@ -299,7 +307,7 @@ details.faq summary::before{content:"Q";flex:0 0 auto;width:38px;height:38px;bor
 details.faq summary::after{content:"＋";margin-left:auto;color:var(--orange-ink);font-size:1.3rem;transition:transform .2s}
 details.faq[open] summary::after{transform:rotate(45deg)}
 details.faq .a{padding:0 24px 22px 76px;color:var(--ink-soft);font-size:1.02rem}
-details.faq[open]{box-shadow:0 6px 20px var(--shadow)}
+details.faq[open]{box-shadow:var(--sh-lift)}
 
 /* ---- Forms ---- */
 form{display:flex;flex-direction:column;gap:18px}
@@ -351,7 +359,7 @@ button[disabled]{opacity:.6;cursor:progress}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .thanks{color:#2A1D14}}
 
 /* ---- CTA band ---- */
-.cta-band{background:var(--phone);color:var(--phone-ink);text-align:center;padding:clamp(52px,7.5vw,88px) 0}
+.cta-band{background:var(--phone);color:var(--phone-ink);text-align:center;padding:clamp(52px,7.4vw,88px) 0}
 .cta-band h2{color:inherit;font-size:clamp(1.75rem,4.6vw,2.8rem);line-height:1.45}
 .cta-band p{margin:16px auto 30px;opacity:.9;font-size:1.05rem;max-width:32em}
 .cta-band .btn-primary{box-shadow:0 8px 24px rgba(0,0,0,.35)}
@@ -402,7 +410,7 @@ button[disabled]{opacity:.6;cursor:progress}
 .article .warn .pt{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--orange-ink);display:block;margin-bottom:6px}
 .article .lesson-link{background:var(--ai-tint);border-radius:var(--radius);padding:28px;margin:2.5em 0 0;text-align:center}
 .article .lesson-link p{margin-bottom:18px;color:var(--ink-soft)}
-.term{background:var(--surface);border-radius:20px;padding:22px 26px;margin-bottom:16px;box-shadow:0 3px 12px var(--shadow)}
+.term{background:var(--surface);border-radius:var(--r-s);padding:22px 26px;margin-bottom:16px;box-shadow:var(--sh-card)}
 .term dt{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:6px}
 .term dd{margin:0;color:var(--ink-soft)}
 .term dd .rei{display:block;margin-top:8px;font-size:.95rem;color:var(--leaf)}
@@ -410,15 +418,15 @@ button[disabled]{opacity:.6;cursor:progress}
 
 /* ---- 講師紹介 ---- */
 .teacher-band{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:center;
-  background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:42px 46px;
-  position:relative;overflow:hidden;box-shadow:0 6px 22px var(--shadow)}
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:42px 46px;
+  position:relative;overflow:hidden;box-shadow:var(--sh-card)}
 .teacher-band::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;
   background:linear-gradient(180deg,var(--ai),var(--wakaba))}
 .teacher-band+.teacher-band::before{background:linear-gradient(180deg,var(--kaki),var(--ai))}
 @media (max-width:820px){.teacher-band{grid-template-columns:1fr;gap:24px;padding:30px 24px;text-align:center}}
 .t-photo{width:100%;max-width:220px;margin:0 auto;border-radius:50%;padding:6px;
   background:linear-gradient(135deg,var(--ai-tint),var(--kaki-tint));
-  box-shadow:0 14px 34px var(--shadow)}
+  box-shadow:var(--sh-lift)}
 .t-photo>img,.t-photo>svg{border-radius:50%;border:4px solid var(--surface)}
 .t-photo svg,.t-photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
 .t-role{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
@@ -437,14 +445,14 @@ button[disabled]{opacity:.6;cursor:progress}
 @media (max-width:820px){.t-hero{grid-template-columns:1fr;gap:26px;text-align:center}}
 .t-hero .t-photo{max-width:260px}
 .t-hero h1{font-size:clamp(1.9rem,4.6vw,2.7rem);margin:10px 0 18px}
-.t-quote{background:var(--kaki-tint);border-radius:24px;padding:36px 34px;margin:0;
+.t-quote{background:var(--kaki-tint);border-radius:var(--r-l);padding:36px 34px;margin:0;
   font-size:1.15rem;line-height:2.05}
 .t-quote .mark{font-family:"Shippori Mincho",serif;font-size:3rem;color:var(--orange-ink);
   line-height:1;display:block;margin-bottom:-8px}
 .t-quote cite{display:block;margin-top:18px;text-align:right;font-style:normal;
   font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--ink-soft);font-size:.98rem}
 .t-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
-.t-fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.t-fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-s);padding:22px}
 .t-fact .k{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.86rem;
   color:var(--orange-ink);display:block;margin-bottom:6px}
 .t-fact .v{font-size:1.02rem}
@@ -473,13 +481,13 @@ button[disabled]{opacity:.6;cursor:progress}
 
 /* ---- コース詳細ページ ---- */
 .c-spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:28px}
-.c-spec>div{background:var(--surface);border-radius:16px;padding:16px 18px;box-shadow:0 3px 10px var(--shadow)}
+.c-spec>div{background:var(--surface);border-radius:var(--r-s);padding:16px 18px;box-shadow:var(--sh-card)}
 .c-spec .k{display:block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.8rem;
   letter-spacing:.06em;color:var(--orange-ink);margin-bottom:4px}
 .c-spec .v{font-size:1.02rem;line-height:1.6}
 .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 @media (max-width:720px){.fit-grid{grid-template-columns:1fr}}
-.fit-col{background:var(--surface);border-radius:22px;padding:28px 26px;box-shadow:0 4px 16px var(--shadow)}
+.fit-col{background:var(--surface);border-radius:var(--r-l);padding:28px 26px;box-shadow:var(--sh-card)}
 .fit-col.yes{border-top:5px solid var(--wakaba)}
 .fit-col.no{border-top:5px solid var(--ink-faint)}
 .fit-col h3{font-family:"Zen Maru Gothic",sans-serif;font-size:1.15rem;margin-bottom:16px;color:var(--leaf)}
@@ -496,14 +504,14 @@ button[disabled]{opacity:.6;cursor:progress}
 /* コース一覧のカードをリンクに */
 a.c-card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;
   transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-a.c-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px var(--shadow-strong);border-color:var(--ai)}
+a.c-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lift);border-color:var(--ai)}
 .c-more{margin-top:14px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.98rem;
   color:var(--ai);display:inline-flex;align-items:center;gap:7px}
 .c-more::after{content:"→";transition:transform .18s ease}
 a.c-card:hover .c-more::after{transform:translateX(5px)}
 
 /* お仕事向けセクション */
-.biz-band{background:var(--phone);color:var(--phone-ink);border-radius:28px;padding:44px 46px;position:relative;overflow:hidden}
+.biz-band{background:var(--phone);color:var(--phone-ink);border-radius:var(--r-l);padding:44px 46px;position:relative;overflow:hidden}
 :root[data-theme="dark"] .biz-band{background:var(--ai-deep)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .biz-band{background:var(--ai-deep)}}
 .biz-band>.sec-head h2{color:var(--phone-ink)}
@@ -515,7 +523,7 @@ a.c-card:hover .c-more::after{transform:translateX(5px)}
 .biz-band .c-card p,.biz-band .card p{color:var(--ink-soft)}
 .biz-band .c-card h3,.biz-band .card h3{color:var(--ink)}
 .biz-band .c-meta{color:var(--ink-faint)}
-@media (max-width:620px){.biz-band{padding:34px 24px;border-radius:22px}}
+@media (max-width:620px){.biz-band{padding:34px 24px;border-radius:var(--r-l)}}
 
 /* ---- ブログのカテゴリー ---- */
 .cchips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
@@ -578,7 +586,7 @@ a.cat,.post-card .cat,.post-meta .cat{
    .hero に gap を置いても子は .wrap 一つきりなので効かない */
 .hero>.wrap{display:flex;flex-direction:column;gap:clamp(22px,3.4vw,30px)}
 .hcard{position:relative;overflow:hidden;background:var(--surface);
-  border-radius:clamp(24px,3.2vw,32px);box-shadow:0 4px 18px var(--shadow);
+  border-radius:var(--r-l);box-shadow:var(--sh-card);
   min-height:clamp(360px,66vw,460px);display:flex;align-items:center}
 .hcard-art{position:absolute;right:clamp(4px,1.2vw,14px);bottom:16px;top:18px;z-index:1;
   height:calc(100% - 34px);width:auto;max-width:none;object-fit:contain;object-position:bottom right}
@@ -607,7 +615,7 @@ a.cat,.post-card .cat,.post-meta .cat{
 }
 
 /* 申し込みの帯 */
-.hoffer{background:var(--peach-2);border-radius:clamp(24px,3.2vw,32px);
+.hoffer{background:var(--peach-2);border-radius:var(--r-l);
   padding:clamp(30px,4.4vw,42px) clamp(24px,3.4vw,38px);text-align:center}
 .hoffer .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--ink);
   font-size:clamp(1.28rem,4.4vw,1.75rem);line-height:1.45}
@@ -621,7 +629,7 @@ a.cat,.post-card .cat,.post-meta .cat{
   transition:transform .16s ease,box-shadow .16s ease}
 :root[data-theme="dark"] .hoffer .cta{color:#2A1D14}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hoffer .cta{color:#2A1D14}}
-.hoffer .cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px var(--shadow-strong)}
+.hoffer .cta:hover{transform:translateY(-2px);box-shadow:var(--sh-lift)}
 @media (min-width:900px){
   .hoffer{display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;
     gap:clamp(24px,3.4vw,44px)}
@@ -637,11 +645,11 @@ a.cat,.post-card .cat,.post-meta .cat{
 .q.r{justify-content:flex-end}
 .q .fig{flex:0 0 auto;width:98px}
 .q .fig img{width:98px;height:auto;filter:drop-shadow(0 6px 12px rgba(95,72,48,.14))}
-.bub{position:relative;background:var(--surface);border-radius:28px;padding:20px 27px;
-  font-size:1.04rem;line-height:1.8;box-shadow:0 4px 16px var(--shadow);max-width:min(30em,100%);
+.bub{position:relative;background:var(--surface);border-radius:var(--r-l);padding:20px 27px;
+  font-size:1.04rem;line-height:1.8;box-shadow:var(--sh-card);max-width:min(30em,100%);
   color:inherit;text-decoration:none;display:block;
   transition:transform .16s ease,box-shadow .16s ease}
-a.bub:hover{transform:translateY(-2px);box-shadow:0 10px 24px var(--shadow-strong)}
+a.bub:hover{transform:translateY(-2px);box-shadow:var(--sh-lift)}
 a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 /* 左に人がいる行だけ、しっぽを出す */
 .q:not(.r) .bub::after{content:"";position:absolute;left:-12px;top:46%;width:14px;height:20px;
@@ -657,13 +665,13 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
   .q{gap:11px}
   .q .fig,.q .fig img{width:74px}
   .q.r .fig{margin-left:-22px}
-  .bub{padding:17px 21px;font-size:1rem;border-radius:23px}
+  .bub{padding:17px 21px;font-size:1rem;border-radius:var(--r-l)}
   .dood{width:38px}
   .dood svg{width:100%;height:auto}
 }
 
 /* ---- 答えの帯 ---- */
-.answer{background:var(--orange-ink);color:#fff;padding:clamp(44px,6.5vw,74px) 0;position:relative;overflow:hidden}
+.answer{background:var(--orange-ink);color:#fff;padding:clamp(52px,7.4vw,88px) 0;position:relative;overflow:hidden}
 :root[data-theme="dark"] .answer{color:#2A1D14}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .answer{color:#2A1D14}}
 .answer::before{content:"";position:absolute;width:min(48vw,440px);aspect-ratio:1;border-radius:50%;
@@ -672,7 +680,7 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 @media (max-width:760px){.agrid{grid-template-columns:1fr}}
 .answer h2{font-size:clamp(1.68rem,4.6vw,2.85rem);line-height:1.45;color:inherit}
 .answer p{margin-top:18px;font-size:1.02rem;max-width:30em;opacity:.95}
-.abadge{background:rgba(0,0,0,.16);border-radius:22px;padding:22px 30px;text-align:center;flex:0 0 auto;
+.abadge{background:rgba(0,0,0,.16);border-radius:var(--r-l);padding:22px 30px;text-align:center;flex:0 0 auto;
   box-shadow:inset 0 0 0 2.4px rgba(255,255,255,.55)}
 .abadge .n{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-weight:700;
   font-size:clamp(2.2rem,5vw,3.2rem);line-height:1}
@@ -681,11 +689,11 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 /* ---- 2つの学び方 ---- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 @media (max-width:820px){.two{grid-template-columns:1fr}}
-.wcard{background:var(--surface);border-radius:26px;padding:clamp(26px,3.4vw,36px);box-shadow:0 4px 18px var(--shadow);
+.wcard{background:var(--surface);border-radius:var(--r-l);padding:clamp(26px,3.4vw,36px);box-shadow:var(--sh-card);
   transition:transform .18s ease,box-shadow .18s ease}
-.wcard:hover{transform:translateY(-3px);box-shadow:0 16px 34px var(--shadow-strong)}
+.wcard:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
 .wtop{display:flex;align-items:center;gap:15px;margin-bottom:16px}
-.wic{width:58px;height:58px;border-radius:20px;display:grid;place-items:center;flex:0 0 auto;
+.wic{width:58px;height:58px;border-radius:var(--r-s);display:grid;place-items:center;flex:0 0 auto;
   background:var(--peach);color:var(--orange-ink)}
 .wic.g{background:var(--leaf-tint);color:var(--leaf)}
 .wic svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
@@ -702,18 +710,18 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 .ugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media (max-width:880px){.ugrid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.ugrid{grid-template-columns:1fr}}
-.uc{background:var(--surface);border-radius:24px;padding:26px 25px;box-shadow:0 4px 16px var(--shadow)}
+.uc{background:var(--surface);border-radius:var(--r-l);padding:26px 25px;box-shadow:var(--sh-card)}
 .uc .tag{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.82rem;
   color:var(--ink);background:var(--peach);border-radius:999px;padding:5px 15px}
 .uc h3{font-size:1.12rem;margin:14px 0 10px;line-height:1.55}
 .uc p{font-size:.96rem;color:var(--ink-soft)}
-.uc q{display:block;margin-top:14px;padding:13px 16px;background:var(--cream-2);border-radius:16px;
+.uc q{display:block;margin-top:14px;padding:13px 16px;background:var(--cream-2);border-radius:var(--r-s);
   color:var(--ink-soft);font-size:.94rem;line-height:1.72;quotes:"「" "」"}
 .uc q::before{content:open-quote}
 .uc q::after{content:close-quote}
 
 /* ---- 料金の一覧 ---- */
-.fee{background:var(--surface);border-radius:26px;overflow:hidden;box-shadow:0 4px 18px var(--shadow)}
+.fee{background:var(--surface);border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh-card)}
 .fee a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:21px 28px;
   text-decoration:none;transition:background .15s;position:relative}
 .fee a+a::before{content:"";position:absolute;top:0;left:28px;right:28px;height:1px;background:var(--line)}
@@ -739,12 +747,12 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 .people{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,26px);
   max-width:760px;margin-inline:auto}
 .pc{--ph:clamp(104px,29vw,158px);
-  background:var(--surface);border-radius:22px;
+  background:var(--surface);border-radius:var(--r-l);
   padding:clamp(18px,2.2vw,28px) clamp(14px,1.8vw,24px) clamp(16px,2vw,24px);
-  box-shadow:0 4px 16px var(--shadow);
+  box-shadow:var(--sh-card);
   display:flex;flex-direction:column;align-items:center;text-align:center;
   text-decoration:none;color:var(--ink);transition:transform .18s ease,box-shadow .18s ease}
-.pc:hover{transform:translateY(-3px);box-shadow:0 16px 32px var(--shadow-strong)}
+.pc:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
 /* 幅と高さを同じ値で明示する。aspect-ratio だけだと縦に伸びる */
 .pc img{width:var(--ph);height:var(--ph);flex:0 0 auto;border-radius:50%;object-fit:cover;
   object-position:center 25%;box-shadow:0 4px 14px var(--shadow)}
@@ -770,7 +778,7 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 /* いちばん狭い画面でも2列を保つ */
 @media (max-width:359px){
   .people{gap:10px}
-  .pc{padding:16px 11px 14px;border-radius:19px}
+  .pc{padding:16px 11px 14px;border-radius:var(--r-s)}
   .pc li{padding-left:12px;font-size:.8rem}
   .pc .go span{font-size:.85rem;min-height:46px}
 }
@@ -801,12 +809,12 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 @media (max-width:899px){.fam figure{margin-top:4px}}
 
 /* ---- スマホの実画面 ---- */
-.phone{background:var(--phone);border-radius:30px;padding:12px;box-shadow:0 18px 42px var(--shadow-strong)}
+.phone{background:var(--phone);border-radius:var(--r-l);padding:12px;box-shadow:var(--sh-lift)}
 .ph-t{display:flex;align-items:center;gap:9px;padding:9px 13px 12px;color:var(--phone-ink);
   font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.89rem}
 .ph-t .dot{width:9px;height:9px;border-radius:50%;background:#8FD6AE}
-.ph-s{background:var(--cream);border-radius:20px;padding:16px 14px;display:flex;flex-direction:column;gap:11px}
-.msg{max-width:88%;padding:12px 16px;border-radius:19px;font-size:.93rem;line-height:1.72}
+.ph-s{background:var(--cream);border-radius:var(--r-s);padding:16px 14px;display:flex;flex-direction:column;gap:11px}
+.msg{max-width:88%;padding:12px 16px;border-radius:var(--r-s);font-size:.93rem;line-height:1.72}
 .msg.me{align-self:flex-end;background:var(--orange-ink);color:#fff;border-bottom-right-radius:6px}
 :root[data-theme="dark"] .msg.me{color:#2A1D14}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .msg.me{color:#2A1D14}}
@@ -819,8 +827,8 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 .demonote .k{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.2rem;color:var(--orange-ink);margin-bottom:14px}
 .demonote ol{margin-left:1.3em;display:flex;flex-direction:column;gap:11px;font-size:1rem;line-height:1.8}
 .demonote ol b{color:var(--orange-ink)}
-.cau{margin-top:32px;background:var(--surface);border-radius:22px;padding:24px 28px;
-  box-shadow:0 4px 16px var(--shadow);border-left:6px solid var(--leaf)}
+.cau{margin-top:32px;background:var(--surface);border-radius:var(--r-l);padding:24px 28px;
+  box-shadow:var(--sh-card);border-left:6px solid var(--leaf)}
 .cau p{font-size:.99rem;line-height:1.9;color:var(--ink-soft)}
 .cau b,.cau strong{color:var(--ink)}
 
