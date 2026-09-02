@@ -726,15 +726,29 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 }
 
 /* ---- ご家族の方へ ---- */
-.family{background:var(--peach);border-radius:30px;padding:clamp(32px,4.4vw,50px);
-  display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,3.4vw,40px);align-items:center}
-@media (max-width:820px){.family{grid-template-columns:1fr}}
-.family .k{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--ink);font-size:.96rem}
-.family h2{font-size:clamp(1.5rem,3.4vw,2.15rem);line-height:1.45;margin-top:8px}
-.family p{color:var(--ink-soft);margin-top:14px;font-size:1rem}
-.family b,.family strong{color:var(--ink)}
-.family .art{display:flex;justify-content:center}
-.family .art svg{width:min(230px,100%);height:auto}
+.fam{display:grid;grid-template-columns:1fr;gap:clamp(24px,3.5vw,40px);align-items:center}
+/* 広い画面では、左に文章・右にイラスト。縦積みのままだと絵が大きくなりすぎる */
+@media (min-width:900px){.fam{grid-template-columns:1.02fr .98fr}}
+.fam .k{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;color:var(--orange-ink)}
+.fam h2{margin-top:10px;font-size:clamp(1.58rem,5.2vw,2.35rem);line-height:1.42;letter-spacing:.01em}
+.fam ul{list-style:none;margin-top:clamp(20px,3vw,28px);
+  display:flex;flex-direction:column;gap:clamp(13px,1.8vw,17px)}
+.fam li{display:grid;grid-template-columns:34px 1fr;gap:13px;align-items:start;
+  font-size:clamp(.98rem,2.7vw,1.06rem);line-height:1.7;color:var(--ink)}
+.fam li svg{width:30px;height:30px;margin-top:.18em;stroke:var(--ink);fill:none;
+  stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.fam .btn{margin-top:clamp(24px,3.4vw,32px);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--orange-ink);color:#fff;
+  font-size:clamp(1.02rem,3vw,1.16rem);line-height:1.5;
+  padding:17px 26px;min-height:64px;width:100%;
+  box-shadow:0 6px 16px rgba(164,68,19,.24)}
+@media (min-width:900px){.fam .btn{width:auto;align-self:start;display:inline-flex}}
+:root[data-theme="dark"] .fam .btn{color:#2A1D14}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fam .btn{color:#2A1D14}}
+.fam figure{margin:0}
+.fam figure img{width:100%;height:auto}
+@media (max-width:899px){.fam figure{margin-top:4px}}
 
 /* ---- スマホの実画面 ---- */
 .phone{background:var(--phone);border-radius:30px;padding:12px;box-shadow:0 18px 42px var(--shadow-strong)}
