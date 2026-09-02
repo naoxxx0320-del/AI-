@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=20260901a">
+<link rel="stylesheet" href="assets/style.css?v=20260902a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -58,21 +58,12 @@
 </script>
 <style>
 /* ---- トップページだけで使う部分 ---- */
-.hero h1 .accent{color:var(--kaki)}
-.hero h1 .blue{color:var(--ai)}
-.phcap{margin-top:14px;text-align:center;font-family:"Zen Maru Gothic",sans-serif;font-size:.92rem;color:var(--ai)}
-.merit-note{margin-top:34px;background:var(--wakaba-tint);border-left:6px solid var(--wakaba);
-  border-radius:16px;padding:26px 28px}
-.merit-note p{line-height:1.9}
+.phcap{margin-top:14px;text-align:center;font-family:"Zen Maru Gothic",sans-serif;font-size:.92rem;color:var(--orange-ink)}
+.merit-note{margin-top:32px;background:var(--surface);border-radius:22px;padding:24px 28px;
+  box-shadow:0 4px 16px var(--shadow);border-left:6px solid var(--leaf)}
+.merit-note p{font-size:.99rem;line-height:1.9;color:var(--ink-soft)}
+.merit-note strong{color:var(--ink)}
 @media (max-width:620px){.merit-note{padding:22px 20px}}
-.family-band{background:var(--kaki-tint);border-radius:28px;padding:48px 44px;
-  display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
-@media (max-width:820px){.family-band{grid-template-columns:1fr;padding:36px 26px}}
-.family-band h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
-.family-band .k{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--kaki);font-size:.98rem}
-.family-band p{color:var(--ink-soft);margin-top:14px}
-.family-band .art{text-align:center}
-.family-band .art svg{max-width:260px}
 </style>
 </head>
 <body>
@@ -86,12 +77,9 @@
 <header class="site-header">
   <div class="wrap bar">
     <a class="brand" href="./" aria-label="すみだAI教室 ホーム">
-      <svg width="44" height="44" viewBox="0 0 46 46" aria-hidden="true">
-        <rect x="3" y="4" width="40" height="30" rx="10" fill="#1F4A6B"/>
-        <path d="M14 34 L14 42 L24 34 Z" fill="#1F4A6B"/>
-        <text x="23" y="25" font-family="Zen Maru Gothic, sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">AI</text>
-        <path d="M35 30 q6 -2 6 -8 q-6 2 -6 8Z" fill="#4E7A5A"/>
-        <path d="M35 30 q-6 -2 -6 -8 q6 2 6 8Z" fill="#4E7A5A"/>
+      <svg class="brand-mark" width="44" height="44" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 2.6c5.1-1.4 9.6 1.1 12.6 4 3.3 3.2 6.4 5.6 7.7 10.2 1.3 4.7-.4 9.2-2.2 13.2-1.8 4-3.6 8.2-7.4 10.9-3.9 2.8-9 3.4-13.8 2.9-4.8-.5-9.6-2.2-12.7-5.8C5 34.4 4.2 29.2 4.4 24.3c.2-5 1.3-10.2 4.6-14C12.4 6.4 18.6 4.1 24 2.6Z" fill="var(--peach)"/>
+        <text x="24" y="30" font-family="Zen Maru Gothic, sans-serif" font-size="16.5" font-weight="700" fill="var(--ink)" text-anchor="middle">AI</text>
       </svg>
       <span>
         <span class="brand-name">すみだAI教室</span>
@@ -143,13 +131,13 @@
     <div class="sec-head">
       <h2 id="nayami-title">AIについて<span class="u">こんな不安</span>はありませんか？</h2>
     </div>
-    <div class="qgrid">
-      <div class="q reveal"><img src="assets/illust/senior-m1.png" width="320" height="355" alt="" loading="lazy" decoding="async"><p><span class="nb">AIって、</span><em><span class="nb">そもそも</span><span class="nb">何なの？</span></em></p></div>
-      <div class="q reveal"><img src="assets/illust/senior-f1.png" width="320" height="485" alt="" loading="lazy" decoding="async"><p><span class="nb">スマホは</span><span class="nb">電話とLINEだけ。</span><em><span class="nb">私にも</span><span class="nb">できるかしら</span></em></p></div>
-      <div class="q reveal"><img src="assets/illust/senior-m2.png" width="320" height="320" alt="" loading="lazy" decoding="async"><p><span class="nb"><em>だまされたり</em></span><span class="nb"><em>しないか</em>、</span><span class="nb">それが</span><span class="nb">心配で</span></p></div>
-      <div class="q reveal"><img src="assets/illust/senior-f3.png" width="320" height="390" alt="" loading="lazy" decoding="async"><p><span class="nb">足が悪くて、</span><em><span class="nb">教室まで</span><span class="nb">通うのが</span><span class="nb">難しい</span></em></p></div>
-      <div class="q reveal"><img src="assets/illust/senior-m3.png" width="320" height="323" alt="" loading="lazy" decoding="async"><p><span class="nb">息子や娘に</span><span class="nb">聞くのは、</span><em><span class="nb">気が引ける</span></em></p></div>
-      <div class="q reveal"><img src="assets/illust/senior-f2.png" width="320" height="398" alt="" loading="lazy" decoding="async"><p><span class="nb">今さら</span><span class="nb">覚えて、</span><em><span class="nb">使う場面が</span><span class="nb">あるかしら</span></em></p></div>
+    <div class="qlist">
+      <div class="q reveal"><span class="fig"><img src="assets/illust/senior-m1.png" width="320" height="355" alt="" loading="lazy" decoding="async"></span><a class="bub" href="blog/ai-yougo-jiten.html" aria-label="AIとは何かを、やさしい言葉で説明したページへ"><span class="nb">AIって、</span><em><span class="nb">そもそも</span><span class="nb">何なの？</span></em></a><span class="dood" aria-hidden="true"><svg width="46" height="34" viewBox="0 0 46 34" fill="none" stroke="#E8905C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l11 11L8 28"/><path d="M26 6l11 11-11 11"/></svg></span></div>
+      <div class="q r reveal"><span class="dood" aria-hidden="true"><svg width="56" height="52" viewBox="0 0 56 52"><circle cx="28" cy="27" r="22" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 25 28 13l15 12"/><path d="M17 25v15h22V25"/><path d="M24 40v-8h8v8"/><path d="M28 18v3"/></g></svg></span><a class="bub" href="course/taiken.html" aria-label="はじめてスマホ＆AI体験コースのご案内へ"><span class="nb">スマホは</span><span class="nb">電話とLINEだけ。</span><em><span class="nb">私にも</span><span class="nb">できるかしら</span></em></a><span class="fig"><img src="assets/illust/senior-f1.png" width="320" height="485" alt="" loading="lazy" decoding="async"></span></div>
+      <div class="q reveal"><span class="fig"><img src="assets/illust/senior-m2.png" width="320" height="320" alt="" loading="lazy" decoding="async"></span><a class="bub" href="course/anshin.html" aria-label="デジタル安心講座のご案内へ"><span class="nb"><em>だまされたり</em></span><span class="nb"><em>しないか</em>、</span><span class="nb">それが</span><span class="nb">心配で</span></a><span class="dood" aria-hidden="true"><svg width="54" height="52" viewBox="0 0 54 52"><circle cx="33" cy="26" r="20" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="10" width="22" height="32" rx="11"/><path d="M33 10v11"/></g><path d="M4 13l7 7-7 7" fill="none" stroke="#E8905C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <div class="q r reveal"><span class="dood" aria-hidden="true"><svg width="54" height="50" viewBox="0 0 54 50"><circle cx="27" cy="24" r="20" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 21a14 10 0 1 0 28 0 14 10 0 1 0-28 0"/><path d="M21 32l-5 8 10-4.5"/></g></svg></span><a class="bub" href="course/jitaku.html" aria-label="ご自宅マンツーマン出張のご案内へ"><span class="nb">足が悪くて、</span><em><span class="nb">教室まで</span><span class="nb">通うのが</span><span class="nb">難しい</span></em></a><span class="fig"><img src="assets/illust/senior-f3.png" width="320" height="390" alt="" loading="lazy" decoding="async"></span></div>
+      <div class="q reveal"><span class="fig"><img src="assets/illust/senior-m3.png" width="320" height="323" alt="" loading="lazy" decoding="async"></span><a class="bub" href="course/kobetsu.html" aria-label="マンツーマン個別相談のご案内へ"><span class="nb">息子や娘に</span><span class="nb">聞くのは、</span><em><span class="nb">気が引ける</span></em></a><span class="dood" aria-hidden="true"><svg width="50" height="46" viewBox="0 0 50 46"><circle cx="25" cy="23" r="19" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 17h22M14 24h15"/><path d="M11 11h28v22H22l-8 6v-6h-3z"/></g></svg></span></div>
+      <div class="q r reveal"><span class="dood" aria-hidden="true"><svg width="52" height="48" viewBox="0 0 52 48"><circle cx="26" cy="24" r="20" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="24" r="11"/><path d="M26 18v6l4 3"/></g></svg></span><a class="bub" href="blog/ai-kurashi-katsuyo.html" aria-label="暮らしでのAI活用アイデア10選へ"><span class="nb">今さら</span><span class="nb">覚えて、</span><em><span class="nb">使う場面が</span><span class="nb">あるかしら</span></em></a><span class="fig"><img src="assets/illust/senior-f2.png" width="320" height="398" alt="" loading="lazy" decoding="async"></span></div>
     </div>
   </div>
 </section>
@@ -303,63 +291,24 @@
   </div>
 </section>
 
-<!-- ===== 5つの約束 ===== -->
-<section class="alt" id="about-us" aria-labelledby="promise-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">わたしたちの5つの約束</span>
-      <h2 id="promise-title">だからシニアに<span class="u">やさしい</span></h2>
-      <p>むずかしい言葉は使いません。ひとりも置いていきません。</p>
-    </div>
-    <div class="grid-auto">
-      <div class="p-card reveal">
-        <div class="p-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>やさしく</h3>
-        <p>専門用語を使わず、身近な言葉で。何度聞いても嫌な顔はしません。</p>
-      </div>
-      <div class="p-card reveal">
-        <div class="p-badge green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>ゆっくり</h3>
-        <p>あなたのペースに合わせます。少人数だから急がされません。</p>
-      </div>
-      <div class="p-card reveal">
-        <div class="p-badge orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>あんしん</h3>
-        <p>詐欺メールや偽情報の見分け方も一緒に学習。こわい話から守ります。</p>
-      </div>
-      <div class="p-card reveal">
-        <div class="p-badge orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg></div>
-        <h3>たのしく</h3>
-        <p>写真をきれいに、孫への手紙、旅行の下調べ。毎日が少し楽しくなります。</p>
-      </div>
-      <div class="p-card reveal">
-        <div class="p-badge green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>つながる</h3>
-        <p>画面ごしでも仲間はできます。学びが、新しい居場所になります。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== ご家族へ ===== -->
-<section aria-labelledby="family-title">
+<section class="alt" aria-labelledby="family-title">
   <div class="wrap">
-    <div class="family-band reveal">
+    <div class="family reveal">
       <div>
         <span class="k">息子さん・娘さん・お孫さんへ</span>
-        <h2 id="family-title"><span class="nb">離れて暮らす</span><span class="nb">親御さんに</span><br><span class="nb">「安心」を</span><span class="nb">贈りませんか。</span></h2>
+        <h2 id="family-title">離れて暮らす親御さんに<br>「安心」を贈りませんか。</h2>
         <p>スマホの困りごと、あやしいメールへの不安、話し相手。オンラインだから、遠くに住む親御さんにもそのまま届きます。<strong>受講のプレゼント（代理申し込み）</strong>も承ります。</p>
-        <p class="mt-md"><a class="btn btn-primary" href="family.html">ご家族向けのご案内を見る</a></p>
+        <p style="margin-top:22px"><a class="btn btn-primary" href="family.html">ご家族向けのご案内を見る</a></p>
       </div>
       <div class="art" aria-hidden="true">
         <svg viewBox="0 0 240 200">
-          <circle cx="120" cy="100" r="86" fill="#D5562C" opacity=".12"/>
-          <rect x="58" y="52" width="66" height="110" rx="12" fill="#1D2328"/>
-          <rect x="64" y="60" width="54" height="94" rx="6" fill="#FFFFFF"/>
-          <circle cx="91" cy="92" r="16" fill="#F0C9A8"/>
-          <path d="M75 128 q16 -18 32 0 Z" fill="#1F4A6B"/>
-          <path d="M132 84 q22 -26 46 -6" stroke="#D5562C" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="2 8"/>
-          <path d="M178 62 c-8 -10 -24 -2 -18 10 c4 8 18 14 18 14 s14 -6 18 -14 c6 -12 -10 -20 -18 -10Z" fill="#D5562C"/>
+          <rect x="58" y="46" width="68" height="112" rx="14" fill="var(--ink)"/>
+          <rect x="64" y="54" width="56" height="96" rx="8" fill="var(--surface)"/>
+          <circle cx="92" cy="88" r="17" fill="var(--peach)"/>
+          <path d="M74 126q18 -20 36 0Z" fill="var(--ink)"/>
+          <path d="M134 84q22 -26 46 -6" stroke="var(--orange-ink)" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="2 9"/>
+          <path d="M182 60c-8 -11 -25 -2 -19 11 4 8 19 15 19 15s15 -7 19 -15c6 -13 -11 -22 -19 -11Z" fill="var(--orange-ink)"/>
         </svg>
       </div>
     </div>
@@ -367,7 +316,7 @@
 </section>
 
 <!-- ===== 料金 ===== -->
-<section class="alt" id="ryokin" aria-labelledby="courses-title">
+<section id="ryokin" aria-labelledby="courses-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="courses-title">まずは<span class="u">500円</span>から</h2>
@@ -405,7 +354,7 @@
 </section>
 
 <!-- ===== 講師 ===== -->
-<section id="teacher" aria-labelledby="teacher-title">
+<section class="alt" id="teacher" aria-labelledby="teacher-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="teacher-title">教えるのは<span class="u">この2人</span>です</h2>
@@ -435,7 +384,7 @@
 </section>
 
 <!-- ===== 流れ ===== -->
-<section class="alt" aria-labelledby="flow-title">
+<section aria-labelledby="flow-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="flow-title">はじめかたは<span class="u">かんたん3ステップ</span></h2>
@@ -458,7 +407,7 @@
 </section>
 
 <!-- ===== FAQ ===== -->
-<section aria-labelledby="faq-title">
+<section class="alt" aria-labelledby="faq-title">
   <div class="wrap-narrow">
     <div class="sec-head">
       <h2 id="faq-title">ご不安を<span class="u">うかがいます</span></h2>
@@ -531,7 +480,7 @@
   </div>
 </footer>
 
-<script src="assets/config.js?v=20260901a" defer></script>
-<script src="assets/site.js?v=20260901a" defer></script>
+<script src="assets/config.js?v=20260902a" defer></script>
+<script src="assets/site.js?v=20260902a" defer></script>
 </body>
 </html>
