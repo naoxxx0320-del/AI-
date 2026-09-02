@@ -462,38 +462,6 @@ button[disabled]{opacity:.6;cursor:progress}
 .area-list{line-height:2.1;font-size:1.02rem;color:var(--ink-soft)}
 .note{color:var(--ink-soft);font-size:.95rem}
 
-/* ---- 講師ページ: 2人体制 ---- */
-.t-roster{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
-@media (max-width:760px){.t-roster{grid-template-columns:1fr;gap:18px}}
-.t-card{
-  display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;
-  background:var(--surface);border:1px solid var(--line);border-radius:26px;
-  padding:34px 28px 28px;text-decoration:none;color:var(--ink);position:relative;overflow:hidden;
-  box-shadow:0 4px 18px var(--shadow);
-  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
-}
-.t-card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;
-  background:linear-gradient(90deg,var(--ai),var(--wakaba))}
-.t-card:nth-child(2)::before{background:linear-gradient(90deg,var(--kaki),var(--ai))}
-.t-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px var(--shadow-strong);border-color:var(--ai)}
-.t-card-photo{width:118px;height:118px;border-radius:50%;padding:5px;flex:0 0 auto;
-  background:linear-gradient(135deg,var(--ai-tint),var(--kaki-tint));display:block}
-.t-card-photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
-  border:3px solid var(--surface)}
-.t-card-role{margin-top:18px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:.85rem;letter-spacing:.08em;color:var(--ink);
-  background:var(--peach);border-radius:999px;padding:5px 16px}
-.t-card-name{margin-top:12px;font-family:"Shippori Mincho",serif;font-weight:700;
-  font-size:1.62rem;color:var(--ink);line-height:1.3}
-.t-card-tx{margin-top:12px;font-size:.98rem;line-height:1.8;color:var(--ink-soft);max-width:24em}
-.t-card-tags{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
-.t-card-tags i{font-style:normal;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:.8rem;color:var(--ai);background:var(--ai-tint);border-radius:8px;padding:5px 11px}
-.t-card-go{margin-top:20px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:1rem;color:var(--ai);display:inline-flex;align-items:center;gap:7px}
-.t-card-go::after{content:"→";transition:transform .18s ease}
-.t-card:hover .t-card-go::after{transform:translateX(5px)}
-
 .t-h{font-size:clamp(1.9rem,4.6vw,2.7rem);margin:10px 0 18px}
 
 /* ---- コース詳細ページ ---- */
@@ -717,15 +685,45 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 }
 
 /* ---- 講師の並び ---- */
-.people{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media (max-width:760px){.people{grid-template-columns:1fr}}
-.pc{background:var(--surface);border-radius:26px;padding:28px;display:grid;grid-template-columns:98px 1fr;
-  gap:20px;align-items:start;box-shadow:0 4px 16px var(--shadow);text-decoration:none;color:var(--ink)}
-.pc:hover{box-shadow:0 14px 30px var(--shadow-strong)}
-.pc img{width:98px;height:98px;border-radius:50%;object-fit:cover;box-shadow:0 4px 14px var(--shadow)}
-.pc .rk{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.84rem;color:var(--orange-ink)}
-.pc .nm{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.4rem;margin:5px 0 10px}
-.pc p{font-size:.95rem;color:var(--ink-soft)}
+/* 広い画面で間延びしないよう、2枚ぶんの幅で止める */
+.people{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,26px);
+  max-width:760px;margin-inline:auto}
+.pc{--ph:clamp(104px,29vw,158px);
+  background:var(--surface);border-radius:22px;
+  padding:clamp(18px,2.2vw,28px) clamp(14px,1.8vw,24px) clamp(16px,2vw,24px);
+  box-shadow:0 4px 16px var(--shadow);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  text-decoration:none;color:var(--ink);transition:transform .18s ease,box-shadow .18s ease}
+.pc:hover{transform:translateY(-3px);box-shadow:0 16px 32px var(--shadow-strong)}
+/* 幅と高さを同じ値で明示する。aspect-ratio だけだと縦に伸びる */
+.pc img{width:var(--ph);height:var(--ph);flex:0 0 auto;border-radius:50%;object-fit:cover;
+  object-position:center 25%;box-shadow:0 4px 14px var(--shadow)}
+.pc .rk{margin-top:16px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+  font-size:clamp(.78rem,2.1vw,.9rem);color:var(--orange-ink);line-height:1.5}
+.pc .nm{margin-top:4px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+  font-size:clamp(1.24rem,3.6vw,1.6rem);line-height:1.35;letter-spacing:.02em}
+.pc ul{list-style:none;margin-top:14px;text-align:left;
+  display:flex;flex-direction:column;gap:7px;width:fit-content;max-width:100%}
+.pc li{position:relative;padding-left:14px;font-size:clamp(.84rem,2.3vw,.98rem);
+  line-height:1.65;color:var(--ink-soft)}
+.pc li::before{content:"";position:absolute;left:2px;top:.66em;width:5px;height:5px;
+  border-radius:50%;background:var(--orange)}
+.pc .go{margin-top:auto;padding-top:18px;width:100%}
+.pc .go span{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;
+  background:var(--orange-ink);color:#fff;border-radius:999px;
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+  font-size:clamp(.9rem,2.4vw,1.05rem);min-height:50px;padding:10px 12px;line-height:1.3}
+:root[data-theme="dark"] .pc .go span{color:#2A1D14}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pc .go span{color:#2A1D14}}
+.pc .go span::after{content:"→";transition:transform .18s ease}
+.pc:hover .go span::after{transform:translateX(4px)}
+/* いちばん狭い画面でも2列を保つ */
+@media (max-width:359px){
+  .people{gap:10px}
+  .pc{padding:16px 11px 14px;border-radius:19px}
+  .pc li{padding-left:12px;font-size:.8rem}
+  .pc .go span{font-size:.85rem;min-height:46px}
+}
 
 /* ---- ご家族の方へ ---- */
 .family{background:var(--peach);border-radius:30px;padding:clamp(32px,4.4vw,50px);
