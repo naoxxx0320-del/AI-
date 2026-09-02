@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=20260902e">
+<link rel="stylesheet" href="assets/style.css?v=20260902f">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -110,13 +110,26 @@
 
 <main id="main">
 
-<div class="page-hero">
+<svg class="ph-defs" aria-hidden="true"><defs>
+  <clipPath id="sumidaCurve" clipPathUnits="objectBoundingBox">
+    <path d="M0.536,0 C0.30,0.055 0.06,0.10 0.028,0.22
+             C0.005,0.36 0,0.48 0,0.60
+             C0,0.74 0.09,0.90 0.275,1
+             L1,1 L1,0 Z"/>
+  </clipPath>
+</defs></svg>
+
+<div class="page-hero photo-hero">
+  <div class="ph-art">
+    <img src="assets/img/sumida-skytree.jpg" width="1038" height="2160" alt="隅田川ごしに見える東京スカイツリー" fetchpriority="high" decoding="async">
+  </div>
   <div class="wrap">
     <nav class="breadcrumb" aria-label="パンくず">
       <ol><li><a href="./">ホーム</a></li><li>墨田区でAIを学ぶ</li></ol>
     </nav>
     <span class="kicker">墨田区の方へ</span>
-    <h1><span class="nb">墨田区で</span><span class="nb"><span class="accent">AI</span>を</span><span class="nb">学ぶなら。</span></h1>
+    <h1><span class="nb">墨田区で</span><br><span class="nb"><span class="accent">AI</span>を学ぶなら。</span></h1>
+    <span class="rule"></span>
     <p class="lead">スカイツリーの見えるこの街で、AI教室をはじめました。<strong>教室に通う必要はありません。</strong>私たちがご自宅や集会所へうかがうか、お手元のスマホでオンラインにつなぐか、どちらでも選べます。墨田区にお住まいの方なら、出張の交通費はいただきません。</p>
   </div>
 </div>
@@ -125,6 +138,11 @@
 <section aria-labelledby="why-title">
   <div class="wrap-narrow">
     <div class="sec-head">
+      <div class="divider" aria-hidden="true">
+        <i></i>
+        <svg viewBox="0 0 48 40"><circle cx="14" cy="14" r="6"/><path d="M4 34c0-5.5 4.5-9 10-9 2.2 0 4.2.6 5.8 1.6"/><circle cx="30" cy="20" r="4.6"/><path d="M22 34c0-4.3 3.6-7 8-7s8 2.7 8 7"/><path d="M30 2h14v9h-8l-4 3.4V11h-2z"/></svg>
+        <i></i>
+      </div>
       <span class="kicker">この街ではじめた理由</span>
       <h2 id="why-title"><span class="nb">下町には</span><span class="nb">「聞ける相手」が</span><span class="nb">いてほしい。</span></h2>
     </div>
@@ -218,13 +236,13 @@
       <span class="kicker">団体のみなさまへ</span>
       <h2 id="group-title"><span class="nb">町会・シニアクラブ・</span><span class="nb">施設への</span><span class="nb">出張講座</span></h2>
     </div>
-    <p class="lead">集会所や施設のお部屋にうかがって、90分ほどの講座を行います。貸出用のタブレットを持参しますので、スマホをお持ちでない方も参加できます。</p>
+    <p class="lead measure">集会所や施設のお部屋にうかがって、90分ほどの講座を行います。貸出用のタブレットを持参しますので、スマホをお持ちでない方も参加できます。</p>
     <div class="grid-3 mt-lg">
       <div class="p-card center reveal"><h3>町会・自治会</h3><p>回覧やお知らせのデジタル化のご相談も一緒にどうぞ。</p></div>
       <div class="p-card center reveal"><h3>シニアクラブ</h3><p>「詐欺から身を守る」講座が特に喜ばれています。</p></div>
       <div class="p-card center reveal"><h3>介護施設・デイサービス</h3><p>レクリエーションの一環としてもご利用いただけます。</p></div>
     </div>
-    <p class="mt-lg"><a class="btn btn-ghost" href="contact.html">出張講座を相談する</a></p>
+    <p class="center mt-lg"><a class="btn btn-ghost" href="contact.html">出張講座を相談する</a></p>
   </div>
 </section>
 
@@ -242,7 +260,7 @@
       <details class="faq"><summary>墨田区以外に住んでいますが受けられますか。</summary><p class="a">オンライン講座は全国どこからでも受けられます。出張は墨田区と近隣区が対象です。</p></details>
       <details class="faq"><summary>パソコンは持っていませんが大丈夫ですか。</summary><p class="a">大丈夫です。当教室の講座はすべて<strong>スマホ1台</strong>で受けられるように作っています。</p></details>
     </div>
-    <p class="mt-lg"><a class="arrow-link" href="faq.html">そのほかの質問をすべて見る</a></p>
+    <p class="center mt-lg"><a class="arrow-link" href="faq.html">そのほかの質問をすべて見る</a></p>
   </div>
 </section>
 
@@ -294,7 +312,7 @@
   </div>
 </footer>
 
-<script src="assets/config.js?v=20260902e" defer></script>
-<script src="assets/site.js?v=20260902e" defer></script>
+<script src="assets/config.js?v=20260902f" defer></script>
+<script src="assets/site.js?v=20260902f" defer></script>
 </body>
 </html>
