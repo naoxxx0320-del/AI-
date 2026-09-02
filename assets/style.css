@@ -19,6 +19,7 @@
   --orange:#D56C34;     /* 塗り（ボタン・番号）。白の大きな文字が乗る */
   --orange-ink:#A44413; /* 橙の文字と、本文が乗る塗り */
   --peach:#F7DCC6;      /* 淡い橙。札・アイコンの地 */
+  --peach-2:#F6B889;    /* 一段濃い橙。申し込みの帯 */
   --leaf:#3F6E54;
   --leaf-tint:#E3EFE7;
   --phone:#1F3A5C;      /* 端末の枠。明暗どちらでも濃紺 */
@@ -38,7 +39,7 @@
   :root:not([data-theme="light"]){
   --cream:#1C1A17; --cream-2:#232019; --paper:#1C1A17; --surface:#26231E; --tint:#232019;
   --ink:#EDE6DA; --ink-soft:#BDB3A4; --ink-faint:#A2998A;
-  --orange:#EE9C6C; --orange-ink:#F0A87E; --peach:#3A2E24;
+  --orange:#EE9C6C; --orange-ink:#F0A87E; --peach:#3A2E24; --peach-2:#4A382A;
   --leaf:#8DC4A6; --leaf-tint:#25302A;
   --phone:#151E2A; --phone-ink:#EDE6DA;
   --ai:#8FBEE0; --ai-deep:#14202E; --ai-tint:#232C36;
@@ -51,7 +52,7 @@
 :root[data-theme="dark"]{
   --cream:#1C1A17; --cream-2:#232019; --paper:#1C1A17; --surface:#26231E; --tint:#232019;
   --ink:#EDE6DA; --ink-soft:#BDB3A4; --ink-faint:#A2998A;
-  --orange:#EE9C6C; --orange-ink:#F0A87E; --peach:#3A2E24;
+  --orange:#EE9C6C; --orange-ink:#F0A87E; --peach:#3A2E24; --peach-2:#4A382A;
   --leaf:#8DC4A6; --leaf-tint:#25302A;
   --phone:#151E2A; --phone-ink:#EDE6DA;
   --ai:#8FBEE0; --ai-deep:#14202E; --ai-tint:#232C36;
@@ -451,8 +452,10 @@ button[disabled]{opacity:.6;cursor:progress}
 .note-line{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:26px}
 .text-link{color:var(--orange-ink);font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .text-link:hover{color:var(--ink)}
-.arrow-link{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--orange-ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
-.arrow-link::after{content:"→";transition:transform .15s}
+/* 長い文言もあるので折り返しは許す。矢印だけが行頭に落ちないよう詰める */
+.arrow-link{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--orange-ink);
+  text-decoration:none;display:inline;align-items:center}
+.arrow-link::after{content:"\2009→";display:inline-block;transition:transform .15s}
 .arrow-link:hover::after{transform:translateX(4px)}
 
 /* ---- 墨田区ページ ---- */
@@ -565,21 +568,56 @@ a.cat,.post-card .cat,.post-meta .cat{
   .bottombar svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
 }
 
-/* ---- トップのヒーロー ---- */
-.hero{padding:clamp(44px,6.5vw,78px) 0 clamp(40px,5.5vw,64px)}
-.hgrid{display:grid;grid-template-columns:1.18fr .82fr;gap:clamp(20px,3.4vw,48px);align-items:end}
-@media (max-width:880px){.hgrid{grid-template-columns:1fr}}
-.hfig{display:flex;justify-content:center;align-items:flex-end;margin:0}
-.hfig img{width:auto;height:clamp(290px,36vw,470px);filter:drop-shadow(0 14px 24px rgba(95,72,48,.16))}
-@media (max-width:880px){.hfig{margin-top:8px}.hfig img{height:clamp(230px,54vw,300px)}}
-.pill{display:inline-flex;align-items:center;gap:9px;background:var(--leaf-tint);color:var(--leaf);
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.92rem;padding:8px 18px;border-radius:999px}
-.hero h1{font-size:clamp(2.15rem,6.2vw,3.7rem);line-height:1.32;margin-top:20px}
-.hero h1 .o,.hero h1 .accent{color:var(--orange-ink)}
-.hlead{margin-top:22px;color:var(--ink-soft);font-size:1.05rem;max-width:28em}
-.hlead b,.hlead strong{color:var(--ink)}
-.hbtns{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
-.hnote{margin-top:16px;font-size:.9rem;color:var(--ink-faint)}
+/* ---- トップのヒーロー（白いカード＋申し込みの帯） ---- */
+.hero{padding:clamp(18px,3vw,34px) 0 clamp(40px,5.5vw,64px);
+  display:flex;flex-direction:column;gap:clamp(16px,2.4vw,22px)}
+.hcard{position:relative;overflow:hidden;background:var(--surface);
+  border-radius:clamp(22px,3vw,30px);box-shadow:0 4px 18px var(--shadow);
+  min-height:clamp(330px,62vw,430px);display:flex;align-items:center}
+.hcard-art{position:absolute;right:0;bottom:0;top:10px;z-index:1;
+  height:calc(100% - 10px);width:auto;max-width:none;object-fit:contain;object-position:bottom right}
+/* 文字が読めるよう、左から白をかぶせる */
+.hcard::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(100deg,var(--surface) 30%,color-mix(in srgb,var(--surface) 55%,transparent) 54%,transparent 76%)}
+.hcard-tx{position:relative;z-index:3;padding:clamp(26px,4.4vw,44px);max-width:min(30em,66%)}
+.hcard .eyebrow{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+  font-size:clamp(.74rem,2.2vw,.88rem);color:var(--orange-ink);margin-bottom:10px;white-space:nowrap}
+.hcard h1{font-size:clamp(1.38rem,4.6vw,2.7rem);line-height:1.32;letter-spacing:.005em}
+.hcard p{margin-top:clamp(14px,2.4vw,20px);color:var(--ink);
+  font-size:clamp(.95rem,2.8vw,1.08rem);line-height:1.8}
+.ghost{margin-top:clamp(20px,3vw,28px);display:inline-flex;align-items:center;justify-content:center;
+  min-height:58px;padding:14px 34px;border-radius:999px;text-decoration:none;
+  background:var(--surface);color:var(--orange-ink);box-shadow:inset 0 0 0 2.4px var(--orange-ink);
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:clamp(1.02rem,3vw,1.14rem);
+  transition:transform .16s ease,box-shadow .16s ease}
+.ghost:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2.4px var(--orange-ink),0 10px 22px var(--shadow-strong)}
+@media (max-width:520px){
+  .hcard-tx{max-width:73%;padding:24px 18px}
+  .hcard::after{background:linear-gradient(102deg,var(--surface) 36%,color-mix(in srgb,var(--surface) 58%,transparent) 60%,transparent 84%)}
+}
+@media (max-width:345px){.hcard-tx{max-width:82%}}
+
+/* 申し込みの帯 */
+.hoffer{background:var(--peach-2);border-radius:clamp(22px,3vw,30px);
+  padding:clamp(24px,3.6vw,36px) clamp(20px,3vw,34px);text-align:center}
+.hoffer .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--ink);
+  font-size:clamp(1.28rem,4.4vw,1.75rem);line-height:1.45}
+.hoffer .t b{font-size:1.12em}
+.hoffer .s{margin-top:6px;color:var(--ink);font-size:clamp(.92rem,2.6vw,1.02rem);line-height:1.7}
+.hoffer .cta{margin-top:clamp(18px,2.6vw,24px);
+  display:flex;align-items:center;justify-content:center;width:100%;min-height:64px;
+  padding:15px 26px;border-radius:999px;text-decoration:none;
+  background:var(--orange-ink);color:#fff;box-shadow:0 6px 16px rgba(122,48,10,.30);
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:clamp(1.06rem,3.4vw,1.28rem);
+  transition:transform .16s ease,box-shadow .16s ease}
+:root[data-theme="dark"] .hoffer .cta{color:#2A1D14}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hoffer .cta{color:#2A1D14}}
+.hoffer .cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px var(--shadow-strong)}
+@media (min-width:900px){
+  .hoffer{display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;
+    gap:clamp(20px,3vw,40px);padding:clamp(26px,3vw,34px) clamp(30px,3.4vw,44px)}
+  .hoffer .cta{margin-top:0;width:auto;padding:15px 40px}
+}
 
 /* ---- 不安の吹き出し（押すと答えのページへ） ---- */
 .qlist{display:flex;flex-direction:column;gap:clamp(18px,2.6vw,26px);max-width:800px;margin-inline:auto}
