@@ -595,7 +595,9 @@ a.cat,.post-card .cat,.post-meta .cat{
   .hcard-tx{max-width:73%;padding:24px 18px}
   .hcard::after{background:linear-gradient(102deg,var(--surface) 36%,color-mix(in srgb,var(--surface) 58%,transparent) 60%,transparent 84%)}
 }
-@media (max-width:345px){.hcard-tx{max-width:82%}}
+@media (max-width:345px){
+  .hcard-tx{max-width:82%}
+}
 
 /* 申し込みの帯 */
 .hoffer{background:var(--peach-2);border-radius:clamp(22px,3vw,30px);
@@ -618,6 +620,9 @@ a.cat,.post-card .cat,.post-meta .cat{
     gap:clamp(20px,3vw,40px);padding:clamp(26px,3vw,34px) clamp(30px,3.4vw,44px)}
   .hoffer .cta{margin-top:0;width:auto;padding:15px 40px}
 }
+/* 320px幅では「ワンコイン体験を申し込む」が2行に折れるので詰める。
+   .hoffer .cta の定義より後ろに置かないと後勝ちで打ち消される */
+@media (max-width:345px){.hoffer .cta{font-size:.92rem;padding:15px 12px}}
 
 /* ---- 不安の吹き出し（押すと答えのページへ） ---- */
 .qlist{display:flex;flex-direction:column;gap:clamp(18px,2.6vw,26px);max-width:800px;margin-inline:auto}
