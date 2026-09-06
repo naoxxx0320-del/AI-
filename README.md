@@ -36,7 +36,7 @@
 初回のみ設定が必要です：
 1. このブランチを main にマージ
 2. リポジトリの **Settings → Pages → Source** を **GitHub Actions** に設定
-3. 公開URL: `https://naoxxx0320-del.github.io/AI-/`
+3. 公開URL: `https://sumida-ai.jp/`
 
 公開後にやること（SEO）：
 - [Google Search Console](https://search.google.com/search-console) にサイトを登録し、`sitemap.xml` を送信

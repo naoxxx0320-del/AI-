@@ -894,3 +894,10 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
 @media (max-width:560px){
   .prose,.measure,.sec-head>p{padding-inline:10px}
 }
+
+
+/* ── ブログのカテゴリー説明 ──
+   一覧だけだとブログ目次と中身が重なり、検索側に同じページと見なされる。
+   下の記事一覧が自前の余白を持つので、こちらの下だけ詰める */
+.cat-intro{padding:clamp(30px,4.6vw,48px) 0 0}
+.cat-intro strong{color:var(--orange-ink)}

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=20260902g">
+<link rel="stylesheet" href="/assets/style.css?v=20260906a">
 </head>
 <body>
 <main style="min-height:80vh;display:grid;place-items:center;text-align:center;padding:40px 20px">
@@ -23,5 +23,15 @@
     <p style="margin-top:28px"><a class="btn btn-primary" href="/">ホームに戻る</a></p>
   </div>
 </main>
+<script>
+/* 独自ドメインに移る前は /AI-/ 配下でした。その形の古いURLが
+   まだどこかに残っていても行き止まりにならないよう、拾って送り出す */
+(function(){
+  var p = location.pathname;
+  if (p.indexOf('/AI-/') === 0) {
+    location.replace(p.slice(4) + location.search + location.hash);
+  }
+})();
+</script>
 </body>
 </html>
