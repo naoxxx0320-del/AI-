@@ -25,10 +25,24 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # 公開するのは実際のサイトだけ。事業計画や講師用の資料、開発用の
+      # ファイルはリポジトリには置いておくが、配信対象からは外す。
+      # ついでに /docs/ のような索引のないディレクトリが減り、404 も減る。
+      - name: Stage publishable files
+        run: |
+          mkdir -p _site
+          rsync -a ./ _site/ \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '.claude' \
+            --exclude '_site' \
+            --exclude 'docs' \
+            --exclude 'README.md' \
+            --exclude 'LICENSE'
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
