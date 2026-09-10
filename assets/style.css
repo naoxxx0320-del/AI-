@@ -922,3 +922,8 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
   .table-stack th[scope="row"]{font-family:"Zen Maru Gothic",sans-serif;font-size:1.05rem;margin-bottom:4px}
   .table-stack td::before{content:attr(data-label) "　";color:var(--ink-faint);font-size:.9rem}
 }
+
+/* ── 関連ページの一行 ──
+   申し込みの帯の中に置くと、橙地に橙文字で読めなくなる。
+   帯の手前に、独立した区画として置く */
+.rel-links{padding:clamp(22px,3.2vw,34px) 0 0}
