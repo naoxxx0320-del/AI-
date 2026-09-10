@@ -901,3 +901,24 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
    下の記事一覧が自前の余白を持つので、こちらの下だけ詰める */
 .cat-intro{padding:clamp(30px,4.6vw,48px) 0 0}
 .cat-intro strong{color:var(--orange-ink)}
+
+
+/* ── 読み上げにだけ残す文字 ──
+   courses.html と sumida.html の表の caption で使っていたが、
+   定義がなく画面に出てしまっていた */
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* ── 狭い画面では表を縦に積む ──
+   min-width:560px の横スクロールだと、いちばん見たい料金の列が
+   画面の外に出る。シニアの方に横スクロールを強いない */
+@media (max-width:560px){
+  .table-stack{overflow-x:visible}
+  .table-stack table{min-width:0}
+  .table-stack thead{display:none}
+  .table-stack tr{display:block;padding:16px 18px;border-bottom:1px solid var(--line)}
+  .table-stack tr:last-child{border-bottom:none}
+  .table-stack th,.table-stack td{display:block;border:none;padding:1px 0}
+  .table-stack th[scope="row"]{font-family:"Zen Maru Gothic",sans-serif;font-size:1.05rem;margin-bottom:4px}
+  .table-stack td::before{content:attr(data-label) "　";color:var(--ink-faint);font-size:.9rem}
+}
