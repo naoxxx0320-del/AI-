@@ -707,8 +707,8 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
   border-right:2.4px solid #fff;border-bottom:2.4px solid #fff;transform:rotate(42deg)}
 
 /* ---- こんなときに役立ちます ---- */
-.ugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:880px){.ugrid{grid-template-columns:1fr 1fr}}
+/* カードは4枚。3列だと 3+1 で右が空くので、2列で 2×2 にそろえる */
+.ugrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media (max-width:560px){.ugrid{grid-template-columns:1fr}}
 .uc{background:var(--surface);border-radius:var(--r-l);padding:26px 25px;box-shadow:var(--sh-card)}
 .uc .tag{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.82rem;
@@ -927,3 +927,19 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
    申し込みの帯の中に置くと、橙地に橙文字で読めなくなる。
    帯の手前に、独立した区画として置く */
 .rel-links{padding:clamp(22px,3.2vw,34px) 0 0}
+
+
+/* ── 指で押せる大きさをそろえる ──
+   シニアの方が対象なので、主要な操作は 44px 角を下回らないようにする。
+   フッターの並びは16px、メニューの開閉は33pxしかなかった */
+.nav-toggle{min-height:44px;min-width:44px}
+.tel-btn{min-height:44px;display:inline-flex;align-items:center}
+.foot-links a{display:inline-block;padding:9px 0;min-height:22px}
+.arrow-link{display:inline-block;padding:8px 0}
+.brand{min-height:44px;display:flex;align-items:center}
+
+/* ── 本文の行の長さ ──
+   よくある質問の答えが1行46字あり、目で行を追うのがつらい。
+   日本語は35〜45字が読みやすい */
+details.faq .a{max-width:40em}
+.card .note,.card p{max-width:44em}
