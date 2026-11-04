@@ -943,3 +943,7 @@ a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
    日本語は35〜45字が読みやすい */
 details.faq .a{max-width:40em}
 .card .note,.card p{max-width:44em}
+
+/* ── 講師が1人のときの並び ──
+   .people は2列固定なので、カードが1枚だと左半分に寄って右が空く */
+.people.solo{grid-template-columns:minmax(0,560px);justify-content:center}
