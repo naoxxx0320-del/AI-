@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# デザイン検討用の仮ページ。公開はするが、検索には拾わせない
+Disallow: /design/
+
 Sitemap: https://sumida-ai.jp/sitemap.xml

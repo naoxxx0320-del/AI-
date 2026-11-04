@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>C案　大きな文字と余白（読みやすさ最優先）｜デザイン検討</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<style>
+:root{--paper:#FAF6EE;--ink:#17304D;--soft:#41586F;--orange:#9C4409;--line:#E3D6C0;--tint:#F2EADC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+ font-family:"BIZ UDPGothic","Hiragino Sans",sans-serif;line-height:2.1;
+ word-break:auto-phrase;overflow-wrap:break-word;font-size:19px}
+h1,h2,h3,.btn,.btn2,.cta-sm,.brand b{font-family:"Zen Maru Gothic",sans-serif;font-weight:700}
+.plan{position:sticky;top:0;z-index:9;margin:0;background:var(--ink);color:var(--paper);
+ text-align:center;padding:7px;font-size:.72rem;letter-spacing:.08em}
+.wrap{width:min(760px,89vw);margin:0 auto}
+.hd{background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;min-height:78px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand i{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--paper);
+ display:grid;place-items:center;font-style:normal;font-size:.8rem;font-weight:700}
+.brand b{font-size:1.18rem}
+.nav{display:none}
+.cta-sm{margin-left:auto;background:var(--orange);color:#fff;text-decoration:none;
+ padding:14px 22px;border-radius:14px;font-size:1rem}
+section{padding:74px 0}
+.hero{padding:70px 0 60px}
+.kick{color:var(--orange);font-weight:700;font-size:1rem;letter-spacing:.06em;margin:0}
+.kick.c{text-align:center}
+h1{font-size:clamp(2.1rem,6.2vw,3.1rem);line-height:1.5;margin:16px 0 0}
+h2{font-size:clamp(1.7rem,4.6vw,2.3rem);margin:12px 0 34px;line-height:1.5}
+.lead{color:var(--soft);margin:22px 0 0;font-size:1.06rem}
+.btns{display:flex;flex-direction:column;gap:14px;margin-top:34px}
+.btn{background:var(--orange);color:#fff;text-decoration:none;padding:22px 26px;border-radius:16px;
+ text-align:center;font-size:1.12rem}
+.btn2{color:var(--ink);text-decoration:none;padding:20px 26px;border-radius:16px;
+ border:2px solid var(--line);text-align:center;font-size:1.06rem}
+.use{background:var(--tint)}
+.cards{display:flex;flex-direction:column;gap:0}
+.cards article{padding:30px 0;border-bottom:2px solid var(--line)}
+.cards article:first-child{border-top:2px solid var(--line)}
+.tag{display:inline-block;color:var(--orange);font-size:1rem;font-weight:700}
+.cards h3{font-size:1.32rem;margin:8px 0 10px;line-height:1.55}
+.cards p{color:var(--soft);margin:0}
+.cards q{display:block;margin-top:16px;padding:16px 20px;background:var(--paper);
+ border-radius:14px;color:var(--soft);font-size:1rem}
+.warn{margin:32px 0 0;padding:22px 24px;background:var(--paper);border-radius:16px;
+ border:2px solid var(--orange);color:var(--soft);font-size:1rem}
+.plist{list-style:none;padding:0;margin:0}
+.plist li{display:flex;flex-direction:column;gap:2px;padding:24px 0;border-bottom:2px solid var(--line)}
+.plist li:first-child{border-top:2px solid var(--line)}
+.plist b{font-size:1.18rem}
+.plist span{color:var(--soft);font-size:.95rem}
+.plist em{font-style:normal;font-family:"Shippori Mincho",serif;font-weight:700;
+ font-size:1.9rem;color:var(--orange);line-height:1.3}
+.end{background:var(--ink);color:var(--paper);text-align:center}
+.end h2{color:var(--paper)}
+.end p{color:rgba(250,246,238,.9)}
+.end .btn2{color:var(--paper);border-color:rgba(250,246,238,.4)}
+.tel{font-size:1rem;margin-top:22px}
+</style>
+</head>
+<body>
+<p class="plan">C案　大きな文字と余白（読みやすさ最優先）</p>
+<header class="hd">
+  <div class="wrap bar">
+    <span class="brand"><i>AI</i><b>すみだAI教室</b></span>
+    <nav class="nav"><a href="#">コース・料金</a><a href="#">墨田区の方へ</a><a href="#">講師紹介</a><a href="#">よくある質問</a></nav>
+    <a class="cta-sm" href="#">お申し込み</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kick">墨田区・オンライン／出張</p>
+    <h1>ご自宅から、<br>AIと新しい世界を。</h1>
+    <p class="lead">教室に通う必要はありません。ご自宅のスマホ1台で、専門用語を使わず、何度でも。いくつになっても、新しいことは楽しいものです。</p>
+    <p class="btns"><a class="btn" href="#">ワンコイン体験を申し込む（500円）</a><a class="btn2" href="#">コースを見る</a></p>
+  </div>
+</section>
+
+<section class="use">
+  <div class="wrap">
+    <p class="kick c">できること</p>
+    <h2>こんなときに役立ちます</h2>
+    <div class="cards">
+      <article><span class="tag">孫への手紙</span><h3>気持ちを話すだけで、手紙になる</h3><p>仕上げをご自分の言葉に直せば、立派な一通のできあがりです。</p><q>入学祝いの手紙を書きたい。何と書けばいいかしら</q></article>
+      <article><span class="tag">詐欺から守る</span><h3>あわてて電話する前の、ひと呼吸</h3><p>怪しいメールやハガキを見せて、その場で確かめられます。</p><q>こんなメールが来たけれど、本物でしょうか</q></article>
+    </div>
+    <p class="warn">ただし、AIは万能ではありません。お薬・治療・お金の判断は、かならず人に確かめてください。</p>
+  </div>
+</section>
+
+<section class="price">
+  <div class="wrap">
+    <p class="kick c">料金</p>
+    <h2>まずは500円から</h2>
+    <ul class="plist">
+      <li><b>はじめてスマホ＆AI体験</b><span>60分・初回のみ</span><em>500円</em></li>
+      <li><b>ご自宅へ出張（個別）</b><span>60分・交通費込</span><em>4,400円</em></li>
+      <li><b>やさしいAI入門</b><span>90分×全4回</span><em>9,800円</em></li>
+    </ul>
+  </div>
+</section>
+
+<section class="end">
+  <div class="wrap">
+    <h2>その一歩を、いっしょに。</h2>
+    <p>「行ってみようかしら」と思われたら、それがはじまりです。</p>
+    <p class="btns"><a class="btn" href="#">体験を申し込む（500円）</a></p>
+    <p class="tel">お電話：080-4885-5430／受付 9:00〜23:00</p>
+  </div>
+</section>
+</body>
+</html>
