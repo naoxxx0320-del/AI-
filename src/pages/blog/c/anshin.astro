@@ -1,0 +1,23 @@
+---
+import Base, { type Props } from '../../../layouts/Base.astro';
+import body from '../../../bodies/blog/c/anshin.html?raw';
+
+const meta = {
+  "title": "安心・安全の記事一覧｜すみだAI教室",
+  "description": "詐欺の見分け方と、AIを信じすぎないための線引き。便利さと同じくらい大切なことです。 すみだAI教室のブログです。",
+  "canonical": "https://sumida-ai.jp/blog/c/anshin.html",
+  "og": {
+    "type": "website",
+    "title": "安心・安全の記事一覧",
+    "description": "詐欺の見分け方と、AIを信じすぎないための線引き。便利さと同じくらい大切なことです。 すみだAI教室のブログです。",
+    "url": "https://sumida-ai.jp/blog/c/anshin.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"ブログ\",\n          \"item\": \"https://sumida-ai.jp/blog/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"安心・安全\",\n          \"item\": \"https://sumida-ai.jp/blog/c/anshin.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"CollectionPage\",\n      \"name\": \"安心・安全の記事一覧\",\n      \"description\": \"詐欺の見分け方と、AIを信じすぎないための線引き。便利さと同じくらい大切なことです。 すみだAI教室のブログです。\",\n      \"url\": \"https://sumida-ai.jp/blog/c/anshin.html\",\n      \"inLanguage\": \"ja\",\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"すみだAI教室（AIプロジェクトチーム）\"\n      }\n    },\n    {\n      \"@type\": \"ItemList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"url\": \"https://sumida-ai.jp/blog/ai-uso-hallucination.html\",\n          \"name\": \"AIはなぜ堂々と間違えるのか【ハルシネーションとの付き合い方】\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"url\": \"https://sumida-ai.jp/blog/sagi-mail-mikata.html\",\n          \"name\": \"高齢者を狙う詐欺メールの見分け方5つ【実例つき】\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"url\": \"https://sumida-ai.jp/blog/ai-kenko-sodan.html\",\n          \"name\": \"AIに健康のことを聞いてもいい？【知っておきたい線引き】\"\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "headExtra": "<style>\n.post-card{background:var(--surface);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;text-decoration:none;box-shadow:0 4px 16px var(--shadow);transition:transform .18s ease,box-shadow .18s ease}\n.post-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px var(--shadow-strong)}\n.post-card h2{font-size:1.3rem;line-height:1.55}\n.post-card .excerpt{color:var(--ink-soft);font-size:1rem}\n.post-card time{font-size:.86rem;color:var(--ink-faint)}\n.post-card .more{font-weight:700;font-weight:700;color:var(--ai);font-size:.95rem;margin-top:auto}\n</style>",
+  "path": "/blog/c/anshin.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

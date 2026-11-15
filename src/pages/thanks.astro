@@ -1,0 +1,14 @@
+---
+import Base, { type Props } from '../layouts/Base.astro';
+import body from '../bodies/thanks.html?raw';
+
+const meta = {
+  "title": "送信が完了しました｜すみだAI教室",
+  "description": "お申し込み・お問い合わせの送信が完了しました。すみだAI教室から2〜3日以内にご連絡いたします。",
+  "robots": "noindex",
+  "headExtra": "<style>\n.thanks-hero{padding:64px 0 40px;text-align:center}\n.thanks-mark{width:104px;height:104px;margin:0 auto 28px;border-radius:50%;background:var(--wakaba);display:grid;place-items:center;box-shadow:0 12px 30px var(--shadow)}\n.thanks-mark svg{width:56px;height:56px;color:#fff}\n:root[data-theme=\"dark\"] .thanks-mark svg{color:#1B1915}\n.thanks-hero h1{font-size:clamp(1.9rem,5.2vw,2.8rem);color:var(--leaf)}\n.thanks-hero .lead{margin:22px auto 0;font-size:1.15rem;color:var(--ink-soft);max-width:26em;text-align:left}\n.next-card{background:var(--surface);border-radius:24px;padding:32px;margin-top:14px;box-shadow:0 4px 16px var(--shadow)}\n.next-card h2{font-size:1.4rem;margin-bottom:20px}\n.next-list{list-style:none;display:flex;flex-direction:column;gap:18px}\n.next-list li{display:flex;gap:16px;align-items:flex-start}\n.next-list .n{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:700;font-weight:700;font-size:1.2rem}\n:root[data-theme=\"dark\"] .next-list .n{color:#2A1D14}\n@media (prefers-color-scheme:dark){:root:not([data-theme=\"light\"]) .next-list .n{color:#2A1D14}}\n.next-list .t{font-weight:700;font-weight:700;display:block;margin-bottom:2px}\n.next-list .d{color:var(--ink-soft);font-size:1rem}\n</style>",
+  "path": "/thanks.html",
+  "hideCta": true
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

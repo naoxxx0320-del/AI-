@@ -1,0 +1,21 @@
+{
+  "name": "sumida-ai",
+  "private": true,
+  "type": "module",
+  "description": "すみだAI教室 公式サイト",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "verify": "astro check && astro build"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "astro": "^7.4.12",
+    "typescript": "^6.0.3"
+  }
+}

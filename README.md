@@ -53,3 +53,26 @@
 電話番号・メール・料金などは、すべて**仮（プレースホルダー）**です。
 実開業時に、正しい情報・本番用の申込フォーム（送信先）へ差し替えてください。
 「みんなの声」は開講前のサービスイメージ（サンプル）であり、サイト上にもその旨を明記しています。
+
+## 開発（Astro）
+
+サイトは [Astro](https://astro.build/) で組み立て、静的HTMLとして GitHub Pages に公開しています。
+ページに JavaScript は出さない設定なので、表示の速さは静的HTMLのときと同じです。
+
+```bash
+npm ci            # 初回だけ
+npm run dev       # 手元で確認（http://localhost:4321）
+npm run check     # 型チェック
+npm run build     # dist/ に公開用のHTMLを書き出す
+```
+
+| 置き場所 | 中身 |
+|---|---|
+| `src/site.ts` | 電話番号・ナビ・ページ下部の注記など、全ページ共通の事実 |
+| `src/layouts/Base.astro` | head・ヘッダー・申し込みボタン・フッター |
+| `src/pages/` | 各ページのメタ情報（title・description・構造化データ） |
+| `src/bodies/` | 各ページの本文（HTML） |
+| `public/` | 画像・CSS・JS・robots.txt・sitemap.xml など、そのまま公開するもの |
+
+`main` に反映されると GitHub Actions が型チェックとビルドを行い、通ったときだけ公開します。
+PR ではビルドの確認だけ行います。

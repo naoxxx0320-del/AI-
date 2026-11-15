@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/blog/ai-tanomikata-kata.html?raw';
+
+const meta = {
+  "title": "AIへの頼み方の型【5つの材料】｜すみだAI教室",
+  "description": "同じことを聞いても、頼み方で答えの質は変わります。毎回入れるべき5つの材料と、直させ方。",
+  "canonical": "https://sumida-ai.jp/blog/ai-tanomikata-kata.html",
+  "og": {
+    "type": "article",
+    "title": "思い通りの答えが返ってくる頼み方の型【5つの材料】",
+    "description": "同じことを聞いても、頼み方で答えの質は変わります。毎回入れるべき5つの材料と、直させ方。",
+    "url": "https://sumida-ai.jp/blog/ai-tanomikata-kata.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"ブログ\",\n          \"item\": \"https://sumida-ai.jp/blog/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"つくる（中上級）\",\n          \"item\": \"https://sumida-ai.jp/blog/c/tsukuru.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 4,\n          \"name\": \"思い通りの答えが返ってくる頼み方の型【5つの材料】\",\n          \"item\": \"https://sumida-ai.jp/blog/ai-tanomikata-kata.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"思い通りの答えが返ってくる頼み方の型【5つの材料】\",\n      \"description\": \"同じことを聞いても、頼み方で答えの質は変わります。毎回入れるべき5つの材料と、直させ方。\",\n      \"articleSection\": \"つくる（中上級）\",\n      \"datePublished\": \"2026-08-30\",\n      \"dateModified\": \"2026-08-30\",\n      \"inLanguage\": \"ja\",\n      \"image\": \"https://sumida-ai.jp/assets/og-image.png\",\n      \"author\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"publisher\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"mainEntityOfPage\": \"https://sumida-ai.jp/blog/ai-tanomikata-kata.html\"\n    }\n  ]\n}"
+  ],
+  "path": "/blog/ai-tanomikata-kata.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

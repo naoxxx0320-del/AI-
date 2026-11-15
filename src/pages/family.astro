@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../layouts/Base.astro';
+import body from '../bodies/family.html?raw';
+
+const meta = {
+  "title": "ご家族の方へ｜親のスマホ・AI教室をお探しなら すみだAI教室",
+  "description": "離れて暮らす高齢の親御さんのスマホ・AIの困りごと、詐欺の不安に。シニア専門のオンライン教室なら全国どこでも受講可能。代理申し込み（受講のプレゼント）も歓迎。進み具合のご家族向け報告つき。",
+  "canonical": "https://sumida-ai.jp/family.html",
+  "og": {
+    "type": "website",
+    "title": "ご家族の方へ｜親御さんに「安心」を贈る、シニア専門AI教室",
+    "description": "スマホの困りごと・詐欺の不安・話し相手。オンラインだから遠くの親御さんにも届きます。代理申し込み歓迎。",
+    "url": "https://sumida-ai.jp/family.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"ご家族の方へ\",\n          \"item\": \"https://sumida-ai.jp/family.html\"\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "path": "/family.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

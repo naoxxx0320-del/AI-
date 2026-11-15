@@ -3,6 +3,8 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,38 +13,43 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          check-latest: true
+          cache: npm
+      - name: Install
+        run: npm ci
+      # 型の誤りがあれば公開しない
+      - name: Type check
+        run: npx astro check
+      - name: Build
+        run: npm run build
+      - name: Upload site
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
   deploy:
+    # PR ではビルドの確認だけ行い、公開は main への反映時のみ
+    if: github.event_name != 'pull_request'
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      # 公開するのは実際のサイトだけ。事業計画や講師用の資料、開発用の
-      # ファイルはリポジトリには置いておくが、配信対象からは外す。
-      # ついでに /docs/ のような索引のないディレクトリが減り、404 も減る。
-      - name: Stage publishable files
-        run: |
-          mkdir -p _site
-          rsync -a ./ _site/ \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude '.claude' \
-            --exclude '_site' \
-            --exclude 'docs' \
-            --exclude 'README.md' \
-            --exclude 'LICENSE'
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
