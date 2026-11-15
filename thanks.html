@@ -12,10 +12,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
 <link rel="apple-touch-icon" href="/assets/icon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=20261104a">
+<link rel="stylesheet" href="assets/style.css?v=20261115n">
 <style>
 .thanks-hero{padding:64px 0 40px;text-align:center}
 .thanks-mark{width:104px;height:104px;margin:0 auto 28px;border-radius:50%;background:var(--wakaba);display:grid;place-items:center;box-shadow:0 12px 30px var(--shadow)}
@@ -27,10 +24,10 @@
 .next-card h2{font-size:1.4rem;margin-bottom:20px}
 .next-list{list-style:none;display:flex;flex-direction:column;gap:18px}
 .next-list li{display:flex;gap:16px;align-items:flex-start}
-.next-list .n{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.2rem}
+.next-list .n{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:700;font-weight:700;font-size:1.2rem}
 :root[data-theme="dark"] .next-list .n{color:#2A1D14}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .next-list .n{color:#2A1D14}}
-.next-list .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;display:block;margin-bottom:2px}
+.next-list .t{font-weight:700;font-weight:700;display:block;margin-bottom:2px}
 .next-list .d{color:var(--ink-soft);font-size:1rem}
 </style>
 </head>
@@ -42,7 +39,7 @@
     <a class="brand" href="./" aria-label="すみだAI教室 ホーム">
       <svg class="brand-mark" width="44" height="44" viewBox="0 0 48 48" aria-hidden="true">
         <path d="M24 2.6c5.1-1.4 9.6 1.1 12.6 4 3.3 3.2 6.4 5.6 7.7 10.2 1.3 4.7-.4 9.2-2.2 13.2-1.8 4-3.6 8.2-7.4 10.9-3.9 2.8-9 3.4-13.8 2.9-4.8-.5-9.6-2.2-12.7-5.8C5 34.4 4.2 29.2 4.4 24.3c.2-5 1.3-10.2 4.6-14C12.4 6.4 18.6 4.1 24 2.6Z" fill="var(--peach)"/>
-        <text x="24" y="30" font-family="Zen Maru Gothic, sans-serif" font-size="16.5" font-weight="700" fill="var(--ink)" text-anchor="middle">AI</text>
+        <text x="24" y="30" font-family="Noto Sans JP, sans-serif" font-size="16.5" font-weight="700" fill="var(--ink)" text-anchor="middle">AI</text>
       </svg>
       <span>
         <span class="brand-name">すみだAI教室</span>
@@ -101,14 +98,14 @@
     </div>
 
     <div class="card mt-md" style="border-left:6px solid var(--kaki)">
-      <p style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;margin-bottom:8px">3日たっても連絡がないときは</p>
+      <p style="font-weight:700;font-weight:700;margin-bottom:8px">3日たっても連絡がないときは</p>
       <p style="color:var(--ink-soft);font-size:1rem">
         通信の行き違いかもしれません。お手数ですが
         <a class="text-link" href="tel:08048855430">080-4885-5430</a>
         までお電話いただくか、LINEでご連絡ください。
       </p>
       <div data-line-card hidden class="mt-md">
-        <a data-line-btn class="btn btn-block" href="#" rel="noopener" target="_blank" style="background:#068C3E;color:#fff">
+        <a data-line-btn class="btn btn-block" href="#" rel="noopener" target="_blank" style="background:#056B2E;color:#fff">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.57 7.4 8.4 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.87c-.04.26-.2 1.01.88.55 1.09-.46 5.87-3.46 8.01-5.92C21.55 13.42 22 11.85 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
           <span class="nb">LINEで相談する</span>
         </a>
@@ -148,6 +145,7 @@
         <ul class="foot-links">
           <li><a href="about.html">会社概要</a></li>
           <li><a href="contact.html">お問い合わせ・お申し込み</a></li>
+          <li><a href="contact.html#privacy">個人情報の取り扱い</a></li>
           <li data-line-card hidden><a data-line-btn href="#" target="_blank" rel="noopener">LINEで相談する</a></li>
         </ul>
       </nav>

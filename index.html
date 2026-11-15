@@ -20,11 +20,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
 <link rel="apple-touch-icon" href="/assets/icon-180.png">
-<link rel="preload" as="image" href="assets/illust/couple.png" type="image/png" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=20261104a">
+<link rel="stylesheet" href="assets/style.css?v=20261115n">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -79,7 +75,7 @@
     <a class="brand" href="./" aria-label="すみだAI教室 ホーム">
       <svg class="brand-mark" width="44" height="44" viewBox="0 0 48 48" aria-hidden="true">
         <path d="M24 2.6c5.1-1.4 9.6 1.1 12.6 4 3.3 3.2 6.4 5.6 7.7 10.2 1.3 4.7-.4 9.2-2.2 13.2-1.8 4-3.6 8.2-7.4 10.9-3.9 2.8-9 3.4-13.8 2.9-4.8-.5-9.6-2.2-12.7-5.8C5 34.4 4.2 29.2 4.4 24.3c.2-5 1.3-10.2 4.6-14C12.4 6.4 18.6 4.1 24 2.6Z" fill="var(--peach)"/>
-        <text x="24" y="30" font-family="Zen Maru Gothic, sans-serif" font-size="16.5" font-weight="700" fill="var(--ink)" text-anchor="middle">AI</text>
+        <text x="24" y="30" font-family="Noto Sans JP, sans-serif" font-size="16.5" font-weight="700" fill="var(--ink)" text-anchor="middle">AI</text>
       </svg>
       <span>
         <span class="brand-name">すみだAI教室</span>
@@ -97,299 +93,243 @@
       <a href="faq.html">よくある質問</a>
       <a href="blog/">ブログ</a>
     </nav>
-    <a class="tel-btn" href="contact.html">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H7l-3 3z"/></svg>
-      お申し込み
+    <a class="tel-btn" href="contact.html">お申し込み
     </a>
   </div>
 </header>
 
 <main id="main">
 
-<!-- ===== HERO ===== -->
-<section class="hero" aria-labelledby="hero-title">
+<!-- ② ファーストビュー -->
+<section class="hero">
   <div class="wrap">
-    <div class="hcard">
-      <img class="hcard-art" src="assets/illust/couple.png" width="373" height="760" alt="ご自宅でならんで過ごすご夫婦のイラスト" fetchpriority="high" decoding="async">
-      <div class="hcard-tx">
-        <span class="eyebrow">墨田区発・オンライン全国対応</span>
-        <h1 id="hero-title">ご自宅から、<br>AIと新しい世界を。</h1>
-        <p>教室に通う必要はありません。<br>ご自宅のリビングが、最先端の学びの場に。</p>
-        <a class="ghost" href="#ryokin">料金を見る</a>
-      </div>
-    </div>
-
-    <div class="hoffer">
+    <div class="hgrid">
       <div>
-        <p class="t">初回体験 <b>500円</b>（60分）</p>
-        <p class="s">ご家族からの代理お申し込みも歓迎です。</p>
+        <span class="kicker">墨田区発・シニアのためのAI/スマホ教室</span>
+        <h1><span class="nb">はじめてのAIを、</span><br><span class="nb">暮らしの楽しみに。</span></h1>
+        <p class="lead">ご自宅への出張と、オンライン。どちらでも、ゆっくり学べます。専門用語は使いません。同じことを何度おたずねいただいても、同じようにお答えします。</p>
+        <div class="offer">
+          <div>
+            <span class="offer-k">はじめての方の体験</span>
+            <span class="offer-v"><b>500</b><span class="unit">円</span><span class="sep">/</span><b>60</b><span class="unit">分</span></span>
+          </div>
+          <a class="text-link" href="courses.html">コース・料金をすべて見る</a>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="contact.html">体験を申し込む</a>
+          <a class="btn btn-ghost btn-lg" href="tel:08048855430">電話で相談する</a>
+        </div>
+        <p class="note mt-md">お電話 080-4885-5430／受付 9:00〜23:00　※ 本サイトは開講準備中のご案内です。料金は開講時に確定します。</p>
       </div>
-      <a class="cta" href="contact.html">ワンコイン体験を申し込む</a>
+      <aside class="demo" aria-label="AIに頼んだときの例">
+        <p class="demo-cap">活用イメージ</p>
+        <div class="demo-row"><span class="demo-k">あなた</span><p>来月、夫婦で温泉に2泊したいです。二人とも70代で、長い距離は歩けません。坂や階段の少ない回り方を考えてください。</p></div>
+        <div class="demo-row ai"><span class="demo-k">AI</span><p>宿から送迎のある場所を中心に、3か所だけ回る案をご提案します。1日目は到着後すぐ入浴、2日目は……</p></div>
+        <p class="demo-note">※ 実際の画面ではありません。頼み方と返ってくる内容の例です。</p>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ===== よくある不安 ===== -->
-<section class="alt" id="nayami" aria-labelledby="nayami-title">
+<!-- ③ AIでできること -->
+<section class="alt" id="can" aria-labelledby="can-title">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="nayami-title">AIについて<span class="u">こんな不安</span>はありませんか？</h2>
-    </div>
-    <div class="qlist">
-      <div class="q reveal"><span class="fig"><img src="assets/illust/senior-m1.png" width="320" height="355" alt="" loading="lazy" decoding="async"></span><a class="bub" href="blog/ai-yougo-jiten.html" aria-label="AIとは何かを、やさしい言葉で説明したページへ"><span class="nb">AIって、</span><em><span class="nb">そもそも</span><span class="nb">何なの？</span></em></a><span class="dood" aria-hidden="true"><svg width="46" height="34" viewBox="0 0 46 34" fill="none" stroke="#E8905C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l11 11L8 28"/><path d="M26 6l11 11-11 11"/></svg></span></div>
-      <div class="q r reveal"><span class="dood" aria-hidden="true"><svg width="56" height="52" viewBox="0 0 56 52"><circle cx="28" cy="27" r="22" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 25 28 13l15 12"/><path d="M17 25v15h22V25"/><path d="M24 40v-8h8v8"/><path d="M28 18v3"/></g></svg></span><a class="bub" href="course/taiken.html" aria-label="はじめてスマホ＆AI体験コースのご案内へ"><span class="nb">スマホは</span><span class="nb">電話とLINEだけ。</span><em><span class="nb">私にも</span><span class="nb">できるかしら</span></em></a><span class="fig"><img src="assets/illust/senior-f1.png" width="320" height="485" alt="" loading="lazy" decoding="async"></span></div>
-      <div class="q reveal"><span class="fig"><img src="assets/illust/senior-m2.png" width="320" height="320" alt="" loading="lazy" decoding="async"></span><a class="bub" href="course/anshin.html" aria-label="デジタル安心講座のご案内へ"><span class="nb"><em>だまされたり</em></span><span class="nb"><em>しないか</em>、</span><span class="nb">それが</span><span class="nb">心配で</span></a><span class="dood" aria-hidden="true"><svg width="54" height="52" viewBox="0 0 54 52"><circle cx="33" cy="26" r="20" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="10" width="22" height="32" rx="11"/><path d="M33 10v11"/></g><path d="M4 13l7 7-7 7" fill="none" stroke="#E8905C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <div class="q r reveal"><span class="dood" aria-hidden="true"><svg width="54" height="50" viewBox="0 0 54 50"><circle cx="27" cy="24" r="20" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 21a14 10 0 1 0 28 0 14 10 0 1 0-28 0"/><path d="M21 32l-5 8 10-4.5"/></g></svg></span><a class="bub" href="course/jitaku.html" aria-label="ご自宅マンツーマン出張のご案内へ"><span class="nb">足が悪くて、</span><em><span class="nb">教室まで</span><span class="nb">通うのが</span><span class="nb">難しい</span></em></a><span class="fig"><img src="assets/illust/senior-f3.png" width="320" height="390" alt="" loading="lazy" decoding="async"></span></div>
-      <div class="q reveal"><span class="fig"><img src="assets/illust/senior-m3.png" width="320" height="323" alt="" loading="lazy" decoding="async"></span><a class="bub" href="course/kobetsu.html" aria-label="マンツーマン個別相談のご案内へ"><span class="nb">息子や娘に</span><span class="nb">聞くのは、</span><em><span class="nb">気が引ける</span></em></a><span class="dood" aria-hidden="true"><svg width="50" height="46" viewBox="0 0 50 46"><circle cx="25" cy="23" r="19" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 17h22M14 24h15"/><path d="M11 11h28v22H22l-8 6v-6h-3z"/></g></svg></span></div>
-      <div class="q r reveal"><span class="dood" aria-hidden="true"><svg width="52" height="48" viewBox="0 0 52 48"><circle cx="26" cy="24" r="20" fill="#F7DCC6"/><g fill="none" stroke="#E8905C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="24" r="11"/><path d="M26 18v6l4 3"/></g></svg></span><a class="bub" href="blog/ai-kurashi-katsuyo.html" aria-label="暮らしでのAI活用アイデア10選へ"><span class="nb">今さら</span><span class="nb">覚えて、</span><em><span class="nb">使う場面が</span><span class="nb">あるかしら</span></em></a><span class="fig"><img src="assets/illust/senior-f2.png" width="320" height="398" alt="" loading="lazy" decoding="async"></span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 答えの帯 ===== -->
-<section class="answer" aria-labelledby="answer-title">
-  <div class="wrap agrid">
-    <div>
-      <h2 id="answer-title">その心配ごとを<br><u>ぜんぶ引き受けます。</u></h2>
-      <p>通う必要はありません。専門用語も使いません。同じ質問を10回されても、10回同じようにお答えします。だまされない使い方も、便利な使い方と同じくらい大切にお伝えします。</p>
-    </div>
-    <div class="abadge">
-      <div class="n">500<span style="font-size:.4em">円</span></div>
-      <div class="l">まずは60分の体験から</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 2つの学び方 ===== -->
-<section id="ways" aria-labelledby="ways-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="ways-title">学び方は<span class="u">2つ</span>です</h2>
-      <p>足の具合が悪い日も、雨の日も、遠方にお住まいでも。合うほうをお選びください。</p>
-    </div>
-    <div class="two">
-      <article class="wcard reveal">
-        <div class="wtop">
-          <span class="wic g"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
-          <div><h3>ご自宅へ出張</h3><span class="sub">墨田区・近隣／60分 4,400円</span></div>
-        </div>
-        <p>いつもの椅子に座ったまま、いつものスマホで。ご自宅ならではの困りごとは、その場でないと解けません。</p>
-        <ul>
-          <li>墨田区内は交通費をいただきません（<a class="text-link" href="sumida.html">出張エリアを見る</a>）</li>
-          <li>Wi-Fiや文字の大きさもその場で整えます</li>
-          <li>ご家族の同席を歓迎します</li>
-        </ul>
-        <p class="mt-md"><a class="arrow-link" href="course/jitaku.html">ご自宅出張のくわしい内容</a></p>
-      </article>
-      <article class="wcard reveal">
-        <div class="wtop">
-          <span class="wic b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
-          <div><h3>オンライン</h3><span class="sub">全国どこからでも／体験 500円</span></div>
-        </div>
-        <p>出かけずに、お手元のスマホひとつで。「つながるかしら」の不安には、前日のお電話でお応えします。</p>
-        <ul>
-          <li>初回は電話でつなぎ方を練習します</li>
-          <li>最大4名の少人数。質問し放題です</li>
-          <li>録画で何度でも復習できます</li>
-        </ul>
-        <p class="mt-md"><a class="arrow-link" href="online.html">オンラインのはじめ方を見る</a></p>
-      </article>
-    </div>
-    <p class="note-line">墨田区にお住まいの方へ ── <a class="text-link" href="sumida.html">出張エリア・町会向け講座のご案内はこちら</a></p>
-  </div>
-</section>
-
-<!-- ===== こんなときに役立ちます ===== -->
-<section class="alt" id="merit" aria-labelledby="merit-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="merit-title">こんなときに<span class="u">役立ちます</span></h2>
-      <p>むずかしい機械の話ではありません。困ったときに、遠慮なく何度でも聞ける相手ができる。それだけのことです。</p>
+      <span class="kicker">AIでできること</span>
+      <h2 id="can-title">「こう頼むと、こう返ってきます」</h2>
+      <p>むずかしい機械の話ではありません。言葉で頼めば、形にして返してくれます。そのまま口に出せる例を並べました。</p>
     </div>
     <div class="ugrid">
-      <article class="uc reveal">
-        <span class="tag">旅行の計画</span>
+      <article class="uc"><span class="tag">旅行の計画</span>
         <h3>坂道の少ない道順で、温泉へ</h3>
-        <p>行き先の順番、移動時間、休憩どころまでまとめて提案してくれます。</p>
-        <q>来月、夫婦で温泉に2泊したい。あまり歩かずに回れる順番を教えて</q>
-      </article>
-      <article class="uc reveal">
-        <span class="tag">孫への手紙</span>
-        <h3>気持ちを話すだけで、手紙になる</h3>
-        <p>仕上げをご自分の言葉に直せば、立派な一通のできあがりです。</p>
-        <q>入学祝いの手紙を書きたい。何と書けばいいかしら</q>
-      </article>
-      <article class="uc reveal">
-        <span class="tag">詐欺から守る</span>
-        <h3>あわてて電話する前の、ひと呼吸</h3>
-        <p>怪しいメールやハガキを見せて、その場で確かめられます。</p>
-        <q>こんなメールが来たけれど、本物でしょうか</q>
-      </article>
-      <article class="uc reveal">
-        <span class="tag">今日の献立</span>
+        <p>行き先の順番、移動時間、休憩どころまでまとめて返ってきます。</p>
+        <q>来月、夫婦で温泉に2泊したい。あまり歩かずに回れる順番を教えて</q></article>
+      <article class="uc"><span class="tag">手紙・あいさつ文</span>
+        <h3>気持ちを話すだけで、下書きになる</h3>
+        <p>仕上げをご自分の言葉に直せば、一通のできあがりです。</p>
+        <q>入学祝いの手紙を書きたい。何と書けばいいかしら</q></article>
+      <article class="uc"><span class="tag">今日の献立</span>
         <h3>冷蔵庫にあるもので、一品</h3>
         <p>材料から献立と作り方を。塩分ひかえめの注文にも応えます。</p>
-        <q>冷蔵庫に大根と鶏肉がある。何が作れる？</q>
-      </article>
+        <q>冷蔵庫に大根と鶏肉がある。何が作れる？</q></article>
+      <article class="uc"><span class="tag">声で聞く</span>
+        <h3>打たずに、話しかけて使う</h3>
+        <p>キーボードが苦手でも大丈夫です。マイクに向かって話すだけ。</p>
+        <q>この画面に出ている言葉は、どういう意味ですか</q></article>
     </div>
-
-    <div class="merit-note reveal">
-      <p><strong>ただし、AIは万能ではありません。</strong>まちがいを、さも本当のように答えることがあります。とくに<strong>お薬・治療・お金の判断は、AIの答えだけで決めないでください</strong>。かならずお医者さん、薬剤師さん、ご家族や役所にご確認を。</p>
-      <p class="mt-md">当教室では、便利な使い方と同じくらい、<strong>この「信じすぎない線引き」</strong>を大切にお伝えしています。</p>
+    <div class="warn mt-lg">
+      <span class="pt">ここは正直にお伝えします</span>
+      AIは、知らないことでももっともらしく答えることがあります。<strong>お薬・治療・お金・手続きの判断は、AIの答えだけで決めないでください。</strong>当教室では、便利な使い方と同じくらい、この線引きをお伝えしています。
     </div>
-
     <p class="note-line"><a class="arrow-link" href="blog/ai-kurashi-katsuyo.html">使い方の実例をもっと見る（例文つき10選）</a></p>
   </div>
 </section>
 
-<!-- ===== ご家族へ ===== -->
-<section aria-labelledby="family-title">
-  <div class="wrap">
-    <div class="fam">
-      <div class="reveal">
-        <span class="k">息子さん・娘さん・お孫さんへ</span>
-        <h2 id="family-title">離れて暮らす親御さんに、<br>心からの安心を贈る。</h2>
-        <ul>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg>
-            <span>スマホの困りごと、話し相手。</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="8" r="3.3"/><path d="M2.8 20c0-3.2 2.6-5.3 5.7-5.3 1.2 0 2.3.3 3.2.9"/><path d="M14 12h7v5.2h-4.4L14 19.6z"/></svg>
-            <span>オンラインだから、そのまま届きます。</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.2 11h17.6v9.5H3.2z"/><path d="M2 7.4h20V11H2z"/><path d="M12 7.4v13.1"/><path d="M12 7.4S10.8 3 8.4 3a2.2 2.2 0 0 0 0 4.4zM12 7.4S13.2 3 15.6 3a2.2 2.2 0 0 1 0 4.4z"/></svg>
-            <span>受講のプレゼント（代理申し込み）も承ります。</span>
-          </li>
-        </ul>
-        <a class="btn" href="family.html">ご家族向けのご案内<br>（代理申し込み）を見る</a>
-      </div>
-      <figure class="reveal">
-        <img src="assets/illust/family.png" width="860" height="547" alt="タブレットを使うお父さまと、スマートフォンの画面ごしに話す娘さんのイラスト" loading="lazy" decoding="async">
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 料金 ===== -->
-<section class="alt" id="ryokin" aria-labelledby="courses-title">
+<!-- ④ この教室の教え方 -->
+<section aria-labelledby="how-title">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="courses-title">まずは<span class="u">500円</span>から</h2>
-      <p>合わなければ続けなくて構いません。無理におすすめすることは、一切いたしません。（すべて税込）</p>
+      <span class="kicker">教え方</span>
+      <h2 id="how-title">わからないと言える場所にしています</h2>
     </div>
-    <div class="fee reveal">
-      <a href="course/taiken.html">
-        <span class="cap b">体験</span>
-        <span><h3>はじめてスマホ＆AI 体験</h3><small>60分／出張・オンライン</small></span>
-        <span class="y">500<i>円</i></span>
-      </a>
-      <a href="course/nyumon.html">
-        <span class="cap b">全4回</span>
-        <span><h3>やさしいAI入門</h3><small>90分×4／少人数（〜4名）</small></span>
-        <span class="y">9800<i>円</i></span>
-      </a>
-      <a href="course/anshin.html">
-        <span class="cap o">安心</span>
-        <span><h3>デジタル安心講座</h3><small>90分／詐欺・偽情報から身を守る</small></span>
-        <span class="y">2000<i>円</i></span>
-      </a>
-      <a href="course/jitaku.html">
-        <span class="cap g">出張</span>
-        <span><h3>ご自宅マンツーマン</h3><small>60分／墨田区・近隣（交通費込）</small></span>
-        <span class="y">4400<i>円</i></span>
-      </a>
-      <a href="course/web-seisaku.html">
-        <span class="cap b">中上級</span>
-        <span><h3>AIでWebサイト作成</h3><small>3時間／オンライン個別</small></span>
-        <span class="y">30000<i>円</i></span>
-      </a>
+    <div class="grid-3">
+      <div class="p-card"><h3>言葉を置き換えてお伝えします</h3>
+        <p>「プロンプト」「アカウント」といった言葉は使わずに進めます。どうしても必要なときは、その場で言い換えを添えます。</p></div>
+      <div class="p-card"><h3>進む速さは、その方に合わせます</h3>
+        <p>決まった進度表はありません。すでにお使いの機能は飛ばし、つまずいた場所に時間を使います。</p></div>
+      <div class="p-card"><h3>何度おたずねいただいても構いません</h3>
+        <p>1回で覚えていただくつもりで作っていません。月額のコースがあるのは、忘れた頃にもう一度聞ける場所を用意したかったからです。</p></div>
     </div>
-    <p class="center mt-lg"><a class="btn btn-ghost" href="courses.html">すべてのコース・料金を見る</a></p>
   </div>
 </section>
 
-<!-- ===== 講師 ===== -->
+<!-- ⑤ 選べる受講方法 -->
+<section class="alt" id="ways" aria-labelledby="ways-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">受講方法</span>
+      <h2 id="ways-title">ご自宅への出張と、オンライン</h2>
+      <p>足の具合が悪い日も、雨の日も、遠方にお住まいでも。合うほうをお選びください。</p>
+    </div>
+    <div class="table-wrap table-stack">
+      <table>
+        <caption>出張とオンラインの比較（掲載条件は開講時に確定します）</caption>
+        <thead><tr><th scope="col">くらべる点</th><th scope="col">ご自宅へ出張</th><th scope="col">オンライン</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">対象エリア</th><td data-label="出張">墨田区全域／近隣区は要相談</td><td data-label="オンライン">全国どこからでも</td></tr>
+          <tr><th scope="row">必要な機器</th><td data-label="出張">お使いのスマホ1台</td><td data-label="オンライン">スマホまたはタブレット1台</td></tr>
+          <tr><th scope="row">人数</th><td data-label="出張">マンツーマン〜少人数</td><td data-label="オンライン">最大4名の少人数</td></tr>
+          <tr><th scope="row">接続のお手伝い</th><td data-label="出張">講師がうかがうので不要</td><td data-label="オンライン">初回は前日にお電話で一緒に練習</td></tr>
+          <tr><th scope="row">料金・交通費</th><td data-label="出張">60分 4,400円（墨田区内は交通費なし）</td><td data-label="オンライン">60分 3,300円（個別相談）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cta-row mt-lg">
+      <a class="btn btn-ghost" href="sumida.html">墨田区の出張エリアを見る</a>
+      <a class="btn btn-ghost" href="online.html">オンラインのはじめ方を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 講師紹介 -->
 <section id="teacher" aria-labelledby="teacher-title">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="teacher-title">お迎えするのは<span class="u">この人</span>です</h2>
-      <p>どんな人が来るのか分からないまま申し込むのは、不安なものです。</p>
+      <span class="kicker">講師</span>
+      <h2 id="teacher-title">お迎えするのはこの人です</h2>
+      <p>どんな人が来るのか分からないまま申し込むのは、不安なものです。顔と名前を出してお迎えします。</p>
     </div>
     <div class="people solo">
-      <a class="pc reveal" href="teacher.html#takeuchi">
-        <img src="assets/teacher-520.jpg" width="520" height="520" alt="すみだAI教室 代表・講師 竹内直政" loading="lazy" decoding="async">
+      <a class="pc" href="teacher.html#takeuchi">
+        <picture><source srcset="assets/teacher-520.webp" type="image/webp"><img src="assets/teacher-520.jpg" width="520" height="520" alt="すみだAI教室 代表・講師 竹内直政" loading="lazy" decoding="async"></picture>
         <div class="rk">代表・講師</div>
         <div class="nm">竹内 直政</div>
         <ul>
-          <li>銀行でデジタル化を推進</li>
-          <li>デジタルが苦手な方に伝える</li>
-          <li>あきらめずに、何度でも</li>
+          <li>銀行でデジタル化の推進を担当</li>
+          <li>デジタルが苦手な方に伝えることが本業</li>
+          <li>出張・オンラインとも同じ講師がうかがいます</li>
         </ul>
-        <div class="go"><span>詳細を見る</span></div>
+        <div class="go">経歴と教え方を見る</div>
       </a>
-          </div>
+    </div>
+    <p class="note-line">※ 勤務先が当教室を運営・公認しているものではありません。</p>
   </div>
 </section>
 
-<!-- ===== 流れ ===== -->
-<section class="alt" aria-labelledby="flow-title">
+<!-- ⑦ コース・料金 -->
+<section class="alt" id="price" aria-labelledby="price-title">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="flow-title">はじめかたは<span class="u">かんたん3ステップ</span></h2>
+      <span class="kicker">コース・料金</span>
+      <h2 id="price-title">まずは体験から。続け方は後で選べます</h2>
+      <p>入会金はありません。教材費もいただきません。表示はすべて税込です。</p>
+    </div>
+    <div class="table-wrap table-stack">
+      <table>
+        <caption>講座と料金（開講準備中のため、料金は開講時に確定します）</caption>
+        <thead><tr><th scope="col">講座</th><th scope="col">時間・回数</th><th scope="col">料金（税込）</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">はじめてスマホ＆AI体験</th><td data-label="時間">60分・初回のみ</td><td data-label="料金">500円</td></tr>
+          <tr><th scope="row">ご自宅へ出張（個別）</th><td data-label="時間">60分</td><td data-label="料金">4,400円（交通費込）</td></tr>
+          <tr><th scope="row">マンツーマン個別相談</th><td data-label="時間">60分</td><td data-label="料金">3,300円</td></tr>
+          <tr><th scope="row">やさしいAI入門</th><td data-label="時間">90分 × 全4回</td><td data-label="料金">9,800円</td></tr>
+          <tr><th scope="row">生活活用コース（月額）</th><td data-label="時間">90分 × 月4回</td><td data-label="料金">5,500円 / 月</td></tr>
+          <tr><th scope="row">デジタル安心講座</th><td data-label="時間">90分</td><td data-label="料金">2,000円</td></tr>
+          <tr><th scope="row">町会・シニアクラブ・施設への出張</th><td data-label="時間">90分〜</td><td data-label="料金">応相談</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note mt-md">※ お支払いは受講当日です。前払いはいただきません。※ 体験だけで終えていただいて構いません。勧誘はいたしません。</p>
+    <p class="note-line"><a class="arrow-link" href="courses.html">各コースの内容を詳しく見る</a></p>
+  </div>
+</section>
+
+<!-- ⑧ 申し込みから受講まで -->
+<section aria-labelledby="flow-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">申し込みから受講まで</span>
+      <h2 id="flow-title">やることは3つだけです</h2>
     </div>
     <div class="steps">
-      <div class="step reveal">
-        <h3>お申し込み</h3>
-        <p>お電話またはフォームでどうぞ。「オンラインは初めて」と、ぜひ教えてください。</p>
-      </div>
-      <div class="step reveal">
-        <h3>前日にお電話</h3>
-        <p>つなぎ方を一緒に練習します。困っていることも、ここでうかがいます。</p>
-      </div>
-      <div class="step reveal">
-        <h3>当日60分</h3>
-        <p>届いた案内を押すだけ。マイクを押して、ふだんの言葉で話しかけます。文字は打ちません。</p>
-      </div>
+      <div class="step"><h3>お申し込み</h3>
+        <p>お電話、フォーム、LINEのどれでも。「体験を受けたい」とだけお伝えください。ご家族からの代理のお申し込みも承ります。</p></div>
+      <div class="step"><h3>日程と受講方法の確認</h3>
+        <p>ご希望の日と、出張かオンラインかをうかがいます。オンラインの場合は<strong>前日にお電話で、つなぎ方を一緒に練習</strong>します。当日ではなく前日に行います。</p></div>
+      <div class="step"><h3>当日60分</h3>
+        <p>お使いのスマホをそのまま使います。新しく買っていただくものはありません。お支払いは当日です。続けるかどうかは、後日お決めください。</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
+<!-- ⑨ ご家族・団体向け -->
+<section class="alt" aria-labelledby="for-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">ご家族・団体のみなさまへ</span>
+      <h2 id="for-title">代理のお申し込み、町会・施設への出張</h2>
+    </div>
+    <div class="grid-2">
+      <div class="p-card"><h3>離れて暮らすご家族から</h3>
+        <p>親御さんの代理でお申し込みいただけます。初回に同席していただくこともできます。オンラインなら全国どこでも受けられます。</p>
+        <p class="mt-md"><a class="arrow-link" href="family.html">ご家族の方へのご案内</a></p></div>
+      <div class="p-card"><h3>町会・シニアクラブ・施設から</h3>
+        <p>集会所や施設のお部屋にうかがって、90分ほどの講座を行います。貸出用のタブレットを持参しますので、スマホをお持ちでない方も参加できます。</p>
+        <p class="mt-md"><a class="arrow-link" href="sumida.html">出張講座のご案内</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑩ よくある質問 -->
 <section aria-labelledby="faq-title">
   <div class="wrap-narrow">
     <div class="sec-head">
-      <h2 id="faq-title">ご不安を<span class="u">うかがいます</span></h2>
+      <span class="kicker">よくある質問</span>
+      <h2 id="faq-title">申し込む前に、気になるところ</h2>
     </div>
     <div class="faq-list">
-      <details class="faq">
-        <summary>パソコンを持っていませんが、受講できますか？</summary>
-        <p class="a">はい、スマートフォンだけで大丈夫です。タブレットの貸出（出張講座）もあります。</p>
-      </details>
-      <details class="faq">
-        <summary>オンラインのつなぎ方がわかりません。</summary>
-        <p class="a">初回は、お電話でゆっくり一緒に接続します。「つながらなかったらどうしよう」の心配はいりません。詳しくは<a class="text-link" href="online.html">オンラインのはじめ方</a>をご覧ください。</p>
-      </details>
-      <details class="faq">
-        <summary>墨田区の外に住んでいても大丈夫ですか？</summary>
-        <p class="a">オンライン講座は全国どこからでも受講できます。出張講座は<a class="text-link" href="sumida.html">墨田区と近隣エリア</a>が対象です（ご相談ください）。</p>
-      </details>
+      <details class="faq"><summary>パソコンを持っていませんが、受けられますか。</summary><p class="a">受けられます。当教室の講座は、ふだんお使いの<strong>スマホ1台</strong>で受けられるように作っています。パソコンもタブレットもご用意いただく必要はありません。</p></details>
+      <details class="faq"><summary>はじめてでも大丈夫ですか。</summary><p class="a">大丈夫です。体験は「こわくないと分かっていただくこと」が目的で、操作を覚えていただくことは目的にしていません。すでにお使いの機能は飛ばして進めます。</p></details>
+      <details class="faq"><summary>料金は、表示されているもので確定ですか。</summary><p class="a">本サイトは<strong>開講準備中のご案内</strong>です。掲載している料金は予定で、開講時に確定します。確定後の金額は、お申し込みの際に必ず先にお伝えします。</p></details>
+      <details class="faq"><summary>オンラインのつなぎ方が不安です。</summary><p class="a">初回は、講座の<strong>前日までにお電話で</strong>、つなぎ方を一緒に練習します。当日につながらない状態から始めることはありません。それでも難しい場合は、墨田区内であれば出張に切り替えられます。</p></details>
+      <details class="faq"><summary>墨田区の外に住んでいても大丈夫ですか。</summary><p class="a">オンライン講座は全国どこからでも受けられます。ご自宅への出張は墨田区全域が対象で、近隣の江東区・台東区・葛飾区・江戸川区はご相談ください。</p></details>
+      <details class="faq"><summary>キャンセルはできますか。</summary><p class="a">できます。お支払いは受講当日なので、前払いの返金という手続きは発生しません。ご都合が悪くなったら、お電話かフォームでご連絡ください。</p></details>
+      <details class="faq"><summary>家族が代わりに申し込めますか。</summary><p class="a">歓迎しています。お申し込みフォームに「ご家族（代理申し込み）」の選択肢があります。ご希望があれば、進み具合をご家族へご報告します。</p></details>
     </div>
-    <p class="center mt-lg"><a class="arrow-link" href="faq.html">よくある質問をすべて見る</a></p>
+    <p class="note-line"><a class="arrow-link" href="faq.html">そのほかの質問をすべて見る</a></p>
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section class="cta-band" id="cta" aria-labelledby="cta-title">
+<!-- ⑪ 最後の申し込み案内 -->
+<section class="cta-band" aria-labelledby="cta-title">
   <div class="wrap">
     <h2 id="cta-title">その一歩を、いっしょに。</h2>
-    <p>「わからない」と言える場所をつくりたくて、この教室をはじめました。まずは60分、話してみませんか。</p>
+    <p>「行ってみようかしら」と思われたら、それがはじまりです。合わなければ、体験だけで終えていただいて構いません。</p>
     <div class="cta-row">
-      <a class="btn btn-primary btn-lg" href="contact.html">体験を申し込む（500円）</a>
-      <a class="btn btn-ghost" href="family.html" style="background:transparent;color:currentColor;border-color:currentColor">ご家族の方はこちら</a>
+      <a class="btn btn-primary btn-lg" href="contact.html">体験を申し込む（60分 500円）</a>
+      <a class="btn btn-ghost btn-lg" href="tel:08048855430">電話で相談する</a>
     </div>
-    <p class="sub">お電話でのご相談 <span class="nb">080-4885-5430</span> ／ <span class="nb">受付 9:00〜23:00</span></p>
+    <p class="sub">お電話 080-4885-5430／受付 9:00〜23:00</p>
   </div>
 </section>
 
@@ -419,6 +359,7 @@
         <ul class="foot-links">
           <li><a href="about.html">会社概要</a></li>
           <li><a href="contact.html">お問い合わせ・お申し込み</a></li>
+          <li><a href="contact.html#privacy">個人情報の取り扱い</a></li>
           <li data-line-card hidden><a data-line-btn href="#" target="_blank" rel="noopener">LINEで相談する</a></li>
         </ul>
       </nav>
