@@ -1,949 +1,462 @@
+@charset "utf-8";
 /* ============================================================
-   すみだAIきょうしつ — Design System
-   Brand: AIプロジェクトチーム
-   Palette: 生成り / 濃紺 / 柿（デザイン案I）
+   すみだAI教室 — デザインシステム
+   「AIを、もっと身近に。大人のための、やさしい学び。」
+   白とオフホワイトの地、濃紺の本文、深い青のアクセント。
+   余白・見出し・区切り線で整理し、影と装飾は最小限にする。
    ============================================================ */
 
+/* ---- 1. トークン ---- */
 :root{
-  /* 面 */
-  --cream:#F7F1E6;      /* 地 */
-  --cream-2:#F1E8D9;    /* 一段濃い地 */
-  --paper:#F7F1E6;      /* 旧名。地と同じ */
-  --surface:#FFFFFF;    /* 吹き出し・カード */
-  --tint:#F1E8D9;
-  /* 文字 */
-  --ink:#1F3A5C;        /* 濃紺。見出しも本文もこれ */
-  --ink-soft:#4A6685;
-  --ink-faint:#58687C;
-  /* 差し色 */
-  --orange:#D56C34;     /* 塗り（ボタン・番号）。白の大きな文字が乗る */
-  --orange-ink:#A44413; /* 橙の文字と、本文が乗る塗り */
-  --peach:#F7DCC6;      /* 淡い橙。札・アイコンの地 */
-  --peach-2:#F6B889;    /* 一段濃い橙。申し込みの帯 */
-  --leaf:#3F6E54;
-  --leaf-tint:#E3EFE7;
-  --phone:#1F3A5C;      /* 端末の枠。明暗どちらでも濃紺 */
-  --phone-ink:#F7F1E6;
-  /* 旧名の対応づけ */
-  --ai:#1F3A5C; --ai-deep:#16304C; --ai-tint:#E7EDF3;
-  --kaki:#D56C34; --kaki-deep:#A44413; --kaki-tint:#F7DCC6;
-  --wakaba:#3F6E54; --wakaba-tint:#E3EFE7;
-  /* 線と影 */
-  --line:#E5DCCB;
-  --shadow:rgba(95,72,48,.10);
-  --shadow-strong:rgba(95,72,48,.20);
-  /* 角丸は2種類だけ。小さな札は999pxの丸 */
-  --r-l:26px;           /* カード・帯 */
-  --r-s:18px;           /* カードの中の小箱 */
-  --radius:26px;        /* 旧名 */
-  --radius-sm:18px;
-  /* 影は1種類だけ */
-  --sh-card:0 4px 16px rgba(95,72,48,.10);
-  --sh-lift:0 16px 32px rgba(95,72,48,.20);
+  --paper:#FFFFFF;        /* 地 */
+  --paper-2:#F5F7FA;      /* 交互の節の地 */
+  --surface:#FFFFFF;      /* 箱の地 */
+  --ink:#15202E;          /* 本文 */
+  --ink-soft:#44566B;     /* 補足 */
+  --ink-faint:#5A6879;    /* 注記 */
+  --accent:#0F4C96;       /* 深い青。塗りと見出しの差し色 */
+  --accent-ink:#0B3C78;   /* 淡い地に文字として置く青 */
+  --accent-soft:#E9F0FA;  /* 青の淡い面 */
+  --warm:#A8501B;         /* 体験料金など、少量の温かみ */
+  --warm-soft:#FBF0E8;
+  --on-accent:#FFFFFF;
+  --danger:#B3261E; --danger-soft:#FDECEA;   /* アクセントの塗りに載る文字 */
+  --ok:#1E6B4F;
+  --ok-soft:#E6F2EC;
+  --line:#DCE3EB;         /* 区切り線 */
+  --line-soft:#EBEFF4;
+
+  --r-s:8px; --r:12px; --r-l:16px;
+  --sh:0 1px 2px rgba(21,32,46,.05), 0 6px 18px rgba(21,32,46,.06);
+  --sh-lift:0 2px 6px rgba(21,32,46,.07), 0 14px 32px rgba(21,32,46,.10);
+  --wrap:1160px;
+  --tap:52px;             /* 押せる高さの下限 */
+
+  /* 旧名の受け皿。各ページのHTMLを書き換えずに色を移行する */
+  --cream:var(--paper); --cream-2:var(--paper-2); --tint:var(--accent-soft);
+  --orange:var(--accent); --orange-ink:var(--accent-ink);
+  --peach:var(--accent-soft); --peach-2:#CBDDF4;
+  --leaf:var(--ok); --leaf-tint:var(--ok-soft);
+  --wakaba:var(--ok); --wakaba-tint:var(--ok-soft);
+  --kaki:var(--warm); --kaki-tint:var(--warm-soft);
+  --ai:var(--accent); --ai-deep:var(--accent-ink); --ai-tint:var(--accent-soft);
+  --navy:var(--ink); --phone:var(--ink); --phone-ink:#FFFFFF;
+  --shadow:rgba(21,32,46,.06); --shadow-strong:rgba(21,32,46,.11);
+  --radius:var(--r-l); --radius-sm:var(--r); --r-l-compat:var(--r-l);
+  --sh-card:var(--sh);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-  --cream:#1C1A17; --cream-2:#232019; --paper:#1C1A17; --surface:#26231E; --tint:#232019;
-  --ink:#EDE6DA; --ink-soft:#BDB3A4; --ink-faint:#A2998A;
-  --orange:#EE9C6C; --orange-ink:#F0A87E; --peach:#3A2E24; --peach-2:#4A382A;
-  --leaf:#8DC4A6; --leaf-tint:#25302A;
-  --phone:#151E2A; --phone-ink:#EDE6DA;
-  --ai:#8FBEE0; --ai-deep:#14202E; --ai-tint:#232C36;
-  --kaki:#EE9C6C; --kaki-deep:#F0A87E; --kaki-tint:#3A2E24;
-  --wakaba:#8DC4A6; --wakaba-tint:#25302A;
-  --line:#332E27;
-  --shadow:rgba(0,0,0,.45); --shadow-strong:rgba(0,0,0,.6);
-  }
-}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#10151C; --paper-2:#151B24; --surface:#1A212B;
+  --ink:#E9EEF4; --ink-soft:#B0BDCB; --ink-faint:#8A99A9;
+  --on-accent:#0A1724; --danger:#FF9D92; --danger-soft:#33201E; --accent:#6FA8E8; --accent-ink:#92C0F2; --accent-soft:#1A2838;
+  --warm:#E09A66; --warm-soft:#2C2219; --ok:#6FC2A0; --ok-soft:#18271F;
+  --line:#2A3441; --line-soft:#212A35;
+  --sh:0 1px 2px rgba(0,0,0,.45), 0 6px 18px rgba(0,0,0,.4);
+  --sh-lift:0 2px 6px rgba(0,0,0,.5), 0 14px 32px rgba(0,0,0,.45);
+  --phone-ink:#10151C;
+  --shadow:rgba(0,0,0,.4); --shadow-strong:rgba(0,0,0,.5);
+} }
 :root[data-theme="dark"]{
-  --cream:#1C1A17; --cream-2:#232019; --paper:#1C1A17; --surface:#26231E; --tint:#232019;
-  --ink:#EDE6DA; --ink-soft:#BDB3A4; --ink-faint:#A2998A;
-  --orange:#EE9C6C; --orange-ink:#F0A87E; --peach:#3A2E24; --peach-2:#4A382A;
-  --leaf:#8DC4A6; --leaf-tint:#25302A;
-  --phone:#151E2A; --phone-ink:#EDE6DA;
-  --ai:#8FBEE0; --ai-deep:#14202E; --ai-tint:#232C36;
-  --kaki:#EE9C6C; --kaki-deep:#F0A87E; --kaki-tint:#3A2E24;
-  --wakaba:#8DC4A6; --wakaba-tint:#25302A;
-  --line:#332E27;
-  --shadow:rgba(0,0,0,.45); --shadow-strong:rgba(0,0,0,.6);
-  --sh-card:0 4px 16px rgba(0,0,0,.45); --sh-lift:0 16px 32px rgba(0,0,0,.6);
+  --paper:#10151C; --paper-2:#151B24; --surface:#1A212B;
+  --ink:#E9EEF4; --ink-soft:#B0BDCB; --ink-faint:#8A99A9;
+  --on-accent:#0A1724; --danger:#FF9D92; --danger-soft:#33201E; --accent:#6FA8E8; --accent-ink:#92C0F2; --accent-soft:#1A2838;
+  --warm:#E09A66; --warm-soft:#2C2219; --ok:#6FC2A0; --ok-soft:#18271F;
+  --line:#2A3441; --line-soft:#212A35;
+  --sh:0 1px 2px rgba(0,0,0,.45), 0 6px 18px rgba(0,0,0,.4);
+  --sh-lift:0 2px 6px rgba(0,0,0,.5), 0 14px 32px rgba(0,0,0,.45);
+  --phone-ink:#10151C;
+  --shadow:rgba(0,0,0,.4); --shadow-strong:rgba(0,0,0,.5);
 }
 
-/* ---- Base ---- */
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:96px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* ---- 2. 土台 ---- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:"BIZ UDPGothic","Hiragino Sans","Yu Gothic UI",system-ui,sans-serif;
-  font-size:19px;
-  line-height:1.95;
+  margin:0; background:var(--paper); color:var(--ink);
+  /* 端末内蔵の書体を使う。日本語のWebフォントは1ページ674KB・32ファイルに
+     なり、読み込み中の字形の入れ替わりでレイアウトもずれていた */
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","BIZ UDPGothic",
+    "Noto Sans JP","Yu Gothic UI","Yu Gothic",Meiryo,system-ui,sans-serif;
+  font-size:18px; line-height:1.8; font-weight:400;
+  word-break:auto-phrase; overflow-wrap:break-word; line-break:strict;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.45}
-/* 見出しは丸ゴシック。明朝は金額の数字だけに残す */
-h1,h2,h3,h4{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;letter-spacing:.005em}
-/* 日本語は文節で折り返す。英単語の途中では折らない。
-   auto-phrase は <html lang="ja"> があってはじめて効く */
-body{word-break:auto-phrase;overflow-wrap:break-word;line-break:strict}
-h1,h2,h3,p,li,dt,dd,q,figcaption,summary{text-wrap:pretty}
-h1,h2{text-wrap:balance}
-/* 改行させたくない語句のまとまり（文節）用 */
-.nb{display:inline-block}
+img,svg,video{max-width:100%; height:auto}
+h1,h2,h3,h4{font-weight:700; line-height:1.45; margin:0; text-wrap:pretty; letter-spacing:.01em}
 p{margin:0}
-img,svg{max-width:100%}
-a{color:inherit}
-ul,ol{margin:0;padding:0}
-.label,.mono-label{font-family:"Zen Maru Gothic",sans-serif}
-.wrap{width:min(1120px,92vw);margin:0 auto}
-.wrap-narrow{width:min(860px,92vw);margin:0 auto}
-:focus-visible{outline:3px solid var(--orange-ink);outline-offset:3px;border-radius:6px}
-::selection{background:var(--peach);color:var(--ink)}
+a{color:var(--accent-ink)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:var(--r-s)}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.visually-hidden,.skip:not(:focus){position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.skip:focus{position:fixed;top:10px;left:10px;z-index:200;background:var(--accent);color:var(--on-accent);
+  padding:12px 18px;border-radius:var(--r);text-decoration:none}
+.nb{display:inline-block}
+.wrap{width:min(var(--wrap),92vw); margin-inline:auto}
+.wrap-narrow{width:min(760px,92vw); margin-inline:auto}
+.center{text-align:center}
+.mt-md{margin-top:18px} .mt-lg{margin-top:32px}
+.note{color:var(--ink-faint); font-size:.9rem; line-height:1.7}
+.note-line{text-align:center;color:var(--ink-faint);font-size:.92rem;margin-top:26px}
 
-.skip{position:absolute;left:-999px;top:0;background:var(--ai);color:#fff;padding:12px 18px;border-radius:8px;z-index:200;text-decoration:none}
-:root[data-theme="dark"] .skip{color:#14202E}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .skip{color:#14202E}}
-.skip:focus{left:12px;top:12px}
-
-/* ---- Demo notice ---- */
-.demo-note{background:var(--kaki-tint);color:var(--ink);text-align:center;padding:9px 16px;font-size:.85rem}
-
-/* ---- Header ---- */
-.site-header{
-  position:sticky;top:0;z-index:100;
-  background:var(--surface);
-  box-shadow:0 1px 0 var(--line);
-}
-.bar{display:flex;align-items:center;gap:14px;padding:10px 0}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;min-width:0}
-.brand-name{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.14rem;color:var(--ink);line-height:1.25;display:block;white-space:nowrap}
-.brand-sub{display:block;font-size:.68rem;color:var(--ink-faint);line-height:1.4;white-space:nowrap}
-nav.menu{display:flex;gap:2px;flex-wrap:wrap}
-nav.menu a{
-  text-decoration:none;font-family:"Zen Maru Gothic",sans-serif;font-weight:500;
-  padding:9px 11px;border-radius:999px;font-size:.93rem;color:var(--ink);white-space:nowrap;
-}
-nav.menu a:hover{background:var(--peach);color:var(--ink)}
-/* 広い画面では主要5項目だけ出す。残りはハンバーガーとフッターに残る */
-@media (min-width:961px){nav.menu{flex-wrap:nowrap}nav.menu a.only-mobile{display:none}}
-nav.menu a[aria-current="page"]{background:var(--peach);color:var(--ink)}
-.tel-btn{
-  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
-  background:var(--kaki);color:#fff;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  padding:11px 21px;border-radius:999px;font-size:1.18rem;white-space:nowrap;
-}
-.tel-btn:hover{background:var(--orange-ink)}
-:root[data-theme="dark"] .tel-btn{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tel-btn{color:#2A1D14}}
-
-/* Mobile nav */
-.nav-toggle{display:none;background:none;border:0;border-radius:10px;padding:9px 6px;cursor:pointer;color:var(--ink);font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1rem;align-items:center;gap:7px;white-space:nowrap;flex:0 0 auto}
-@media (max-width:960px){
-  nav.menu{
-    display:none;position:absolute;top:100%;left:0;right:0;
-    flex-direction:column;background:var(--surface);border-bottom:1px solid var(--line);
-    padding:12px 4vw 18px;gap:4px;box-shadow:0 18px 30px var(--shadow);
-  }
-  nav.menu.open{display:flex}
-  nav.menu a{font-size:1.1rem;padding:13px 16px;border-radius:12px}
-  .nav-toggle{display:inline-flex}
-}
-/* 小さい画面: ロゴ・メニュー・ボタンが1行に収まるように */
-@media (max-width:520px){
-  /* 文字を小さくするぶん、塗りを濃いほうに替える。
-     明るい橙のままだと白抜きが3.49で基準（4.5）に届かない */
-  .tel-btn{background:var(--orange-ink)}
-  .tel-btn:hover{background:var(--kaki-deep)}
-  .bar{gap:8px}
-  .brand{gap:8px}
-  .brand svg{width:38px;height:38px}
-  .brand-name{font-size:1rem}
-  .brand-sub{font-size:.6rem}
-  .nav-toggle{padding:8px 10px;font-size:.82rem;border-radius:10px}
-  .tel-btn{padding:9px 13px;font-size:.86rem;gap:5px}
-  .tel-btn svg{display:none}
-}
-/* いちばん狭い画面。副題を隠して屋号だけの1行にする */
-@media (max-width:430px){
-  .bar{gap:8px;padding:9px 0}
-  .brand svg{width:36px;height:36px}
-  .brand-name{font-size:.98rem}
-  .brand-sub{display:none}
-  .nav-toggle{padding:7px 9px;font-size:.78rem}
-  .tel-btn{padding:8px 12px;font-size:.82rem}
-}
-
-/* ---- Buttons ---- */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border:none;cursor:pointer;
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.18rem;
-  padding:18px 34px;border-radius:999px;min-height:60px;
-  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
-}
-.btn:hover{transform:translateY(-2px);box-shadow:var(--sh-lift)}
-.btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 16px rgba(213,108,52,.32)}
-.btn-primary:hover{background:var(--orange-ink)}
-:root[data-theme="dark"] .btn-primary{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-primary{color:#2A1D14}}
-.btn-ghost{background:var(--surface);color:var(--ink);border:2.4px solid var(--ink)}
-.btn-ghost:hover{background:var(--cream-2)}
-.btn-lg{font-size:1.3rem;padding:20px 40px}
-.btn-block{width:100%}
-
-/* ---- Sections ---- */
-/* 節の上下余白はこの1本だけ。節ごとに変えない */
-section{padding:clamp(52px,7.4vw,88px) 0}
-.alt{background:var(--cream-2)}
-.tint{background:var(--cream-2)}
-.cream{background:var(--cream)}
-.sec-head{text-align:center;margin-bottom:clamp(34px,4.6vw,52px)}
-.sec-head .kicker{font-family:"Zen Maru Gothic",sans-serif;color:var(--orange-ink);font-weight:700;font-size:.95rem;letter-spacing:.06em}
-.sec-head h2,.sec-head h1{font-size:clamp(1.6rem,4.2vw,2.5rem);color:var(--ink);margin-top:10px;line-height:1.45}
-.sec-head p{margin-top:20px;color:var(--ink-soft);font-size:1.03rem;max-width:34em;margin-inline:auto}
-/* 見出しは濃紺一色。飾りの下線や丸囲みは入れない */
-h2 .u,h1 .u{white-space:nowrap}
-h2 .m,h1 .m{color:var(--orange-ink)}
+/* ---- 3. 節のリズム ---- */
+section{padding:clamp(56px,7vw,92px) 0}
+.alt{background:var(--paper-2)}
+.sec-head{margin-bottom:clamp(30px,4vw,46px)}
+.sec-head h2,.sec-head h1{font-size:clamp(1.55rem,3.4vw,2.2rem)}
+.sec-head .kicker,.kicker{display:block;color:var(--accent-ink);font-weight:700;
+  font-size:.88rem;letter-spacing:.1em;margin-bottom:10px}
+.sec-head p,.lead{color:var(--ink-soft);margin-top:14px;max-width:38em}
+.lead{font-size:1.04rem}
 .sec-head.left{text-align:left}
+h2 .u,h2 .m,h1 .m,h1 .accent,.accent{color:var(--accent-ink)}
+h2 .u{text-decoration:none;box-shadow:inset 0 -.42em 0 var(--accent-soft)}
+.divider{display:none}            /* 旧デザインの飾り罫。余白で分ける */
+.dood,.fig .dood{display:none}    /* 旧デザインの手描き装飾 */
 
-/* Page hero (subpages) */
-.page-hero{padding:clamp(44px,6vw,68px) 0 clamp(36px,5vw,52px);background:linear-gradient(180deg,var(--cream),var(--paper))}
-.page-hero .kicker{font-family:"Zen Maru Gothic",sans-serif;color:var(--orange-ink);font-weight:700;font-size:1rem}
-.page-hero h1{font-size:clamp(1.9rem,4.6vw,2.9rem);margin-top:12px;line-height:1.32}
-.page-hero .lead{margin-top:18px;color:var(--ink-soft);font-size:1.06rem;max-width:36em}
-.breadcrumb{font-size:.86rem;color:var(--ink-faint);margin-bottom:18px}
-.breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
-.breadcrumb a{color:var(--ai);text-decoration:none}
-.breadcrumb a:hover{text-decoration:underline}
-.breadcrumb li+li::before{content:"›";margin-right:6px;color:var(--ink-faint)}
+/* ---- 4. ボタン ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:var(--tap); padding:14px 26px; border-radius:var(--r);
+  font-weight:700; font-size:1rem; text-decoration:none; border:2px solid transparent;
+  transition:background .15s ease,border-color .15s ease,color .15s ease}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-ink)}
+.btn-ghost,.btn.ghost{background:transparent;color:var(--accent-ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-soft)}
+.btn-lg{min-height:58px;padding:16px 32px;font-size:1.06rem}
+.btn-block{display:flex;width:100%}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.text-link{color:var(--accent-ink);text-underline-offset:3px}
+.arrow-link{display:inline-flex;align-items:center;gap:6px;min-height:44px;
+  color:var(--accent-ink);font-weight:700;text-decoration:none;border-bottom:2px solid var(--accent-soft)}
+.arrow-link:hover{border-bottom-color:var(--accent)}
 
-/* ---- Cards ---- */
-.card{background:var(--surface);border-radius:var(--r-l);padding:28px;box-shadow:var(--sh-card)}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
-@media (max-width:820px){.grid-2,.grid-3{grid-template-columns:1fr}}
-
-/* Promise / feature cards */
-.p-card{background:var(--surface);border-radius:var(--r-l);padding:26px 25px;box-shadow:var(--sh-card);transition:transform .18s ease,box-shadow .18s ease}
-.p-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
-.p-badge{width:56px;height:56px;border-radius:var(--r-s);display:grid;place-items:center;background:var(--peach);color:var(--orange-ink);margin-bottom:16px}
-.p-badge svg{width:30px;height:30px}
-.p-badge.green{background:var(--leaf-tint);color:var(--leaf)}
-.p-badge.orange{background:var(--peach);color:var(--orange-ink)}
-.p-card h3{font-size:1.14rem;color:var(--ink);margin-bottom:10px;line-height:1.5}
-.p-card p{color:var(--ink-soft);font-size:.97rem}
-
-/* ---- Course cards ---- */
-.c-card{background:var(--surface);border-radius:var(--r-l);padding:30px;display:flex;flex-direction:column;position:relative;box-shadow:var(--sh-card)}
-.c-card.feature{box-shadow:var(--sh-card),inset 0 0 0 2.4px var(--orange)}
-.c-tag{position:absolute;top:-14px;left:26px;background:var(--orange-ink);color:#fff;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.88rem;padding:5px 15px;border-radius:999px}
-:root[data-theme="dark"] .c-tag{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .c-tag{color:#2A1D14}}
-.c-card h3{font-size:1.4rem;margin-bottom:6px}
-.c-meta{font-size:.95rem;color:var(--ink-soft);margin-bottom:14px;font-family:"Zen Maru Gothic",sans-serif}
-.c-card ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
-.c-card li{position:relative;padding-left:30px;font-size:1rem}
-.c-card li::before{content:"";position:absolute;left:0;top:.5em;width:18px;height:18px;border-radius:50%;background:var(--leaf)}
-.c-card li::after{content:"";position:absolute;left:5.8px;top:.7em;width:4px;height:8px;border-right:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(42deg)}
-.price{margin-top:auto;padding-top:18px;border-top:1.5px dashed var(--line);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.price .num{font-family:"Shippori Mincho",serif;font-size:2rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-.price .unit{color:var(--ink-soft);font-size:.98rem}
-.mode-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.chip{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px}
-.chip.online{background:var(--peach);color:var(--ink)}
-.chip.visit{background:var(--leaf-tint);color:var(--leaf)}
-
-/* ---- Steps ---- */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
-@media (max-width:820px){.steps{grid-template-columns:1fr}}
-.step{background:var(--surface);border-radius:var(--r-l);padding:30px 26px 26px;position:relative;box-shadow:var(--sh-card);margin-top:17px}
-.step::before{
-  counter-increment:step;content:counter(step);
-  position:absolute;top:-17px;left:26px;
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.2rem;
-  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
-  background:var(--orange);color:#fff;
+/* ---- 5. ヘッダー ---- */
+.site-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 92%,transparent);
+  backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid var(--line)}
+.site-header .bar{display:flex;align-items:center;gap:20px;min-height:68px;flex-wrap:wrap}
+/* 文字を大きくした環境で、入りきらないときは横に流さず折り返す */
+.site-header .bar>*{min-width:0}
+.brand{display:flex;align-items:center;gap:10px;min-height:var(--tap);
+  text-decoration:none;color:var(--ink);flex:0 0 auto}
+.brand-mark{flex:0 0 auto}
+.brand-name{display:block;font-weight:700;font-size:1.02rem;line-height:1.3}
+.brand-sub{display:block;font-size:.72rem;color:var(--ink-faint);line-height:1.3}
+.nav-toggle{display:none;min-height:var(--tap);min-width:var(--tap);align-items:center;gap:6px;
+  background:none;border:1px solid var(--line);border-radius:var(--r);
+  font:inherit;font-size:.92rem;font-weight:700;color:var(--ink);padding:0 14px;cursor:pointer}
+.menu{margin-left:auto;display:flex;align-items:center;gap:4px}
+.menu a{display:inline-flex;align-items:center;min-height:44px;padding:0 11px;border-radius:var(--r-s);
+  color:var(--ink);text-decoration:none;font-size:.95rem;font-weight:500;white-space:nowrap}
+/* .only-mobile(0,1,0) は .menu a(0,2,0) に負けるので、同じ強さで打ち消す */
+.menu a.only-mobile{display:none}
+.menu a:hover{background:var(--accent-soft);color:var(--accent-ink)}
+.tel-btn{display:inline-flex;align-items:center;min-height:var(--tap);padding:0 20px;
+  background:var(--accent);color:var(--on-accent);border-radius:var(--r);font-weight:700;
+  font-size:.95rem;text-decoration:none;flex:0 0 auto}
+.tel-btn:hover{background:var(--accent-ink)}
+.only-mobile{display:none}
+@media (max-width:56.25em){
+  .nav-toggle{display:inline-flex;margin-left:auto}
+  .menu{position:absolute;left:0;right:0;top:100%;margin:0;flex-direction:column;align-items:stretch;
+    gap:0;background:var(--surface);border-bottom:1px solid var(--line);
+    box-shadow:var(--sh);padding:8px 4vw 14px;display:none}
+  .menu.open{display:flex}
+  .menu a{min-height:var(--tap);padding:0 10px;font-size:1rem;border-bottom:1px solid var(--line-soft)}
+  .only-mobile,.menu a.only-mobile{display:inline-flex}
+  .site-header .bar{position:relative;gap:12px}
 }
-:root[data-theme="dark"] .step::before{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step::before{color:#2A1D14}}
-.step h3{font-size:1.16rem;margin:14px 0 10px}
+@media (max-width:28.75em){ .brand-sub{display:none} .tel-btn{padding:0 14px;font-size:.9rem} }
+
+/* ---- 6. 下部の固定ボタン（スマホ） ---- */
+.bottombar{display:none}
+.tab{display:none}
+@media (max-width:47.5em){
+  .bottombar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;
+    left:0;right:0;bottom:0;z-index:60;padding:10px 4vw calc(10px + env(safe-area-inset-bottom));
+    background:color-mix(in srgb,var(--paper) 94%,transparent);
+    backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+  .bottombar a{display:flex;align-items:center;justify-content:center;min-height:var(--tap);
+    border-radius:var(--r);font-weight:700;text-decoration:none;font-size:1rem}
+  .bottombar .c1{background:var(--accent);color:var(--on-accent)}
+  .bottombar .c2{background:var(--surface);color:var(--accent-ink);border:2px solid var(--line)}
+  body{padding-bottom:84px}   /* 本文・フォーム・フッターを隠さない */
+}
+
+/* ---- 7. ページ見出し ---- */
+.page-hero{padding:clamp(34px,4.6vw,56px) 0 clamp(30px,4vw,44px);border-bottom:1px solid var(--line)}
+.page-hero h1{font-size:clamp(1.7rem,4vw,2.5rem);margin-top:8px}
+.page-hero .lead{margin-top:16px}
+.page-hero .rule{display:none}
+.breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0 0 12px;padding:0;
+  font-size:.86rem;color:var(--ink-faint)}
+.breadcrumb li+li::before{content:"›";margin-right:6px;color:var(--line)}
+.breadcrumb a{color:var(--ink-faint)}
+
+/* ---- 8. 箱・並び ---- */
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:22px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:22px}
+.ugrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:22px}
+.fit-grid,.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+
+.card,.p-card,.c-card,.uc,.post-card,.next-card,.v-card,.wcard{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);
+  padding:26px;box-shadow:none}
+.p-card h3,.c-card h3,.uc h3,.card h3{font-size:1.1rem;margin-bottom:10px}
+.p-card p,.c-card p,.uc p,.card p{color:var(--ink-soft);font-size:.98rem;max-width:42em}
+.p-card.center{text-align:center}
+.p-badge{width:46px;height:46px;border-radius:var(--r);display:grid;place-items:center;
+  background:var(--accent-soft);color:var(--accent-ink);margin-bottom:14px}
+.p-badge svg{width:22px;height:22px}
+.p-badge.green{background:var(--ok-soft);color:var(--ok)}
+.p-badge.orange{background:var(--warm-soft);color:var(--warm)}
+.uc .tag,.tag{display:inline-block;background:var(--accent-soft);color:var(--accent-ink);
+  font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px}
+.uc q{display:block;margin-top:14px;padding:14px 16px;background:var(--paper-2);
+  border-radius:var(--r);font-size:.95rem;color:var(--ink-soft);quotes:"「" "」"}
+.uc q::before{content:open-quote}.uc q::after{content:close-quote}
+.c-card.feature{border-color:var(--accent);border-width:2px;position:relative}
+.c-tag{position:absolute;top:-13px;left:22px;background:var(--accent);color:var(--on-accent);
+  font-weight:700;font-size:.82rem;padding:3px 14px;border-radius:999px}
+.c-meta,.c-spec{color:var(--ink-faint);font-size:.9rem}
+.price{font-weight:700;font-size:1.9rem;color:var(--accent-ink);font-variant-numeric:tabular-nums;
+  display:inline-flex;align-items:baseline;gap:3px}
+.price .unit,.unit{font-size:.9rem;font-weight:700;color:var(--ink-soft)}
+.c-more{margin-top:auto}
+
+/* 手順 */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:22px;counter-reset:step}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:26px}
+.step::before{counter-increment:step;content:counter(step);
+  display:grid;place-items:center;width:34px;height:34px;border-radius:999px;
+  background:var(--accent);color:var(--on-accent);font-weight:700;font-size:.95rem;margin-bottom:12px}
+.step h3{font-size:1.08rem;margin-bottom:8px}
 .step p{color:var(--ink-soft);font-size:.97rem}
 
-/* ---- Stats band ---- */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
-@media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{background:var(--surface);border-radius:var(--r-s);padding:20px 14px;text-align:center;box-shadow:var(--sh-card)}
-.stat .num{font-family:"Shippori Mincho",serif;font-size:1.9rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.3}
-.stat .cap{font-size:.88rem;color:var(--ink-soft);font-family:"Zen Maru Gothic",sans-serif}
+/* 補足の面 */
+.point,.article .point{background:var(--accent-soft);border-left:4px solid var(--accent);
+  border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin:0 0 1.5em}
+.point .pt,.article .point .pt{display:block;font-weight:700;color:var(--accent-ink);margin-bottom:6px;font-size:.92rem}
+.warn,.article .warn{background:var(--warm-soft);border-left:4px solid var(--warm);
+  border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin:0 0 1.5em}
+.warn .pt,.article .warn .pt{display:block;font-weight:700;color:var(--warm);margin-bottom:6px;font-size:.92rem}
 
-/* ---- Tables ---- */
-.table-wrap{overflow-x:auto;border-radius:var(--r-s);background:var(--surface);box-shadow:var(--sh-card)}
-table{border-collapse:collapse;width:100%;min-width:560px;font-size:1rem}
-th,td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line)}
-thead th{background:var(--cream-2);color:var(--ink);font-family:"Zen Maru Gothic",sans-serif;font-size:.95rem}
-tbody tr:last-child td{border-bottom:none}
-td .yen{font-variant-numeric:tabular-nums;font-weight:700;color:var(--orange-ink)}
-
-/* ---- Voices ---- */
-.v-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
-.v-card .quote{font-size:1.1rem;line-height:1.85}
-.v-card .who{display:flex;align-items:center;gap:14px;margin-top:20px}
-.avatar{width:50px;height:50px;border-radius:50%;background:var(--ai-tint);color:var(--ai);display:grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.2rem;flex:0 0 auto}
-.who .name{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;display:block}
-.who .attr{font-size:.88rem;color:var(--ink-soft)}
-.stars{color:var(--orange-ink);letter-spacing:2px;font-size:1.05rem;margin-bottom:12px}
-
-/* ---- FAQ ---- */
-.faq-list{display:flex;flex-direction:column;gap:14px}
-details.faq{background:var(--surface);border-radius:var(--r-s);overflow:hidden;box-shadow:var(--sh-card)}
-details.faq summary{
-  cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;
-  padding:20px 24px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.08rem;
-}
-details.faq summary::-webkit-details-marker{display:none}
-details.faq summary::before{content:"Q";flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--peach);color:var(--ink);display:grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif;font-weight:700}
-details.faq summary::after{content:"＋";margin-left:auto;color:var(--orange-ink);font-size:1.3rem;transition:transform .2s}
-details.faq[open] summary::after{transform:rotate(45deg)}
-details.faq .a{padding:0 24px 22px 76px;color:var(--ink-soft);font-size:1.02rem}
-details.faq[open]{box-shadow:var(--sh-lift)}
-
-/* ---- Forms ---- */
-form{display:flex;flex-direction:column;gap:18px}
-label{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.02rem;display:block;margin-bottom:8px}
-label .req{color:var(--orange-ink);font-size:.85rem;margin-left:6px}
-input,textarea,select{
-  width:100%;font-family:inherit;font-size:1.08rem;padding:14px 16px;
-  border:2px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);
-}
-input:focus,textarea:focus,select:focus{border-color:var(--orange-ink);outline:none}
-textarea{min-height:130px;resize:vertical}
-.form-note{font-size:.9rem;color:var(--ink-soft)}
-
-/* ---- 選択肢（シニア向けに大きなタップ領域のカード型） ---- */
-fieldset{border:0;margin:0;padding:0}
-legend{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.02rem;margin-bottom:10px;padding:0}
-legend .req{color:var(--orange-ink);font-size:.85rem;margin-left:6px}
-.choices{display:flex;flex-direction:column;gap:9px}
-.choices.cols{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-@media (max-width:520px){.choices.cols{grid-template-columns:1fr}}
-.choice{
-  display:flex;align-items:center;gap:12px;cursor:pointer;
-  border:2px solid var(--line);border-radius:14px;padding:13px 16px;
-  background:var(--surface);font-size:1.02rem;font-family:inherit;font-weight:400;margin:0;
-  transition:border-color .12s ease,background .12s ease;
-}
-.choice:hover{border-color:var(--ink);background:var(--cream-2)}
-.choice input{
-  appearance:none;-webkit-appearance:none;margin:0;flex:0 0 auto;
-  width:24px;height:24px;border:2px solid var(--ink-soft);border-radius:50%;
-  background:var(--surface);display:grid;place-items:center;padding:0;
-}
-.choice input:checked{border-color:var(--orange-ink);border-width:7px}
-.choice:has(input:checked){border-color:var(--orange-ink);background:var(--peach)}
-.choice input:focus-visible{outline:3px solid var(--orange-ink);outline-offset:3px}
-
-/* ---- 送信状態のメッセージ ---- */
-.form-msg{padding:18px 20px;border-radius:12px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;line-height:1.8}
-.form-msg.ok{background:var(--wakaba);color:#fff}
-:root[data-theme="dark"] .form-msg.ok{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .form-msg.ok{color:#2A1D14}}
-.form-msg.ng{background:var(--kaki-tint);color:var(--ink);border:2px solid var(--kaki)}
-.form-msg .sub{display:block;font-family:"BIZ UDPGothic",sans-serif;font-weight:400;font-size:.95rem;margin-top:8px}
-.form-msg.ok .sub{opacity:.92}
-button[disabled]{opacity:.6;cursor:progress}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.thanks{background:var(--wakaba);color:#fff;padding:16px 20px;border-radius:12px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;text-align:center}
-:root[data-theme="dark"] .thanks{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .thanks{color:#2A1D14}}
-
-/* ---- CTA band ---- */
-.cta-band{background:var(--phone);color:var(--phone-ink);text-align:center;padding:clamp(52px,7.4vw,88px) 0}
-.cta-band h2{color:inherit;font-size:clamp(1.75rem,4.6vw,2.8rem);line-height:1.45}
-.cta-band p{margin:16px auto 30px;opacity:.9;font-size:1.05rem;max-width:32em}
-.cta-band .btn-primary{box-shadow:0 8px 24px rgba(0,0,0,.35)}
-.cta-band .sub{margin-top:18px;font-size:.95rem;opacity:.75}
-.cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-
-/* ---- Info rows ---- */
-.info-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.info-row:last-child{border-bottom:none}
-.info-row .ic{width:44px;height:44px;flex:0 0 auto;border-radius:14px;background:var(--peach);color:var(--orange-ink);display:grid;place-items:center}
-.info-row .ic svg{width:24px;height:24px}
-.info-row .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;color:var(--ink-soft);display:block}
-.info-row .d{font-size:1.1rem}
-/* メールアドレスのような切れない語が行に収まるように */
-.info-row>span{min-width:0}
-.info-row .d a{overflow-wrap:anywhere}
-.info-row .d a{color:var(--orange-ink);font-weight:700}
-
-/* ---- Footer ---- */
-.site-footer{background:var(--phone);color:var(--phone-ink);padding:56px 0 32px}
-.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
-@media (max-width:820px){.foot-grid{grid-template-columns:1fr}}
-.foot-brand{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.35rem}
-.foot-tag{opacity:.85;margin-top:10px;font-size:.98rem;line-height:1.8}
-.foot-h{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;opacity:.7;margin-bottom:14px;letter-spacing:.05em}
-.foot-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.foot-links a{color:var(--phone-ink);text-decoration:none;opacity:.9;font-size:1rem}
-.foot-links a:hover{opacity:1;text-decoration:underline}
-.foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid rgba(247,241,230,.22);font-size:.85rem;opacity:.75;line-height:1.8}
-
-/* ---- Scroll reveal (only when JS is available: html.js) ---- */
-.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.js .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
-
-/* ---- Blog article ---- */
-.article{width:min(780px,92vw);margin:0 auto}
-.post-meta{display:flex;gap:14px;align-items:center;color:var(--ink-faint);font-size:.92rem;margin-top:14px;font-variant-numeric:tabular-nums}
-.post-meta .cat{font-family:"Zen Maru Gothic",sans-serif;font-weight:700}
-.article p{margin:0 0 1.4em}
-.article h2{font-size:1.5rem;margin:2em 0 .8em;padding-left:16px;border-left:6px solid var(--orange);line-height:1.5}
-.article h3{font-size:1.2rem;margin:1.6em 0 .6em;color:var(--orange-ink)}
-.article ul,.article ol{margin:0 0 1.4em;padding-left:1.5em;display:flex;flex-direction:column;gap:.5em}
-.article strong{color:var(--orange-ink)}
-.article .point{background:var(--wakaba-tint);border-left:6px solid var(--wakaba);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:20px 24px;margin:0 0 1.6em}
-.article .point .pt{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--leaf);display:block;margin-bottom:6px}
-.article .warn{background:var(--kaki-tint);border-left:6px solid var(--kaki);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:20px 24px;margin:0 0 1.6em}
-.article .warn .pt{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--orange-ink);display:block;margin-bottom:6px}
-.article .lesson-link{background:var(--ai-tint);border-radius:var(--radius);padding:28px;margin:2.5em 0 0;text-align:center}
-.article .lesson-link p{margin-bottom:18px;color:var(--ink-soft)}
-.term{background:var(--surface);border-radius:var(--r-s);padding:22px 26px;margin-bottom:16px;box-shadow:var(--sh-card)}
-.term dt{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:6px}
-.term dd{margin:0;color:var(--ink-soft)}
-.term dd .rei{display:block;margin-top:8px;font-size:.95rem;color:var(--leaf)}
-
-
-/* ---- 講師紹介 ---- */
-.teacher-band{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:center;
-  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:42px 46px;
-  position:relative;overflow:hidden;box-shadow:var(--sh-card)}
-.teacher-band::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;
-  background:linear-gradient(180deg,var(--ai),var(--wakaba))}
-.teacher-band+.teacher-band::before{background:linear-gradient(180deg,var(--kaki),var(--ai))}
-@media (max-width:820px){.teacher-band{grid-template-columns:1fr;gap:24px;padding:30px 24px;text-align:center}}
-.t-photo{width:100%;max-width:220px;margin:0 auto;border-radius:50%;padding:6px;
-  background:linear-gradient(135deg,var(--ai-tint),var(--kaki-tint));
-  box-shadow:var(--sh-lift)}
-.t-photo>img,.t-photo>svg{border-radius:50%;border:4px solid var(--surface)}
-.t-photo svg,.t-photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
-.t-role{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:.86rem;letter-spacing:.08em;color:var(--ink);
-  background:var(--peach);border-radius:999px;padding:5px 16px}
-.t-name{font-size:1.95rem;margin:14px 0 16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-@media (max-width:820px){.t-name{justify-content:center}}
-.t-age{font-family:"Zen Maru Gothic",sans-serif;font-size:.92rem;font-weight:700;color:var(--ink);
-  background:var(--cream-2);border-radius:999px;padding:5px 14px}
-.t-lead{font-size:1.12rem;margin-bottom:14px}
-.teacher-band p{color:var(--ink-soft)}
-.teacher-band .t-lead{color:var(--ink)}
-
-/* 講師ページ */
-.t-hero{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:center}
-@media (max-width:820px){.t-hero{grid-template-columns:1fr;gap:26px;text-align:center}}
-.t-hero .t-photo{max-width:260px}
-.t-hero h1{font-size:clamp(1.9rem,4.6vw,2.7rem);margin:10px 0 18px}
-.t-quote{background:var(--kaki-tint);border-radius:var(--r-l);padding:36px 34px;margin:0;
-  font-size:1.15rem;line-height:2.05}
-.t-quote .mark{font-family:"Shippori Mincho",serif;font-size:3rem;color:var(--orange-ink);
-  line-height:1;display:block;margin-bottom:-8px}
-.t-quote cite{display:block;margin-top:18px;text-align:right;font-style:normal;
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--ink-soft);font-size:.98rem}
-.t-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
-.t-fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-s);padding:22px}
-.t-fact .k{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.86rem;
-  color:var(--orange-ink);display:block;margin-bottom:6px}
-.t-fact .v{font-size:1.02rem}
-
-/* ---- Utility ---- */
-.center{text-align:center}
-.mt-lg{margin-top:44px}
-.mt-md{margin-top:28px}
-.note-line{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:26px}
-.text-link{color:var(--orange-ink);font-weight:700;text-decoration:underline;text-underline-offset:4px}
-.text-link:hover{color:var(--ink)}
-/* 長い文言もあるので折り返しは許す。矢印だけが行頭に落ちないよう詰める */
-.arrow-link{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--orange-ink);
-  text-decoration:none;display:inline;align-items:center}
-.arrow-link::after{content:"\2009→";display:inline-block;transition:transform .15s}
-.arrow-link:hover::after{transform:translateX(4px)}
-
-/* ---- 墨田区ページ ---- */
-.page-hero h1 .accent{color:var(--kaki)}
-.prose p{margin-top:1.1em;font-size:1.06rem;line-height:2}
-.prose p:first-child{margin-top:0}
-.area-list{line-height:2.1;font-size:1.02rem;color:var(--ink-soft)}
-.note{color:var(--ink-soft);font-size:.95rem}
-
-.t-h{font-size:clamp(1.9rem,4.6vw,2.7rem);margin:10px 0 18px}
-
-/* ---- コース詳細ページ ---- */
-.c-spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:28px}
-.c-spec>div{background:var(--surface);border-radius:var(--r-s);padding:16px 18px;box-shadow:var(--sh-card)}
-.c-spec .k{display:block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.8rem;
-  letter-spacing:.06em;color:var(--orange-ink);margin-bottom:4px}
-.c-spec .v{font-size:1.02rem;line-height:1.6}
-.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media (max-width:720px){.fit-grid{grid-template-columns:1fr}}
-.fit-col{background:var(--surface);border-radius:var(--r-l);padding:28px 26px;box-shadow:var(--sh-card)}
-.fit-col.yes{border-top:5px solid var(--wakaba)}
-.fit-col.no{border-top:5px solid var(--ink-faint)}
-.fit-col h3{font-family:"Zen Maru Gothic",sans-serif;font-size:1.15rem;margin-bottom:16px;color:var(--leaf)}
-.fit-col.no h3{color:var(--ink-soft)}
-.fit-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
-.fit-col li{position:relative;padding-left:28px;font-size:1rem;line-height:1.75}
-.fit-col.yes li::before{content:"✓";position:absolute;left:0;top:0;color:var(--leaf);font-weight:700}
-.fit-col.no li::before{content:"–";position:absolute;left:4px;top:0;color:var(--ink-faint);font-weight:700}
-.bring-list{list-style:none;display:flex;flex-direction:column;gap:12px}
-.bring-list li{position:relative;padding-left:30px;line-height:1.8}
-.bring-list li::before{content:"";position:absolute;left:0;top:.6em;width:14px;height:14px;
-  border-radius:4px;border:2.5px solid var(--orange-ink)}
-
-/* コース一覧のカードをリンクに */
-a.c-card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;
-  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-a.c-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lift);border-color:var(--ai)}
-.c-more{margin-top:14px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.98rem;
-  color:var(--ai);display:inline-flex;align-items:center;gap:7px}
-.c-more::after{content:"→";transition:transform .18s ease}
-a.c-card:hover .c-more::after{transform:translateX(5px)}
-
-/* お仕事向けセクション */
-.biz-band{background:var(--phone);color:var(--phone-ink);border-radius:var(--r-l);padding:44px 46px;position:relative;overflow:hidden}
-:root[data-theme="dark"] .biz-band{background:var(--ai-deep)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .biz-band{background:var(--ai-deep)}}
-.biz-band>.sec-head h2{color:var(--phone-ink)}
-.biz-band>.sec-head .kicker{color:#F0B58C}
-.biz-band>.sec-head p{color:rgba(247,241,230,.85)}
-.biz-band>.sec-head{margin-bottom:32px}
-/* カード内は通常の文字色に戻す */
-.biz-band .c-card,.biz-band .card{color:var(--ink)}
-.biz-band .c-card p,.biz-band .card p{color:var(--ink-soft)}
-.biz-band .c-card h3,.biz-band .card h3{color:var(--ink)}
-.biz-band .c-meta{color:var(--ink-faint)}
-@media (max-width:620px){.biz-band{padding:34px 24px;border-radius:var(--r-l)}}
-
-/* ---- ブログのカテゴリー ---- */
-.cchips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
-.cchip{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;
-  background:var(--surface);color:var(--ink);border:1.5px solid var(--line);
-  border-radius:999px;padding:9px 18px;transition:background .15s,border-color .15s,color .15s}
-.cchip i{font-style:normal;font-size:.8rem;color:inherit}
-.cchip:hover{border-color:var(--ink);color:var(--ink)}
-.cchip.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
-a.cat,.post-card .cat,.post-meta .cat{
-  display:inline-block;text-decoration:none;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:.82rem;border-radius:999px;padding:4px 13px;line-height:1.6}
-.cat-hajimete{background:var(--cream-2);color:var(--ink)}
-.cat-kurashi{background:var(--leaf-tint);color:var(--leaf)}
-.cat-shigoto{background:var(--peach);color:var(--ink)}
-.cat-tsukuru{background:var(--ink);color:var(--cream)}
-.cat-anshin{background:var(--peach);color:var(--ink)}
-.post-card .cat{align-self:flex-start}
-
-/* ============================================================
-   デザイン案I の部品
-   ============================================================ */
-
-/* ---- 追従の申し込み（PC は右端のタブ／スマホは下部のバー） ---- */
-.tab{
-  position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:60;writing-mode:vertical-rl;
-  background:var(--orange-ink);color:#fff;
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.02rem;letter-spacing:.22em;
-  padding:26px 14px;border-radius:14px 0 0 14px;text-decoration:none;
-  box-shadow:-4px 4px 16px var(--shadow-strong);transition:padding-right .18s ease;
-}
-.tab:hover{padding-right:20px}
-:root[data-theme="dark"] .tab{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab{color:#2A1D14}}
-.bottombar{display:none}
-@media (max-width:860px){
-  .tab{display:none}
-  body:has(.bottombar){padding-bottom:86px}
-  .bottombar{
-    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:11px;
-    background:var(--surface);box-shadow:0 -2px 14px var(--shadow);
-    padding:11px 4vw calc(11px + env(safe-area-inset-bottom));
-  }
-  .bottombar a{
-    flex:1;display:flex;align-items:center;justify-content:center;gap:9px;min-height:56px;
-    border-radius:999px;text-decoration:none;
-    font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.18rem;
-  }
-  .bottombar .c1{background:var(--orange);color:#fff}
-  .bottombar .c2{color:var(--ink);box-shadow:inset 0 0 0 2.4px var(--ink)}
-  :root[data-theme="dark"] .bottombar .c1{color:#2A1D14}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bottombar .c1{color:#2A1D14}}
-  .bottombar svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-}
-
-/* ---- トップのヒーロー（白いカード＋申し込みの帯） ---- */
-.hero{padding:clamp(26px,4.2vw,42px) 0 clamp(44px,6vw,68px)}
-/* すきまは .wrap の中（カードと帯のあいだ）に入れる。
-   .hero に gap を置いても子は .wrap 一つきりなので効かない */
-.hero>.wrap{display:flex;flex-direction:column;gap:clamp(22px,3.4vw,30px)}
-.hcard{position:relative;overflow:hidden;background:var(--surface);
-  border-radius:var(--r-l);box-shadow:var(--sh-card);
-  min-height:clamp(360px,66vw,460px);display:flex;align-items:center}
-.hcard-art{position:absolute;right:clamp(4px,1.2vw,14px);bottom:16px;top:18px;z-index:1;
-  height:calc(100% - 34px);width:auto;max-width:none;object-fit:contain;object-position:bottom right}
-/* 文字が読めるよう、左から白をかぶせる */
-.hcard::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(100deg,var(--surface) 30%,color-mix(in srgb,var(--surface) 55%,transparent) 54%,transparent 76%)}
-.hcard-tx{position:relative;z-index:3;padding:clamp(32px,5vw,52px) clamp(24px,4.4vw,50px);max-width:min(30em,66%)}
-.hcard .eyebrow{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:clamp(.74rem,2.2vw,.88rem);color:var(--orange-ink);margin-bottom:12px;white-space:nowrap}
-/* 改行位置は <br> で決めているので、balance に触らせない */
-.hcard h1{font-size:clamp(1.38rem,4.6vw,2.7rem);line-height:1.34;letter-spacing:.005em;text-wrap:pretty}
-.hcard p{margin-top:clamp(16px,2.6vw,22px);color:var(--ink);
-  font-size:clamp(.95rem,2.8vw,1.08rem);line-height:1.8}
-.ghost{margin-top:clamp(24px,3.4vw,32px);display:inline-flex;align-items:center;justify-content:center;
-  min-height:58px;padding:14px 34px;border-radius:999px;text-decoration:none;
-  background:var(--surface);color:var(--orange-ink);box-shadow:inset 0 0 0 2.4px var(--orange-ink);
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:clamp(1.02rem,3vw,1.14rem);
-  transition:transform .16s ease,box-shadow .16s ease}
-.ghost:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2.4px var(--orange-ink),0 10px 22px var(--shadow-strong)}
-@media (max-width:520px){
-  .hcard-tx{max-width:72%;padding:28px 20px}
-  .hcard::after{background:linear-gradient(102deg,var(--surface) 36%,color-mix(in srgb,var(--surface) 58%,transparent) 60%,transparent 84%)}
-}
-@media (max-width:345px){
-  .hcard-tx{max-width:82%}
-}
-
-/* 申し込みの帯 */
-.hoffer{background:var(--peach-2);border-radius:var(--r-l);
-  padding:clamp(30px,4.4vw,42px) clamp(24px,3.4vw,38px);text-align:center}
-.hoffer .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--ink);
-  font-size:clamp(1.28rem,4.4vw,1.75rem);line-height:1.45}
-.hoffer .t b{font-size:1.12em}
-.hoffer .s{margin-top:8px;color:var(--ink);font-size:clamp(.92rem,2.6vw,1.02rem);line-height:1.7}
-.hoffer .cta{margin-top:clamp(22px,3vw,28px);
-  display:flex;align-items:center;justify-content:center;width:100%;min-height:64px;
-  padding:15px 26px;border-radius:999px;text-decoration:none;
-  background:var(--orange-ink);color:#fff;box-shadow:0 6px 16px rgba(122,48,10,.30);
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:clamp(1.06rem,3.4vw,1.28rem);
-  transition:transform .16s ease,box-shadow .16s ease}
-:root[data-theme="dark"] .hoffer .cta{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hoffer .cta{color:#2A1D14}}
-.hoffer .cta:hover{transform:translateY(-2px);box-shadow:var(--sh-lift)}
-@media (min-width:900px){
-  .hoffer{display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;
-    gap:clamp(24px,3.4vw,44px)}
-  .hoffer .cta{margin-top:0;width:auto;padding:15px 44px}
-}
-/* 320px幅では「ワンコイン体験を申し込む」が2行に折れるので詰める。
-   .hoffer .cta の定義より後ろに置かないと後勝ちで打ち消される */
-@media (max-width:345px){.hoffer .cta{font-size:.92rem;padding:15px 12px}}
-
-/* ---- 不安の吹き出し（押すと答えのページへ） ---- */
-.qlist{display:flex;flex-direction:column;gap:clamp(18px,2.6vw,26px);max-width:800px;margin-inline:auto}
-.q{display:flex;align-items:center;gap:16px;position:relative}
-.q.r{justify-content:flex-end}
-.q .fig{flex:0 0 auto;width:98px}
-.q .fig img{width:98px;height:auto;filter:drop-shadow(0 6px 12px rgba(95,72,48,.14))}
-.bub{position:relative;background:var(--surface);border-radius:var(--r-l);padding:20px 27px;
-  font-size:1.04rem;line-height:1.8;box-shadow:var(--sh-card);max-width:min(30em,100%);
-  color:inherit;text-decoration:none;display:block;
-  transition:transform .16s ease,box-shadow .16s ease}
-a.bub:hover{transform:translateY(-2px);box-shadow:var(--sh-lift)}
-a.bub:focus-visible{outline:3px solid var(--orange-ink);outline-offset:4px}
-/* 左に人がいる行だけ、しっぽを出す */
-.q:not(.r) .bub::after{content:"";position:absolute;left:-12px;top:46%;width:14px;height:20px;
-  background:var(--surface);clip-path:polygon(100% 0,100% 100%,0 38%)}
-/* 右の行は人物を吹き出しの端に重ねる */
-.q.r .fig{margin-left:-30px;z-index:2}
-.bub em{font-style:normal;color:var(--orange-ink);font-weight:700}
-.dood{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:58px}
-.dood svg{display:block}
-.dood svg circle[fill]{fill:var(--peach)}
-.dood svg [stroke]{stroke:var(--orange)}
-@media (max-width:520px){
-  .q{gap:11px}
-  .q .fig,.q .fig img{width:74px}
-  .q.r .fig{margin-left:-22px}
-  .bub{padding:17px 21px;font-size:1rem;border-radius:var(--r-l)}
-  .dood{width:38px}
-  .dood svg{width:100%;height:auto}
-}
-
-/* ---- 答えの帯 ---- */
-.answer{background:var(--orange-ink);color:#fff;padding:clamp(52px,7.4vw,88px) 0;position:relative;overflow:hidden}
-:root[data-theme="dark"] .answer{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .answer{color:#2A1D14}}
-.answer::before{content:"";position:absolute;width:min(48vw,440px);aspect-ratio:1;border-radius:50%;
-  background:rgba(255,255,255,.12);top:-32%;right:-7%}
-.agrid{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:clamp(22px,4vw,48px);align-items:center}
-@media (max-width:760px){.agrid{grid-template-columns:1fr}}
-.answer h2{font-size:clamp(1.68rem,4.6vw,2.85rem);line-height:1.45;color:inherit}
-.answer p{margin-top:18px;font-size:1.02rem;max-width:30em;opacity:.95}
-.abadge{background:rgba(0,0,0,.16);border-radius:var(--r-l);padding:22px 30px;text-align:center;flex:0 0 auto;
-  box-shadow:inset 0 0 0 2.4px rgba(255,255,255,.55)}
-.abadge .n{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-weight:700;
-  font-size:clamp(2.2rem,5vw,3.2rem);line-height:1}
-.abadge .l{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.88rem;margin-top:8px}
-
-/* ---- 2つの学び方 ---- */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media (max-width:820px){.two{grid-template-columns:1fr}}
-.wcard{background:var(--surface);border-radius:var(--r-l);padding:clamp(26px,3.4vw,36px);box-shadow:var(--sh-card);
-  transition:transform .18s ease,box-shadow .18s ease}
-.wcard:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
-.wtop{display:flex;align-items:center;gap:15px;margin-bottom:16px}
-.wic{width:58px;height:58px;border-radius:var(--r-s);display:grid;place-items:center;flex:0 0 auto;
-  background:var(--peach);color:var(--orange-ink)}
-.wic.g{background:var(--leaf-tint);color:var(--leaf)}
-.wic svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-.wcard h3{font-size:1.4rem;line-height:1.4}
-.wcard .sub{font-size:.85rem;color:var(--ink-faint);font-family:"Zen Maru Gothic",sans-serif;font-weight:700}
-.wcard p{color:var(--ink-soft);font-size:1rem}
-.wcard ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
-.wcard li{position:relative;padding-left:31px;font-size:.98rem;line-height:1.75}
-.wcard li::before{content:"";position:absolute;left:0;top:.5em;width:20px;height:20px;border-radius:50%;background:var(--leaf)}
-.wcard li::after{content:"";position:absolute;left:6.3px;top:.7em;width:5px;height:9px;
-  border-right:2.4px solid #fff;border-bottom:2.4px solid #fff;transform:rotate(42deg)}
-
-/* ---- こんなときに役立ちます ---- */
-/* カードは4枚。3列だと 3+1 で右が空くので、2列で 2×2 にそろえる */
-.ugrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-@media (max-width:560px){.ugrid{grid-template-columns:1fr}}
-.uc{background:var(--surface);border-radius:var(--r-l);padding:26px 25px;box-shadow:var(--sh-card)}
-.uc .tag{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.82rem;
-  color:var(--ink);background:var(--peach);border-radius:999px;padding:5px 15px}
-.uc h3{font-size:1.12rem;margin:14px 0 10px;line-height:1.55}
-.uc p{font-size:.96rem;color:var(--ink-soft)}
-.uc q{display:block;margin-top:14px;padding:13px 16px;background:var(--cream-2);border-radius:var(--r-s);
-  color:var(--ink-soft);font-size:.94rem;line-height:1.72;quotes:"「" "」"}
-.uc q::before{content:open-quote}
-.uc q::after{content:close-quote}
-
-/* ---- 料金の一覧 ---- */
-.fee{background:var(--surface);border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh-card)}
-.fee a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:21px 28px;
-  text-decoration:none;transition:background .15s;position:relative}
-.fee a+a::before{content:"";position:absolute;top:0;left:28px;right:28px;height:1px;background:var(--line)}
-.fee a:hover{background:var(--cream)}
-.fee .cap{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.77rem;
-  padding:5px 0;width:66px;text-align:center;border-radius:999px;flex:0 0 auto;
-  background:var(--peach);color:var(--ink)}
-.fee .cap.g{background:var(--leaf-tint);color:var(--leaf)}
-.fee h3{font-size:1.08rem;line-height:1.5}
-.fee small{display:block;font-size:.83rem;color:var(--ink-faint);font-weight:400;margin-top:2px;
-  font-family:"BIZ UDPGothic",sans-serif}
-.fee .y{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-weight:700;font-size:1.5rem;
-  color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
-.fee .y i{font-style:normal;font-size:.58em;color:var(--ink-faint)}
-@media (max-width:640px){
-  .fee a{grid-template-columns:auto 1fr;gap:13px;padding:19px 20px}
-  .fee a+a::before{left:20px;right:20px}
-  .fee .y{grid-column:2;justify-self:start}
-}
-
-/* ---- 講師の並び ---- */
-/* 広い画面で間延びしないよう、2枚ぶんの幅で止める */
-.people{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,26px);
-  max-width:760px;margin-inline:auto}
-.pc{--ph:clamp(104px,29vw,158px);
-  background:var(--surface);border-radius:var(--r-l);
-  padding:clamp(18px,2.2vw,28px) clamp(14px,1.8vw,24px) clamp(16px,2vw,24px);
-  box-shadow:var(--sh-card);
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  text-decoration:none;color:var(--ink);transition:transform .18s ease,box-shadow .18s ease}
-.pc:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
-/* 幅と高さを同じ値で明示する。aspect-ratio だけだと縦に伸びる */
-.pc img{width:var(--ph);height:var(--ph);flex:0 0 auto;border-radius:50%;object-fit:cover;
-  object-position:center 25%;box-shadow:0 4px 14px var(--shadow)}
-.pc .rk{margin-top:16px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:clamp(.78rem,2.1vw,.9rem);color:var(--orange-ink);line-height:1.5}
-.pc .nm{margin-top:4px;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:clamp(1.24rem,3.6vw,1.6rem);line-height:1.35;letter-spacing:.02em}
-.pc ul{list-style:none;margin-top:14px;text-align:left;
-  display:flex;flex-direction:column;gap:7px;width:fit-content;max-width:100%}
-.pc li{position:relative;padding-left:14px;font-size:clamp(.84rem,2.3vw,.98rem);
-  line-height:1.65;color:var(--ink-soft)}
-.pc li::before{content:"";position:absolute;left:2px;top:.66em;width:5px;height:5px;
-  border-radius:50%;background:var(--orange)}
-.pc .go{margin-top:auto;padding-top:18px;width:100%}
-.pc .go span{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;
-  background:var(--orange-ink);color:#fff;border-radius:999px;
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
-  font-size:clamp(.9rem,2.4vw,1.05rem);min-height:50px;padding:10px 12px;line-height:1.3}
-:root[data-theme="dark"] .pc .go span{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pc .go span{color:#2A1D14}}
-.pc .go span::after{content:"→";transition:transform .18s ease}
-.pc:hover .go span::after{transform:translateX(4px)}
-/* いちばん狭い画面でも2列を保つ */
-@media (max-width:359px){
-  .people{gap:10px}
-  .pc{padding:16px 11px 14px;border-radius:var(--r-s)}
-  .pc li{padding-left:12px;font-size:.8rem}
-  .pc .go span{font-size:.85rem;min-height:46px}
-}
-
-/* ---- ご家族の方へ ---- */
-.fam{display:grid;grid-template-columns:1fr;gap:clamp(24px,3.5vw,40px);align-items:center}
-/* 広い画面では、左に文章・右にイラスト。縦積みのままだと絵が大きくなりすぎる */
-@media (min-width:900px){.fam{grid-template-columns:1.02fr .98fr}}
-.fam .k{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.95rem;color:var(--orange-ink)}
-.fam h2{margin-top:10px;font-size:clamp(1.58rem,5.2vw,2.35rem);line-height:1.42;letter-spacing:.01em}
-.fam ul{list-style:none;margin-top:clamp(20px,3vw,28px);
-  display:flex;flex-direction:column;gap:clamp(13px,1.8vw,17px)}
-.fam li{display:grid;grid-template-columns:34px 1fr;gap:13px;align-items:start;
-  font-size:clamp(.98rem,2.7vw,1.06rem);line-height:1.7;color:var(--ink)}
-.fam li svg{width:30px;height:30px;margin-top:.18em;stroke:var(--ink);fill:none;
-  stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.fam .btn{margin-top:clamp(24px,3.4vw,32px);
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  background:var(--orange-ink);color:#fff;
-  font-size:clamp(1.02rem,3vw,1.16rem);line-height:1.5;
-  padding:17px 26px;min-height:64px;width:100%;
-  box-shadow:0 6px 16px rgba(164,68,19,.24)}
-@media (min-width:900px){.fam .btn{width:auto;align-self:start;display:inline-flex}}
-:root[data-theme="dark"] .fam .btn{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fam .btn{color:#2A1D14}}
-.fam figure{margin:0}
-.fam figure img{width:100%;height:auto}
-@media (max-width:899px){.fam figure{margin-top:4px}}
-
-/* ---- スマホの実画面 ---- */
-.phone{background:var(--phone);border-radius:var(--r-l);padding:12px;box-shadow:var(--sh-lift)}
-.ph-t{display:flex;align-items:center;gap:9px;padding:9px 13px 12px;color:var(--phone-ink);
-  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:.89rem}
-.ph-t .dot{width:9px;height:9px;border-radius:50%;background:#8FD6AE}
-.ph-s{background:var(--cream);border-radius:var(--r-s);padding:16px 14px;display:flex;flex-direction:column;gap:11px}
-.msg{max-width:88%;padding:12px 16px;border-radius:var(--r-s);font-size:.93rem;line-height:1.72}
-.msg.me{align-self:flex-end;background:var(--orange-ink);color:#fff;border-bottom-right-radius:6px}
-:root[data-theme="dark"] .msg.me{color:#2A1D14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .msg.me{color:#2A1D14}}
-.msg.ai{align-self:flex-start;background:var(--surface);color:var(--ink);border-bottom-left-radius:6px}
-.msg.ai ul{list-style:none;margin:8px 0;display:flex;flex-direction:column;gap:5px;font-size:.89rem}
-.msg.ai b{color:var(--orange-ink)}
-.ph-b{padding:11px 12px 4px;text-align:center;color:var(--phone-ink);opacity:.82;font-size:.78rem}
-.demo{display:grid;grid-template-columns:minmax(280px,370px) 1fr;gap:clamp(24px,4vw,54px);align-items:center}
-@media (max-width:820px){.demo{grid-template-columns:1fr}}
-.demonote .k{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.2rem;color:var(--orange-ink);margin-bottom:14px}
-.demonote ol{margin-left:1.3em;display:flex;flex-direction:column;gap:11px;font-size:1rem;line-height:1.8}
-.demonote ol b{color:var(--orange-ink)}
-.cau{margin-top:32px;background:var(--surface);border-radius:var(--r-l);padding:24px 28px;
-  box-shadow:var(--sh-card);border-left:6px solid var(--leaf)}
-.cau p{font-size:.99rem;line-height:1.9;color:var(--ink-soft)}
-.cau b,.cau strong{color:var(--ink)}
-
-
-/* ============================================================
-   墨田区ページ：写真つきの見出し
-   ============================================================ */
-.photo-hero{position:relative;overflow:hidden;
-  background:linear-gradient(112deg,var(--cream) 38%,#FBEDE0 100%);
-  padding:clamp(26px,4vw,44px) 0 clamp(34px,4.6vw,54px)}
-.photo-hero>.wrap{position:relative;z-index:2}
-/* 文字は左半分に収める。右半分は写真 */
-.photo-hero .breadcrumb,.photo-hero .kicker,
-.photo-hero h1,.photo-hero .lead{max-width:min(30em,53%)}
-@media (min-width:900px){
-  .photo-hero .breadcrumb,.photo-hero .kicker,
-  .photo-hero h1,.photo-hero .lead{max-width:min(30em,48%)}
-  /* 縦長の写真なので、広い画面では高さを確保しないと帯状に切れる */
-  .photo-hero{min-height:clamp(420px,40vw,560px);display:flex;align-items:center}
-  .photo-hero>.wrap{width:min(1120px,92vw)}
-}
-/* 「AIを学ぶなら。」が2行に折れないところまで下げる */
-.photo-hero h1{margin-top:12px;line-height:1.3;font-size:clamp(1.44rem,6.6vw,2.9rem);text-wrap:pretty}
-.photo-hero h1 .accent{color:var(--orange-ink)}
-/* 見出しの下の短い線 */
-.photo-hero .rule{display:block;width:clamp(44px,9vw,64px);height:4px;border-radius:2px;
-  background:var(--orange);margin:clamp(18px,2.6vw,24px) 0 0}
-.photo-hero .lead{margin-top:clamp(18px,2.6vw,24px);color:var(--ink);
-  font-size:clamp(.95rem,2.7vw,1.06rem);line-height:1.95}
-.photo-hero .lead strong{color:var(--ink)}
-
-/* 写真。左のふちだけ曲線で抜く */
-.ph-art{position:absolute;top:0;right:0;bottom:0;z-index:1;
-  width:min(47%,620px);pointer-events:none}
-/* いちばん狭い画面。写真を細くして文字の場所をつくる */
-@media (max-width:345px){
-  .ph-art{width:42%}
-  .photo-hero .breadcrumb,.photo-hero .kicker,
-  .photo-hero h1,.photo-hero .lead{max-width:58%}
-}
-.ph-art img{width:100%;height:100%;object-fit:cover;object-position:62% 26%;
-  clip-path:url(#sumidaCurve)}
-/* 切り抜きが使えない環境では左を大きく丸める */
-@supports not (clip-path:url(#sumidaCurve)){
-  .ph-art img{clip-path:none;border-radius:60% 0 0 60% / 50% 0 0 50%}
-}
-.ph-defs{position:absolute;width:0;height:0;overflow:hidden}
-
-/* 節のあたまの飾り（点線とアイコン） */
-.divider{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2.6vw,20px);
-  margin-bottom:clamp(14px,2.2vw,20px)}
-.divider i{display:block;flex:0 1 clamp(56px,14vw,110px);height:0;
-  border-top:2px dotted var(--orange);opacity:.6}
-.divider svg{flex:0 0 auto;width:clamp(38px,9vw,50px);height:auto;
-  stroke:var(--orange);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-
-
-/* ── 素の本文（カードに入っていない文章）の左右余白 ──
-   カードの中の文は箱の内側余白で守られるが、地の上に直に置いた文章は
-   .wrap の 16px しかなく、スマホで端に貼りつく。読み幅もあわせて決める */
-.prose,.measure{max-width:36em;margin-inline:auto}
-.prose,.measure,.sec-head>p{padding-inline:clamp(0px,1.8vw,10px)}
-@media (max-width:560px){
-  .prose,.measure,.sec-head>p{padding-inline:10px}
-}
-
-
-/* ── ブログのカテゴリー説明 ──
-   一覧だけだとブログ目次と中身が重なり、検索側に同じページと見なされる。
-   下の記事一覧が自前の余白を持つので、こちらの下だけ詰める */
-.cat-intro{padding:clamp(30px,4.6vw,48px) 0 0}
-.cat-intro strong{color:var(--orange-ink)}
-
-
-/* ── 読み上げにだけ残す文字 ──
-   courses.html と sumida.html の表の caption で使っていたが、
-   定義がなく画面に出てしまっていた */
-.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;
-  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
-
-/* ── 狭い画面では表を縦に積む ──
-   min-width:560px の横スクロールだと、いちばん見たい料金の列が
-   画面の外に出る。シニアの方に横スクロールを強いない */
-@media (max-width:560px){
+/* ---- 9. 表 ---- */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-l);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.98rem}
+caption{text-align:left;padding:14px 18px 0;color:var(--ink-faint);font-size:.9rem}
+th,td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
+thead th{background:var(--paper-2);font-size:.92rem;font-weight:700}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
+td,.yen{font-variant-numeric:tabular-nums}
+@media (max-width:35em){
   .table-stack{overflow-x:visible}
   .table-stack table{min-width:0}
   .table-stack thead{display:none}
   .table-stack tr{display:block;padding:16px 18px;border-bottom:1px solid var(--line)}
   .table-stack tr:last-child{border-bottom:none}
   .table-stack th,.table-stack td{display:block;border:none;padding:1px 0}
-  .table-stack th[scope="row"]{font-family:"Zen Maru Gothic",sans-serif;font-size:1.05rem;margin-bottom:4px}
+  .table-stack th[scope="row"]{font-size:1.04rem;margin-bottom:4px}
   .table-stack td::before{content:attr(data-label) "　";color:var(--ink-faint);font-size:.9rem}
 }
 
-/* ── 関連ページの一行 ──
-   申し込みの帯の中に置くと、橙地に橙文字で読めなくなる。
-   帯の手前に、独立した区画として置く */
-.rel-links{padding:clamp(22px,3.2vw,34px) 0 0}
+/* ---- 10. よくある質問 ---- */
+.faq-list{display:flex;flex-direction:column;gap:12px}
+details.faq{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden}
+details.faq summary{display:flex;align-items:center;gap:14px;cursor:pointer;list-style:none;
+  padding:18px 22px;min-height:var(--tap);font-weight:700;font-size:1.02rem}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::before{content:"Q";flex:0 0 auto;width:30px;height:30px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center;font-size:.9rem}
+details.faq summary::after{content:"";margin-left:auto;width:11px;height:11px;flex:0 0 auto;
+  border-right:2px solid var(--accent-ink);border-bottom:2px solid var(--accent-ink);
+  transform:rotate(45deg) translateY(-3px);transition:transform .2s}
+details.faq[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+details.faq .a{padding:0 22px 20px 66px;color:var(--ink-soft);font-size:1rem;max-width:42em}
+@media (max-width:35em){details.faq .a{padding-left:22px}}
 
+/* ---- 11. 申し込みの帯・関連 ---- */
+.cta-band{background:var(--accent);color:var(--on-accent);text-align:center}
+.cta-band h2{color:var(--on-accent);font-size:clamp(1.5rem,3.4vw,2.1rem)}
+.cta-band p{color:color-mix(in srgb,var(--on-accent) 88%,transparent);margin-top:14px;max-width:38em;margin-inline:auto}
+.cta-band .cta-row{justify-content:center;margin-top:28px}
+.cta-band .btn-primary{background:var(--on-accent);color:var(--accent)}
+.cta-band .btn-primary:hover{background:color-mix(in srgb,var(--on-accent) 90%,var(--accent))}
+.cta-band .btn-ghost{color:var(--on-accent);border-color:color-mix(in srgb,var(--on-accent) 55%,transparent)}
+.cta-band .btn-ghost:hover{background:color-mix(in srgb,var(--on-accent) 14%,transparent);border-color:var(--on-accent)}
+.cta-band .sub{margin-top:18px;font-size:.94rem;color:color-mix(in srgb,var(--on-accent) 88%,transparent)}
+.rel-links{padding:clamp(22px,3vw,34px) 0 0}
+.lesson-link{background:var(--accent-soft);border-radius:var(--r-l);padding:26px;margin-top:2.4em;text-align:center}
+.lesson-link p{color:var(--ink-soft);margin-bottom:16px}
+.answer{background:var(--accent);color:var(--on-accent)}
+.answer h2{color:var(--on-accent)}.answer p{color:color-mix(in srgb,var(--on-accent) 88%,transparent)}
+.biz-band{background:var(--ink);color:var(--paper)}
+.biz-band h2,.biz-band .sec-head h2{color:var(--paper)}
+.biz-band .kicker{color:color-mix(in srgb,var(--paper) 72%,var(--accent))}
+.biz-band p,.biz-band .sec-head p{color:color-mix(in srgb,var(--paper) 85%,transparent)}
 
-/* ── 指で押せる大きさをそろえる ──
-   シニアの方が対象なので、主要な操作は 44px 角を下回らないようにする。
-   フッターの並びは16px、メニューの開閉は33pxしかなかった */
-.nav-toggle{min-height:44px;min-width:44px}
-.tel-btn{min-height:44px;display:inline-flex;align-items:center}
-.foot-links a{display:inline-block;padding:9px 0;min-height:22px}
-.arrow-link{display:inline-block;padding:8px 0}
-.brand{min-height:44px;display:flex;align-items:center}
+/* ---- 12. フッター ---- */
+.site-footer{background:var(--paper-2);border-top:1px solid var(--line);
+  padding:clamp(44px,5vw,64px) 0 32px;margin-top:0}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+@media (max-width:47.5em){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid>:first-child{grid-column:1/-1}}
+.foot-brand{font-weight:700;font-size:1.06rem}
+.foot-tag{color:var(--ink-faint);font-size:.9rem;margin-top:10px;line-height:1.8}
+.foot-h{font-weight:700;font-size:.92rem;margin-bottom:8px}
+.foot-links{list-style:none;margin:0;padding:0}
+.foot-links a{display:inline-block;padding:9px 0;color:var(--ink-soft);font-size:.94rem;text-decoration:none}
+.foot-links a:hover{color:var(--accent-ink);text-decoration:underline}
+.foot-bottom{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);
+  color:var(--ink-faint);font-size:.86rem;line-height:1.8}
 
-/* ── 本文の行の長さ ──
-   よくある質問の答えが1行46字あり、目で行を追うのがつらい。
-   日本語は35〜45字が読みやすい */
-details.faq .a{max-width:40em}
-.card .note,.card p{max-width:44em}
+/* ---- 13. 記事 ---- */
+.article{width:min(720px,92vw);margin-inline:auto}
+.article p{margin:0 0 1.5em;line-height:1.95}
+.article h2{font-size:1.4rem;margin:2em 0 .7em;padding-bottom:.4em;border-bottom:2px solid var(--line)}
+.article h3{font-size:1.14rem;margin:1.8em 0 .5em;color:var(--accent-ink)}
+.article ul,.article ol{margin:0 0 1.5em;padding-left:1.4em;display:flex;flex-direction:column;gap:.5em}
+.article strong{color:var(--accent-ink)}
+.post-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px;
+  font-size:.88rem;color:var(--ink-faint)}
+.cat{display:inline-block;background:var(--accent-soft);color:var(--accent-ink);
+  font-weight:700;font-size:.8rem;padding:3px 12px;border-radius:999px;text-decoration:none}
+.cchips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.cchip{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:999px;
+  border:1px solid var(--line);color:var(--ink-soft);text-decoration:none;font-size:.92rem}
+.cchip i{font-style:normal;font-size:.84rem;color:var(--ink-faint)}
+.cchip.on,.cchip:hover{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-soft)}
+.post-card{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.post-card:hover{border-color:var(--accent)}
+.post-card h2{font-size:1.12rem;line-height:1.55}
+.post-card .excerpt{color:var(--ink-soft);font-size:.95rem}
+.post-card time{font-size:.84rem;color:var(--ink-faint)}
+.post-card .more{margin-top:auto;font-weight:700;color:var(--accent-ink);font-size:.92rem}
+.cat-intro{padding:clamp(28px,4vw,42px) 0 0}
+.cat-intro strong{color:var(--accent-ink)}
+.prose,.measure{max-width:36em}
+.prose p{margin-top:1.1em;line-height:1.95}
+.prose p:first-child{margin-top:0}
+.prose h3{font-size:1.12rem;margin:1.6em 0 .4em;color:var(--accent-ink)}
 
-/* ── 講師が1人のときの並び ──
-   .people は2列固定なので、カードが1枚だと左半分に寄って右が空く */
+/* ---- 14. フォーム ---- */
+label{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
+input[type=text],input[type=tel],input[type=email],select,textarea{
+  width:100%;min-height:var(--tap);padding:13px 15px;font:inherit;font-size:1rem;
+  color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r)}
+textarea{min-height:120px;line-height:1.7}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
+  box-shadow:0 0 0 3px var(--accent-soft)}
+input[aria-invalid="true"],select[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--danger)}
+.req{color:var(--danger);font-size:.82rem;margin-left:4px}
+.choices{display:grid;gap:10px}
+.choice{display:flex;align-items:center;gap:12px;min-height:var(--tap);padding:12px 16px;
+  border:1.5px solid var(--line);border-radius:var(--r);cursor:pointer;font-weight:500}
+.choice:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.choice input{width:20px;height:20px;accent-color:var(--accent);flex:0 0 auto}
+.form-note{color:var(--ink-faint);font-size:.88rem;margin-top:14px;line-height:1.75}
+.form-msg{margin-top:16px;padding:14px 18px;border-radius:var(--r);font-weight:700}
+.form-msg.ok{background:var(--ok-soft);color:var(--ok)}
+.form-msg.ng{background:var(--danger-soft);color:var(--danger)}
+.info-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.info-row:last-child{border-bottom:none}
+.info-row .ic{flex:0 0 auto;width:40px;height:40px;border-radius:var(--r);display:grid;place-items:center;
+  background:var(--accent-soft);color:var(--accent-ink)}
+.info-row .k{display:block;font-size:.84rem;color:var(--ink-faint)}
+.info-row .v{font-weight:700}
+
+/* ---- 15. 講師 ---- */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:22px}
 .people.solo{grid-template-columns:minmax(0,560px);justify-content:center}
+.pc{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);
+  padding:30px 26px;text-decoration:none;color:var(--ink)}
+.pc:hover{border-color:var(--accent)}
+.pc img{--ph:clamp(104px,26vw,150px);width:var(--ph);height:var(--ph);
+  border-radius:999px;object-fit:cover;object-position:center 25%;flex:0 0 auto}
+.pc .rk{font-size:.84rem;color:var(--accent-ink);font-weight:700;margin-top:14px}
+.pc .nm{font-size:1.3rem;font-weight:700}
+.pc ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;
+  color:var(--ink-soft);font-size:.95rem;text-align:left}
+.pc ul li::before{content:"・";color:var(--accent)}
+.pc .go{margin-top:18px;width:100%;min-height:var(--tap);display:flex;align-items:center;justify-content:center;
+  background:var(--accent);color:var(--on-accent);border-radius:var(--r);font-weight:700}
+.t-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),auto));gap:28px;align-items:center}
+@media (max-width:38.75em){.t-hero{grid-template-columns:1fr;text-align:center}}
+.t-photo img{width:100%;border-radius:var(--r-l)}
+.t-role{display:block;color:var(--accent-ink);font-weight:700;font-size:.9rem}
+.t-h{font-size:clamp(1.5rem,3.4vw,2rem);margin-top:4px}
+.t-facts{border:1px solid var(--line);border-radius:var(--r-l);background:var(--surface)}
+.t-fact{display:flex;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line-soft)}
+.t-fact:last-child{border-bottom:none}
+.t-fact .k{flex:0 0 32%;color:var(--ink-faint);font-size:.92rem}
+.t-fact .v{font-weight:500}
+.t-quote{font-size:1.06rem;color:var(--ink-soft)}
+
+/* ---- 16. その他の受け皿 ---- */
+.chip,.mode-chips .chip{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 14px;
+  border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-size:.9rem;font-weight:700}
+.mode-chips{display:flex;gap:10px;flex-wrap:wrap}
+.area-list{line-height:2.2}
+.thanks-hero{text-align:center;padding:clamp(50px,8vw,90px) 0}
+.thanks-mark{width:66px;height:66px;margin:0 auto 20px;border-radius:999px;display:grid;place-items:center;
+  background:var(--ok-soft);color:var(--ok)}
+.bub,.q .bub{display:block;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r-l);padding:18px 22px;color:var(--ink);text-decoration:none;font-weight:500}
+.bub:hover{border-color:var(--accent);background:var(--accent-soft)}
+.fig{display:none}                 /* 旧デザインの人物イラスト */
+.hero{padding:clamp(40px,6vw,76px) 0}
+.rise,.reveal{opacity:1;transform:none}   /* 読み込み直後から読める状態で置く */
+.qlist{display:grid;gap:12px}
+.next-list{display:grid;gap:14px}
+.next-card{display:block;text-decoration:none;color:var(--ink)}
+.next-card:hover{border-color:var(--accent)}
+.plist{list-style:none;padding:0;margin:0}
+.plist li{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.plist li:last-child{border-bottom:none}
+.plist em{margin-left:auto;font-style:normal;font-weight:700;font-size:1.3rem;
+  color:var(--accent-ink);font-variant-numeric:tabular-nums}
+
+/* ---- 17. トップのファーストビュー ---- */
+.hero{padding:clamp(40px,6vw,76px) 0 clamp(44px,6vw,80px)}
+.hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,52px);align-items:center}
+.hero h1{font-size:clamp(2rem,5.2vw,3.2rem);line-height:1.38;margin-top:10px}
+.hero .lead{margin-top:18px;font-size:1.08rem;max-width:30em}
+.offer{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:26px;
+  padding:16px 20px;background:var(--warm-soft);border-radius:var(--r-l)}
+.offer-k{display:block;font-size:.88rem;color:var(--ink-soft);font-weight:700}
+.offer-v{display:block;color:var(--warm);font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.offer-v b{font-size:2rem}
+.offer-v .unit{font-size:.95rem;margin-left:1px}
+.offer-v .sep{margin:0 8px;color:var(--ink-faint);font-weight:400}
+.offer .text-link{margin-left:auto;font-weight:700;font-size:.94rem}
+.hero .cta-row{margin-top:26px}
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:22px}
+.demo-cap{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.08em;
+  color:var(--accent-ink);background:var(--accent-soft);padding:3px 12px;border-radius:999px}
+.demo-row{display:grid;grid-template-columns:auto 1fr;gap:12px;margin-top:16px;align-items:start}
+.demo-k{font-size:.74rem;font-weight:700;color:var(--ink-faint);
+  border:1px solid var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.demo-row p{font-size:.97rem;line-height:1.85;color:var(--ink)}
+.demo-row.ai p{background:var(--accent-soft);border-radius:var(--r);padding:12px 14px;color:var(--ink)}
+.demo-row.ai .demo-k{color:var(--accent-ink);border-color:var(--accent-soft);background:var(--accent-soft)}
+.demo-note{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);
+  font-size:.84rem;color:var(--ink-faint)}
+
+/* ---- 18. スマホでの詰め ---- */
+.nav-toggle{white-space:nowrap}
+@media (max-width:38.75em){
+  /* 主要ボタンは指で押しやすいよう横幅いっぱいに */
+  .hero .cta-row,.cta-band .cta-row{flex-direction:column}
+  .hero .cta-row .btn,.cta-band .cta-row .btn{width:100%}
+  .offer{flex-direction:column;align-items:flex-start;gap:8px}
+  .offer .text-link{margin-left:0}
+}
+
+/* ---- 19. 濃い帯の中に置いた箱 ---- */
+/* .biz-band は文字色を地の色に反転させるので、その中の白い箱は
+   文字色を戻さないと、暗い地に暗い文字になる */
+.biz-band .card,.biz-band .p-card,.biz-band .c-card,.biz-band .step{color:var(--ink)}
+.biz-band .card p,.biz-band .p-card p,.biz-band .c-card p{color:var(--ink-soft)}
+.biz-band .btn-ghost{color:var(--paper);border-color:color-mix(in srgb,var(--paper) 55%,transparent)}
+.biz-band .btn-ghost:hover{background:color-mix(in srgb,var(--paper) 14%,transparent);border-color:var(--paper)}
