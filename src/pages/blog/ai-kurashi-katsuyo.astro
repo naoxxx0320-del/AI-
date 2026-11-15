@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/blog/ai-kurashi-katsuyo.html?raw';
+
+const meta = {
+  "title": "シニアのAI活用アイデア10選【例文つき】｜すみだAI教室",
+  "description": "AIはシニアの暮らしにどう役立つのか。旅行の計画、健康の調べもの、孫への手紙、役所の書類、献立、詐欺の確認まで、そのまま使える例文つきで10個ご紹介します。墨田区のすみだAI教室。",
+  "canonical": "https://sumida-ai.jp/blog/ai-kurashi-katsuyo.html",
+  "og": {
+    "type": "article",
+    "title": "シニアのAI活用アイデア10選【暮らしの実例と例文】",
+    "description": "旅行・健康・手紙・役所の書類・献立・詐欺対策まで。AIが暮らしに役立つ場面を、そのまま使える例文つきで10個。",
+    "url": "https://sumida-ai.jp/blog/ai-kurashi-katsuyo.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"ブログ\",\n          \"item\": \"https://sumida-ai.jp/blog/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"くらしで使う\",\n          \"item\": \"https://sumida-ai.jp/blog/c/kurashi.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 4,\n          \"name\": \"シニアのAI活用アイデア10選\",\n          \"item\": \"https://sumida-ai.jp/blog/ai-kurashi-katsuyo.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"シニアのAI活用アイデア10選【暮らしの実例と例文】\",\n      \"description\": \"旅行・健康・手紙・役所の書類・献立・詐欺対策まで。AIが暮らしに役立つ場面を、そのまま使える例文つきで10個。\",\n      \"articleSection\": \"くらしで使う\",\n      \"datePublished\": \"2026-08-30\",\n      \"dateModified\": \"2026-08-30\",\n      \"inLanguage\": \"ja\",\n      \"image\": \"https://sumida-ai.jp/assets/og-image.png\",\n      \"author\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"publisher\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"mainEntityOfPage\": \"https://sumida-ai.jp/blog/ai-kurashi-katsuyo.html\"\n    }\n  ]\n}"
+  ],
+  "path": "/blog/ai-kurashi-katsuyo.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

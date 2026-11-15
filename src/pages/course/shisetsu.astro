@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/course/shisetsu.html?raw';
+
+const meta = {
+  "title": "施設・団体向け講座｜すみだAI教室",
+  "description": "施設・団体向け講座（応相談・ご相談ください）の内容を詳しくご紹介します。レクリエーションとして / 職員向けの研修 / ご家族向けの説明会。すみだAI教室は墨田区のシニア向けAI教室です。オンラインと出張に対応します。",
+  "canonical": "https://sumida-ai.jp/course/shisetsu.html",
+  "og": {
+    "type": "article",
+    "title": "施設・団体向け講座｜すみだAI教室",
+    "description": "施設・団体向け講座（応相談・ご相談ください）の内容を詳しくご紹介します。レクリエーションとして / 職員向けの研修 / ご家族向けの説明会。すみだAI教室は墨田区のシニア向けAI教室です。オンラインと出張に対応します。",
+    "url": "https://sumida-ai.jp/course/shisetsu.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"コース・料金\",\n          \"item\": \"https://sumida-ai.jp/courses.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"施設・団体向け講座\",\n          \"item\": \"https://sumida-ai.jp/course/shisetsu.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Course\",\n      \"name\": \"施設・団体向け講座\",\n      \"description\": \"施設・団体向け講座（応相談・ご相談ください）の内容を詳しくご紹介します。レクリエーションとして / 職員向けの研修 / ご家族向けの説明会。すみだAI教室は墨田区のシニア向けAI教室です。オンラインと出張に対応します。\",\n      \"inLanguage\": \"ja\",\n      \"url\": \"https://sumida-ai.jp/course/shisetsu.html\",\n      \"provider\": {\n        \"@type\": \"EducationalOrganization\",\n        \"name\": \"すみだAI教室（AIプロジェクトチーム）\",\n        \"url\": \"https://sumida-ai.jp/\"\n      },\n      \"hasCourseInstance\": {\n        \"@type\": \"CourseInstance\",\n        \"courseMode\": [\n          \"onsite\"\n        ],\n        \"courseWorkload\": \"PT1H30M\",\n        \"location\": {\n          \"@type\": \"Place\",\n          \"address\": {\n            \"@type\": \"PostalAddress\",\n            \"addressRegion\": \"東京都\",\n            \"addressLocality\": \"墨田区\",\n            \"addressCountry\": \"JP\"\n          }\n        }\n      }\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"ご利用者の身体状況に配慮してもらえますか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"はい。事前に注意点をお聞かせください。座ったまま参加できる内容に調整します。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"職員だけの研修もできますか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"できます。業務での使い方に絞った内容をご用意します。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"見積もりだけお願いできますか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"もちろんです。お電話かフォームからご依頼ください。\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "path": "/course/shisetsu.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

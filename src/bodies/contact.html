@@ -1,0 +1,152 @@
+<div class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="パンくず">
+      <ol><li><a href="./">ホーム</a></li><li>お問い合わせ・お申し込み</li></ol>
+    </nav>
+    <span class="kicker">お問い合わせ・体験申し込み</span>
+    <h1>お気軽にどうぞ。</h1>
+    <p class="lead">お電話でも、フォームでも。ご本人さまからも、ご家族さまからの代理お申し込みも歓迎です。</p>
+  </div>
+</div>
+
+<section aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 id="contact-title" style="position:absolute;left:-9999px">連絡方法</h2>
+    <div class="grid-2" style="align-items:start">
+
+      <!-- Phone card -->
+      <div class="card reveal">
+        <h3 style="font-size:1.5rem;margin-bottom:18px"><span class="nb">お電話が</span><span class="nb">いちばん</span><span class="nb">かんたん。</span></h3>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span><span class="t">お電話</span><span class="d"><a href="tel:08048855430">080-4885-5430</a></span></span>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><span class="t">受付時間</span><span class="d">9:00〜23:00</span></span>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>
+          <span><span class="t">メール</span><span class="d"><a href="mailto:naoxxx0320@gmail.com">naoxxx0320@gmail.com</a></span></span>
+        </div>
+        <p class="mt-md" style="color:var(--ink-soft);font-size:1rem">
+          「ホームページを見た」とお伝えいただければ大丈夫です。<br>
+          聞きたいことがまとまっていなくても、そのままお電話ください。いっしょに整理しましょう。
+        </p>
+        <a class="btn btn-primary btn-block mt-md" href="tel:08048855430">電話をかける</a>
+
+        <div data-line-card hidden class="mt-md" style="border-top:2px dashed var(--line);padding-top:22px">
+          <p style="font-weight:700;font-weight:700;font-size:1.1rem;margin-bottom:10px">LINEでも、ご相談いただけます</p>
+          <p style="color:var(--ink-soft);font-size:.98rem;margin-bottom:14px">ふだんお使いのLINEから、メッセージを送るだけ。ご家族からのご相談もどうぞ。</p>
+          <a data-line-btn class="btn btn-block" href="#" rel="noopener" target="_blank" style="background:#056B2E;color:#fff">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.57 7.4 8.4 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.87c-.04.26-.2 1.01.88.55 1.09-.46 5.87-3.46 8.01-5.92C21.55 13.42 22 11.85 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+            <span class="nb">LINEで相談する</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Form card -->
+      <div class="card reveal">
+        <h3 style="font-size:1.5rem;margin-bottom:10px">フォームでのお申し込み</h3>
+        <p style="color:var(--ink-soft);font-size:1rem;margin-bottom:22px">
+          下から選んで、お名前とお電話番号だけご記入ください。<br>
+          あとは「送信する」を押すだけです。
+        </p>
+
+        <!-- action/method は、JavaScriptが動かない環境でも送信できるようにするための保険。
+             通常は site.js が横取りして送信し、thanks.html へ移動します。 -->
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="86e44014-aade-40b5-ad5f-35b1c50bcc58">
+          <input type="hidden" name="subject" value="すみだAI教室 ウェブサイトからのお申し込み">
+          <input type="hidden" name="from_name" value="すみだAI教室 ウェブサイト">
+          <input type="hidden" name="redirect" value="https://sumida-ai.jp/thanks.html">
+          <fieldset>
+            <legend>どなたのお申し込みですか？</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="who" value="本人（受講したい本人です）" checked>受講したいご本人</label>
+              <label class="choice"><input type="radio" name="who" value="家族（親などへの代理申し込み）">ご家族（親などへの代理申し込み）</label>
+              <label class="choice"><input type="radio" name="who" value="団体（町会・施設などの出張依頼）">町会・施設など（出張のご依頼）</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="name">お名前<span class="req">必須</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required placeholder="例）墨田 花子">
+          </div>
+
+          <div>
+            <label for="tel">お電話番号<span class="req">必須</span></label>
+            <input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required placeholder="例）090-1234-5678">
+          </div>
+
+          <div>
+            <label for="email">メールアドレス（お持ちの方のみ）</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="例）hanako@example.com">
+          </div>
+
+          <fieldset>
+            <legend>ご希望の受け方</legend>
+            <div class="choices cols">
+              <label class="choice"><input type="radio" name="mode" value="オンライン" checked>オンライン</label>
+              <label class="choice"><input type="radio" name="mode" value="出張（墨田区・近隣）">出張（ご自宅など）</label>
+              <label class="choice"><input type="radio" name="mode" value="相談して決めたい">相談して決めたい</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="course">ご希望のコース</label>
+            <select id="course" name="course">
+              <option>ワンコイン体験（500円）</option>
+              <option>やさしいAI入門（全4回）</option>
+              <option>生活活用コース（月額）</option>
+              <option>デジタル安心講座</option>
+              <option>マンツーマン個別相談</option>
+              <option>出張講座（町会・施設）</option>
+              <option>まだ決めていない・相談したい</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="msg">ご相談内容（なくても大丈夫です）</label>
+            <textarea id="msg" name="msg" placeholder="不安なこと、やってみたいことを、何でもどうぞ。&#10;（例：オンラインのつなぎ方が心配です）"></textarea>
+          </div>
+
+          <!-- 迷惑メール対策（人には見えません／Web3Forms指定のチェックボックス形式） -->
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button class="btn btn-primary btn-block" type="submit" id="submitBtn"><span class="nb">この内容で送信する</span></button>
+          <p class="form-note" id="formNote">※ ご記入内容は、すみだAI教室（AIプロジェクトチーム）にのみ届きます。お急ぎの方はお電話がいちばん確実です。</p>
+          <details class="faq" id="privacy" style="margin-top:14px">
+            <summary>個人情報の取り扱いについて</summary>
+            <div class="a">
+              <p>このフォームの送信には、外部のフォーム配信サービス（Web3Forms）を利用しています。ご記入いただいた内容は、同サービスを経由して運営者のメールアドレスに届きます。</p>
+              <p class="mt-md">いただいた情報は、<strong>お問い合わせへの返信と、講座の日程調整のためだけ</strong>に使用します。ご本人の同意なく第三者へ提供することはありません。</p>
+              <p class="mt-md">記録の保存期間や削除のご依頼については、<a class="text-link" href="tel:08048855430">お電話</a>または<a class="text-link" href="mailto:naoxxx0320@gmail.com">メール</a>でお問い合わせください。</p>
+            </div>
+          </details>
+          <p class="note">お申し込み前に：<a class="text-link" href="courses.html">コース・料金を見る</a> ／ <a class="text-link" href="faq.html">よくある質問</a> ／ <a class="text-link" href="sumida.html">墨田区の出張エリア</a></p>
+          <div id="formMsg" class="form-msg" hidden role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="alt" aria-labelledby="area-title">
+  <div class="wrap-narrow">
+    <div class="sec-head">
+      <span class="kicker">提供エリア</span>
+      <h2 id="area-title">どこまで来てもらえるの？</h2>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <tbody>
+          <tr><th scope="row" style="width:38%">オンライン講座</th><td>全国どこからでも受講できます</td></tr>
+          <tr><th scope="row">出張（ご自宅）</th><td>墨田区全域・近隣（江東区・台東区・葛飾区・江戸川区など、ご相談ください）</td></tr>
+          <tr><th scope="row">出張（団体・施設）</th><td>東京都内を中心に応相談</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

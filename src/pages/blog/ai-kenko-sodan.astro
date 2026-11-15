@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/blog/ai-kenko-sodan.html?raw';
+
+const meta = {
+  "title": "AIに健康のことを聞いてもいい？線引き｜すみだAI教室",
+  "description": "AI（ChatGPTなど）に健康や薬のことを聞いてもよいのか。安全に使える4つの場面と、絶対にさせてはいけない3つのことを、シニアの方向けにやさしく解説します。例文つき。",
+  "canonical": "https://sumida-ai.jp/blog/ai-kenko-sodan.html",
+  "og": {
+    "type": "article",
+    "title": "AIに健康のことを聞いてもいい？【シニアが知っておきたい線引き】",
+    "description": "AIに健康のことを聞いてもよいのか。安全な使い方と、絶対にさせてはいけないことを線引きして解説します。",
+    "url": "https://sumida-ai.jp/blog/ai-kenko-sodan.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"ブログ\",\n          \"item\": \"https://sumida-ai.jp/blog/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"安心・安全\",\n          \"item\": \"https://sumida-ai.jp/blog/c/anshin.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 4,\n          \"name\": \"AIに健康のことを聞いてもいい？\",\n          \"item\": \"https://sumida-ai.jp/blog/ai-kenko-sodan.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"AIに健康のことを聞いてもいい？【シニアが知っておきたい線引き】\",\n      \"description\": \"AIに健康のことを聞いてもよいのか。安全な使い方と、絶対にさせてはいけないことを線引きして解説します。\",\n      \"articleSection\": \"安心・安全\",\n      \"datePublished\": \"2026-08-30\",\n      \"dateModified\": \"2026-08-30\",\n      \"inLanguage\": \"ja\",\n      \"image\": \"https://sumida-ai.jp/assets/og-image.png\",\n      \"author\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"publisher\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"mainEntityOfPage\": \"https://sumida-ai.jp/blog/ai-kenko-sodan.html\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"AIに健康のことを聞いてもいいですか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"聞いても構いませんが、AIの答えは診断ではありません。体のしくみを知る、病院で聞きそびれたことを確かめる、お医者さんへの質問を整理するといった使い方に向いています。受診や薬の判断は必ず医療の専門家にご相談ください。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"AIは医師の代わりになりますか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"なりません。AIはあなたの体を診ていませんし、検査もしていません。まちがった内容を、正しそうな文章で答えることもあります。診断と治療は必ず医師にご相談ください。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"飲んでいる薬の名前をAIに伝えても大丈夫ですか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"薬の一般的な説明を調べる範囲であれば問題ありませんが、飲み合わせや量の判断は薬剤師か医師に確認してください。氏名・住所・生年月日・保険証番号などは書き込まないでください。\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "path": "/blog/ai-kenko-sodan.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

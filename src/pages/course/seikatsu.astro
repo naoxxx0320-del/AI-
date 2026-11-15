@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/course/seikatsu.html?raw';
+
+const meta = {
+  "title": "生活活用コース（月額）｜すみだAI教室",
+  "description": "生活活用コース（90分×月4回・月5,500円）のご案内。季節に合わせたテーマ、後半45分はなんでも相談、録画で何度でも復習できます。墨田区のシニア向けAI教室です。",
+  "canonical": "https://sumida-ai.jp/course/seikatsu.html",
+  "og": {
+    "type": "article",
+    "title": "生活活用コース（月額）｜すみだAI教室",
+    "description": "生活活用コース（月額）（90分 × 月4回・月 5,500円）の内容を詳しくご紹介します。季節に合わせたテーマ / 後半45分はなんでも相談 / 録画で何度でも復習。すみだAI教室は墨田区のシニア向けAI教室です。オンラ",
+    "url": "https://sumida-ai.jp/course/seikatsu.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"コース・料金\",\n          \"item\": \"https://sumida-ai.jp/courses.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"生活活用コース（月額）\",\n          \"item\": \"https://sumida-ai.jp/course/seikatsu.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Course\",\n      \"name\": \"生活活用コース（月額）\",\n      \"description\": \"生活活用コース（月額）（90分 × 月4回・月 5,500円）の内容を詳しくご紹介します。季節に合わせたテーマ / 後半45分はなんでも相談 / 録画で何度でも復習。すみだAI教室は墨田区のシニア向けAI教室です。オンラインと出張に対応します。\",\n      \"inLanguage\": \"ja\",\n      \"url\": \"https://sumida-ai.jp/course/seikatsu.html\",\n      \"provider\": {\n        \"@type\": \"EducationalOrganization\",\n        \"name\": \"すみだAI教室（AIプロジェクトチーム）\",\n        \"url\": \"https://sumida-ai.jp/\"\n      },\n      \"hasCourseInstance\": {\n        \"@type\": \"CourseInstance\",\n        \"courseMode\": [\n          \"online\"\n        ],\n        \"courseWorkload\": \"PT6H\",\n        \"location\": {\n          \"@type\": \"Place\",\n          \"address\": {\n            \"@type\": \"PostalAddress\",\n            \"addressRegion\": \"東京都\",\n            \"addressLocality\": \"墨田区\",\n            \"addressCountry\": \"JP\"\n          }\n        }\n      },\n      \"offers\": {\n        \"@type\": \"Offer\",\n        \"price\": \"5500\",\n        \"priceCurrency\": \"JPY\",\n        \"category\": \"講座料金（税込）\"\n      }\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"4回分を前払いですか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"はい。月の初回に4回分をお支払いいただきます。自動引き落としは行いません。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"やめたいときは。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"いつでもやめられます。違約金はありません。翌月分をいただく前にお申し出ください。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"都合の悪い週があります。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"録画をお渡しします。振替のご相談も承ります。\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "path": "/course/seikatsu.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

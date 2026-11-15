@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/course/chokai.html?raw';
+
+const meta = {
+  "title": "町会・シニアクラブ講座｜すみだAI教室",
+  "description": "町会・シニアクラブ向け出張講座（90分〜・ご相談ください）のご案内。いちばん人気は「デジタル安心講座」、AI体験や相談会形式にもできます。墨田区のシニア向けAI教室が集会所へうかがいます。",
+  "canonical": "https://sumida-ai.jp/course/chokai.html",
+  "og": {
+    "type": "article",
+    "title": "町会・シニアクラブ講座｜すみだAI教室",
+    "description": "町会・シニアクラブ講座（90分〜・ご相談ください）の内容を詳しくご紹介します。いちばん人気は「デジタル安心講座」 / AI体験も選べます / 相談会形式にもできます。すみだAI教室は墨田区のシニア向けAI教室です。オンラ",
+    "url": "https://sumida-ai.jp/course/chokai.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"コース・料金\",\n          \"item\": \"https://sumida-ai.jp/courses.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"町会・シニアクラブ講座\",\n          \"item\": \"https://sumida-ai.jp/course/chokai.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Course\",\n      \"name\": \"町会・シニアクラブ講座\",\n      \"description\": \"町会・シニアクラブ講座（90分〜・ご相談ください）の内容を詳しくご紹介します。いちばん人気は「デジタル安心講座」 / AI体験も選べます / 相談会形式にもできます。すみだAI教室は墨田区のシニア向けAI教室です。オンラインと出張に対応します。\",\n      \"inLanguage\": \"ja\",\n      \"url\": \"https://sumida-ai.jp/course/chokai.html\",\n      \"provider\": {\n        \"@type\": \"EducationalOrganization\",\n        \"name\": \"すみだAI教室（AIプロジェクトチーム）\",\n        \"url\": \"https://sumida-ai.jp/\"\n      },\n      \"hasCourseInstance\": {\n        \"@type\": \"CourseInstance\",\n        \"courseMode\": [\n          \"onsite\"\n        ],\n        \"courseWorkload\": \"PT1H30M\",\n        \"location\": {\n          \"@type\": \"Place\",\n          \"address\": {\n            \"@type\": \"PostalAddress\",\n            \"addressRegion\": \"東京都\",\n            \"addressLocality\": \"墨田区\",\n            \"addressCountry\": \"JP\"\n          }\n        }\n      }\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"その場で入会をすすめられませんか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"一切いたしません。物品の販売もしません。名簿もお預かりしません。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"会場にWi-Fiがありません。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"こちらで通信環境を持参するので問題ありません。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"費用はどのくらいですか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"人数・内容・回数によって変わります。町会や公的な施設のみなさまには、続けやすい形をご提案します。\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "path": "/course/chokai.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/course/kobetsu.html?raw';
+
+const meta = {
+  "title": "マンツーマン個別相談｜すみだAI教室",
+  "description": "マンツーマン個別相談（60分・3,300円）のご案内。お困りごとを先にうかがい、AI以外のことでも構いません。ご家族の同席も歓迎します。墨田区のシニア向けAI教室、オンライン・出張対応。",
+  "canonical": "https://sumida-ai.jp/course/kobetsu.html",
+  "og": {
+    "type": "article",
+    "title": "マンツーマン個別相談｜すみだAI教室",
+    "description": "マンツーマン個別相談（60分・3,300円）の内容を詳しくご紹介します。お困りごとを先にうかがいます / AI以外のことでも構いません / ご家族の同席を歓迎します。すみだAI教室は墨田区のシニア向けAI教室です。オンラ",
+    "url": "https://sumida-ai.jp/course/kobetsu.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"コース・料金\",\n          \"item\": \"https://sumida-ai.jp/courses.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"マンツーマン個別相談\",\n          \"item\": \"https://sumida-ai.jp/course/kobetsu.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Course\",\n      \"name\": \"マンツーマン個別相談\",\n      \"description\": \"マンツーマン個別相談（60分・3,300円）の内容を詳しくご紹介します。お困りごとを先にうかがいます / AI以外のことでも構いません / ご家族の同席を歓迎します。すみだAI教室は墨田区のシニア向けAI教室です。オンラインと出張に対応します。\",\n      \"inLanguage\": \"ja\",\n      \"url\": \"https://sumida-ai.jp/course/kobetsu.html\",\n      \"provider\": {\n        \"@type\": \"EducationalOrganization\",\n        \"name\": \"すみだAI教室（AIプロジェクトチーム）\",\n        \"url\": \"https://sumida-ai.jp/\"\n      },\n      \"hasCourseInstance\": {\n        \"@type\": \"CourseInstance\",\n        \"courseMode\": [\n          \"online\"\n        ],\n        \"courseWorkload\": \"PT1H\",\n        \"location\": {\n          \"@type\": \"Place\",\n          \"address\": {\n            \"@type\": \"PostalAddress\",\n            \"addressRegion\": \"東京都\",\n            \"addressLocality\": \"墨田区\",\n            \"addressCountry\": \"JP\"\n          }\n        }\n      },\n      \"offers\": {\n        \"@type\": \"Offer\",\n        \"price\": \"3300\",\n        \"priceCurrency\": \"JPY\",\n        \"category\": \"講座料金（税込）\"\n      }\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"何を相談していいか分かりません。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"それでも大丈夫です。「スマホで困っていること」を思いつくまま話してください。整理はこちらでします。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"1回で解決しますか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"内容によります。60分で終わらない場合は、続きをどうするかを一緒に考えます。\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"録画はもらえますか。\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"ご希望があればお渡しします。\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "path": "/course/kobetsu.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

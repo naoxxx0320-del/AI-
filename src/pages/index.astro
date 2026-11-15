@@ -1,0 +1,23 @@
+---
+import Base, { type Props } from '../layouts/Base.astro';
+import body from '../bodies/index.html?raw';
+
+const meta = {
+  "title": "すみだAI教室｜墨田区のシニア向けAI教室（オンライン＆出張）",
+  "description": "墨田区発、シニア（高齢者）のためのやさしいAI・スマホ教室。オンライン受講とご自宅・町会への出張講座に対応。専門用語なし・少人数・ワンコイン体験500円。詐欺対策のデジタル安心講座も。運営：AIプロジェクトチーム。",
+  "canonical": "https://sumida-ai.jp/",
+  "og": {
+    "type": "website",
+    "title": "すみだAI教室｜シニアのためのオンライン＆出張AI教室",
+    "description": "専門用語なし・ゆっくり・何度でも。オンラインと出張で学べる、シニアのためのやさしいAI教室。体験500円。",
+    "url": "https://sumida-ai.jp/",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\"AIプロジェクトチーム\", \"墨田区のAI教室\", \"すみだAIきょうしつ\"],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\"@type\": \"AdministrativeArea\", \"name\": \"東京都墨田区\"},\n        {\"@type\": \"AdministrativeArea\", \"name\": \"東京都\"},\n        {\"@type\": \"Country\", \"name\": \"日本（オンライン）\"}\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\",\n      \"knowsAbout\": [\"生成AI\", \"ChatGPT\", \"スマートフォン\", \"シニア向けデジタル教育\", \"詐欺対策\"]\n    },\n    {\n      \"@type\": \"WebSite\",\n      \"@id\": \"https://sumida-ai.jp/#website\",\n      \"url\": \"https://sumida-ai.jp/\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\"すみだAIきょうしつ\", \"墨田区のAI教室\", \"AIプロジェクトチーム\"],\n      \"inLanguage\": \"ja\",\n      \"publisher\": {\"@id\": \"https://sumida-ai.jp/#org\"}\n    }\n  ]\n}"
+  ],
+  "headExtra": "<style>\n/* ---- トップページだけで使う部分 ---- */\n.merit-note{margin-top:32px;background:var(--surface);border-radius:22px;padding:24px 28px;\n  box-shadow:0 4px 16px var(--shadow);border-left:6px solid var(--leaf)}\n.merit-note p{font-size:.99rem;line-height:1.9;color:var(--ink-soft)}\n.merit-note strong{color:var(--ink)}\n@media (max-width:620px){.merit-note{padding:22px 20px}}\n</style>",
+  "path": "/"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

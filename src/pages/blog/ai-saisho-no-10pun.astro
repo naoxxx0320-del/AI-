@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/blog/ai-saisho-no-10pun.html?raw';
+
+const meta = {
+  "title": "AIに何を聞けばいいか分からない人へ｜最初の10分",
+  "description": "使い道が思いつかないのは自然なことです。何を聞いてもいい相手だと分かるまでの、具体的な10分。",
+  "canonical": "https://sumida-ai.jp/blog/ai-saisho-no-10pun.html",
+  "og": {
+    "type": "article",
+    "title": "「AIに何を聞けばいいか分からない」人のための最初の10分",
+    "description": "使い道が思いつかないのは自然なことです。何を聞いてもいい相手だと分かるまでの、具体的な10分。",
+    "url": "https://sumida-ai.jp/blog/ai-saisho-no-10pun.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"ブログ\",\n          \"item\": \"https://sumida-ai.jp/blog/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"はじめてのAI\",\n          \"item\": \"https://sumida-ai.jp/blog/c/hajimete.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 4,\n          \"name\": \"「AIに何を聞けばいいか分からない」人のための最初の10分\",\n          \"item\": \"https://sumida-ai.jp/blog/ai-saisho-no-10pun.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"「AIに何を聞けばいいか分からない」人のための最初の10分\",\n      \"description\": \"使い道が思いつかないのは自然なことです。何を聞いてもいい相手だと分かるまでの、具体的な10分。\",\n      \"articleSection\": \"はじめてのAI\",\n      \"datePublished\": \"2026-08-30\",\n      \"dateModified\": \"2026-08-30\",\n      \"inLanguage\": \"ja\",\n      \"image\": \"https://sumida-ai.jp/assets/og-image.png\",\n      \"author\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"publisher\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"mainEntityOfPage\": \"https://sumida-ai.jp/blog/ai-saisho-no-10pun.html\"\n    }\n  ]\n}"
+  ],
+  "path": "/blog/ai-saisho-no-10pun.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>

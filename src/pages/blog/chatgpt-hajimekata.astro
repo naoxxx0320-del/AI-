@@ -1,0 +1,22 @@
+---
+import Base, { type Props } from '../../layouts/Base.astro';
+import body from '../../bodies/blog/chatgpt-hajimekata.html?raw';
+
+const meta = {
+  "title": "シニア向け・スマホでChatGPTを始める方法｜すみだAI教室",
+  "description": "パソコン不要。シニアの方がふだんのスマホでChatGPT（チャットジーピーティー）を始める手順を3ステップでやさしく解説。最初の話しかけ方の例文と、気をつけたい注意点も。",
+  "canonical": "https://sumida-ai.jp/blog/chatgpt-hajimekata.html",
+  "og": {
+    "type": "article",
+    "title": "スマホだけでChatGPTを始める方法【シニア向け・3ステップ】",
+    "description": "パソコン不要。ふだんのスマホでAIとの最初の「おしゃべり」までを3ステップでご案内。",
+    "url": "https://sumida-ai.jp/blog/chatgpt-hajimekata.html",
+    "image": "https://sumida-ai.jp/assets/og-image.png"
+  },
+  "jsonld": [
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"EducationalOrganization\",\n      \"@id\": \"https://sumida-ai.jp/#org\",\n      \"name\": \"すみだAI教室\",\n      \"alternateName\": [\n        \"AIプロジェクトチーム\",\n        \"墨田区のAI教室\"\n      ],\n      \"url\": \"https://sumida-ai.jp/\",\n      \"description\": \"シニア（高齢者）向けのオンライン・出張AI教室。専門用語を使わず、ゆっくり、何度でも教えます。\",\n      \"areaServed\": [\n        {\n          \"@type\": \"AdministrativeArea\",\n          \"name\": \"東京都墨田区\"\n        }\n      ],\n      \"telephone\": \"+81-80-4885-5430\",\n      \"email\": \"naoxxx0320@gmail.com\"\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"ホーム\",\n          \"item\": \"https://sumida-ai.jp/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"ブログ\",\n          \"item\": \"https://sumida-ai.jp/blog/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 3,\n          \"name\": \"はじめてのAI\",\n          \"item\": \"https://sumida-ai.jp/blog/c/hajimete.html\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 4,\n          \"name\": \"スマホだけでChatGPTを始める方法\",\n          \"item\": \"https://sumida-ai.jp/blog/chatgpt-hajimekata.html\"\n        }\n      ]\n    },\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"スマホだけでChatGPTを始める方法【シニア向け・3ステップ】\",\n      \"description\": \"シニアの方がスマホだけでChatGPTを始める手順を3ステップでやさしく解説。最初の話しかけ方の例文つき。\",\n      \"articleSection\": \"はじめてのAI\",\n      \"datePublished\": \"2026-08-29\",\n      \"dateModified\": \"2026-08-29\",\n      \"inLanguage\": \"ja\",\n      \"image\": \"https://sumida-ai.jp/assets/og-image.png\",\n      \"author\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"publisher\": {\n        \"@id\": \"https://sumida-ai.jp/#org\"\n      },\n      \"mainEntityOfPage\": \"https://sumida-ai.jp/blog/chatgpt-hajimekata.html\"\n    }\n  ]\n}"
+  ],
+  "path": "/blog/chatgpt-hajimekata.html"
+} satisfies Props;
+---
+<Base {...meta}><Fragment set:html={body} /></Base>
