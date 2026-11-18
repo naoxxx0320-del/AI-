@@ -460,3 +460,18 @@ input[aria-invalid="true"],select[aria-invalid="true"],textarea[aria-invalid="tr
 .biz-band .card p,.biz-band .p-card p,.biz-band .c-card p{color:var(--ink-soft)}
 .biz-band .btn-ghost{color:var(--paper);border-color:color-mix(in srgb,var(--paper) 55%,transparent)}
 .biz-band .btn-ghost:hover{background:color-mix(in srgb,var(--paper) 14%,transparent);border-color:var(--paper)}
+
+
+/* ---- 20. スマホのヘッダーを1段に ----
+   画面下部に「お電話する／体験を申し込む」があるので、狭い画面では
+   ヘッダーの申し込みボタンを省き、追従ヘッダーが本文を覆う量を減らす。
+   申し込みページ自身（下部ボタンなし）では、電話ボタンを残す */
+@media (max-width:47.5em){ .tel-btn.has-bottombar{display:none} }
+
+/* ---- 21. コース詳細の条件欄 ---- */
+.c-spec{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin-top:22px;
+  padding:16px 20px;max-width:36em;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r-l);font-size:.96rem;color:var(--ink)}
+.c-spec>div{display:contents}
+.c-spec .k{color:var(--ink-faint);font-weight:700;white-space:nowrap}
+.c-spec .v{color:var(--ink);font-variant-numeric:tabular-nums}
