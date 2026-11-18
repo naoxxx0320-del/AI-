@@ -9,7 +9,7 @@ export const SITE = {
   tel: '08048855430',
   telDisplay: '080-4885-5430',
   /** ページ下部の注記。開講状況が変わったらここを直す */
-  notice: '本サイトは開講準備中のサービス案内です。料金は開講時に確定します。',
+  notice: '料金はすべて税込です。お申し込みの際に、金額と内容を必ず先にお伝えします。',
   googleVerification: [
     '2-ufqwHqM7YkhghOjfoz0OS3kuHQ7gcrI-Gbu63--30',
     'exQdm5sAERYM9CTM8nw4zn4RQOzJbqzZEYvfNjPhWlM',
