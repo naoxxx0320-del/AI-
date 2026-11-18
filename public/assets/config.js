@@ -7,7 +7,13 @@ window.SITE_CONFIG = {
   /* --- LINE公式アカウント ---
      友だち追加URLを貼ると、全ページにLINEボタンが表示されます。
      空文字 "" にすると、LINEボタンは表示されなくなります。 */
-  LINE_URL: "https://line.me/ti/p/opL0xZIyk2"
+  LINE_URL: "https://line.me/ti/p/opL0xZIyk2",
+
+  /* --- アクセス解析（Google アナリティクス 4）---
+     管理画面の「測定ID」（G- で始まる）を入れると計測が始まります。
+     空のままなら何も読み込まず、何も送りません。
+     入れるときは、個人情報の取り扱い（contact.html）に解析の記載を足してください。 */
+  GA_MEASUREMENT_ID: ""
 
 };
 

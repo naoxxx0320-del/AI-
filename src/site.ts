@@ -15,7 +15,7 @@ export const SITE = {
     'exQdm5sAERYM9CTM8nw4zn4RQOzJbqzZEYvfNjPhWlM',
   ],
   /** キャッシュを更新したいときに上げる */
-  assetVersion: { css: '20261115n', js: '20260906a' },
+  assetVersion: { css: '20261118a', js: '20261118a' },
 } as const;
 
 export type NavItem = { href: string; label: string; mobileOnly?: boolean };
