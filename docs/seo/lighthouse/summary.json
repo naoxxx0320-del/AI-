@@ -1,0 +1,69 @@
+{
+  "note": "Lighthouse によるラボ計測（模擬モバイル端末・回線を模擬的に低速化）。実ユーザーのCore Web Vitalsではない。",
+  "results": [
+    {
+      "page": "/contact.html",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "70 ms",
+      "fcp": "0.8 s",
+      "fetch": "2026-11-18T05:29:47.870Z",
+      "ff": "mobile",
+      "thr": "simulate",
+      "ver": "13.6.0",
+      "fails": []
+    },
+    {
+      "page": "/course/jitaku.html",
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "120 ms",
+      "fcp": "0.8 s",
+      "fetch": "2026-11-18T05:29:36.366Z",
+      "ff": "mobile",
+      "thr": "simulate",
+      "ver": "13.6.0",
+      "fails": []
+    },
+    {
+      "page": "/teacher.html",
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "90 ms",
+      "fcp": "0.8 s",
+      "fetch": "2026-11-18T05:29:24.640Z",
+      "ff": "mobile",
+      "thr": "simulate",
+      "ver": "13.6.0",
+      "fails": []
+    },
+    {
+      "page": "/",
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0",
+      "tbt": "330 ms",
+      "fcp": "0.9 s",
+      "fetch": "2026-11-18T05:29:12.942Z",
+      "ff": "mobile",
+      "thr": "simulate",
+      "ver": "13.6.0",
+      "fails": []
+    }
+  ]
+}
